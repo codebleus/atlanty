@@ -1,11 +1,15 @@
 .cta {
-  bottom: 2rem;
+  bottom: 0;
   display: block;
   position: fixed;
   width: 100%;
   z-index: 49;
 
-  @media (min-width: 48em) {
+  @media (min-width: 48em) and (max-width: 1280px) {
+    bottom: 2rem;
+  }
+
+  @media (min-width: 1280px) {
     bottom: 15rem;
   }
 

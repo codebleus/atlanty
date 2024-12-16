@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
         e.target.closest('.cta').style.display = 'none';
       });
   }
-  if (document.querySelector('.cookie__btn')) {
-    document
-      .querySelector('.cookie__btn')
-      .addEventListener('click', function (e) {
-        e.target.closest('.cookie').style.display = 'none';
-      });
-  }
+  // if (document.querySelector('.cookie__btn')) {
+  //   document
+  //     .querySelector('.cookie__btn')
+  //     .addEventListener('click', function (e) {
+  //       e.target.closest('.cookie').style.display = 'none';
+  //     });
+  // }
 
   if (document.querySelectorAll('.select').length) {
     document.querySelectorAll('.select').forEach(select => {
