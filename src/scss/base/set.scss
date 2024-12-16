@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-main);
+  font-style: normal;
+  font-weight: normal;
+  // font-size: 10px;
+  font-size: 62.5%;
+  -webkit-animation: bugfix infinite 1s;
+
+  @media (max-width: 74.999em) {
+    // font-size: 62.5%;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  color: var(--primary-txt-color);
+  // background-color: var(--primary-bg-color);
+  background-color: black;
+  -webkit-animation: bugfix infinite 1s;
+}
+
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+  -webkit-animation: bugfix infinite 1s;
+}
+
+a {
+  color: unset;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+
+button,
+input,
+a,
+textarea {
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+button {
+  padding: 0;
+  border: none;
+  text-align: inherit;
+  color: inherit;
+  background-color: transparent;
+  font: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  max-width: 160rem;
+
+  @media (min-width: 64em) {
+    padding: 0 10rem;
+  }
+  @media (min-width: 96em) {
+    padding: 0 11rem;
+  }
+}
+
+// (min-width: 64em)
+// (min-width: 75em) 1023
+// (min-width: 100em) 1599
+
+// @media (max-width: 48em) {
+//   html {
+//     font-size: 5px;
+//     font-size: 1.5625vw;
+//     font-size: calc((100 / 375) * 5vw);
+//     -webkit-text-size-adjust: none;
+//   }
+
+//   body {
+//     -webkit-text-size-adjust: none;
+//   }
+
+// }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/_head.htm',{ "title":"Резиденты" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="main">
+        <section class="hero">
+          <div class="hero__wrapper">
+            <div class="hero__container container">
+              <h1 class="hero__title h1">
+                1300+ Резидентов бизнес-клуба Атланты
+              </h1>
+              <p class="hero__text txt32">
+                Станут твоим личным советом директоров и командой поддержки в
+                жизни и бизнесе
+              </p>
+              <button data-modal="request-modal" class="hero__btn btn">
+                вступить в клуб
+              </button>
+            </div>
+            <div class="hero__image-wrap">
+              <img
+                src="@img/content/background_pic_1_Sr57OMR.webp"
+                class="hero__bg _desktop-only"
+                alt="" />
+              <img
+                src="@img/content/fd6892a2dbebc2cbf21b7b2c885d3ca4.webp"
+                class="hero__bg _mobile-only"
+                alt="" />
+            </div>
+          </div>
+        </section>
+        @@include('html/rezidents.htm',{}) @@include('html/infographics.htm',{})
+        @@include('html/request.htm',{})
+      </main>
+      @@include('html/_cta.htm',{}) @@include('html/_cookie.htm',{})
+      @@include('html/_footer.htm',{}) @@include('html/_modals.htm',{})
+    </div>
+
+    @@include('html/_js.htm',{}) @@include('html/_svg.htm',{})
+  </body>
+</html>

@@ -1,0 +1,142 @@
+.cta {
+  bottom: 2rem;
+  display: block;
+  position: fixed;
+  width: 100%;
+  z-index: 49;
+
+  @media (min-width: 48em) {
+    bottom: 15rem;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__table {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 48em) {
+      gap: 10rem;
+      grid-template-columns: 1fr auto;
+    }
+
+    @media (min-width: 76em) {
+      padding-left: 7rem;
+    }
+  }
+
+  // .cta__content
+
+  &__content {
+    align-items: center;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    margin-left: -2rem;
+    min-height: 2rem;
+    padding: 1.5rem 5.5rem 1.5rem 4.5rem;
+    position: relative;
+    width: 100%;
+    width: calc(100% + 4rem);
+    background-color: rgb(253, 255, 45);
+
+    @media (min-width: 48em) {
+      gap: 2rem;
+      grid-template-columns: 1fr 16rem;
+      margin-left: 0;
+      width: 100%;
+    }
+
+    @media (min-width: 64em) {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 48em) {
+    text-align: center;
+  }
+
+  // @media (max-width: 47.999em) {
+  //   position: absolute;
+  //   right: 1.5rem;
+  //   top: 4rem;
+  //   transform: rotate(180deg);
+  //   writing-mode: vertical-rl;
+  // }
+
+  // .cta__txt
+
+  &__txt {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  // .cta__price
+
+  &__price {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+    @media (min-width: 48em) {
+      align-items: flex-end;
+      flex-direction: column;
+    }
+  }
+
+  // .cta__btn
+
+  &__btn {
+  }
+
+  // .cta__close-btn
+
+  &__close-btn {
+    position: absolute;
+    right: -0.5rem;
+    top: -0.5rem;
+
+    svg {
+      color: var(--primary-brown);
+    }
+
+    @media (max-width: 1023px) {
+      &.ic-btn {
+        right: 0.5rem;
+        top: 0.5rem;
+        transform: none;
+        border: none;
+
+        svg {
+          color: var(--bg-black);
+        }
+      }
+    }
+
+    &.ic-btn {
+      width: 3.2rem;
+      height: 3.2rem;
+      border: 1px solid hsla(25, 30%, 54%, 0.4);
+      transition: border var(--transition-duration);
+
+      svg {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          border: 1px solid #ad8366;
+        }
+      }
+    }
+
+    transform: translate(100%, -100%);
+  }
+}

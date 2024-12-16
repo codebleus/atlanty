@@ -1,0 +1,56 @@
+.cookie {
+  align-items: center;
+  background-color: var(--bg-white);
+  bottom: 0;
+  display: grid;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 400;
+  gap: 0.6rem;
+  grid-template-columns: 1fr;
+  line-height: 120%;
+  padding: 1.2rem 2rem;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  z-index: 48;
+
+  @media (max-width: 1280px) {
+    display: none;
+  }
+
+  @media (min-width: 48em) {
+    max-width: 44rem;
+  }
+
+  @media (min-width: 75em) {
+    font-size: 1.4rem;
+    padding: 1.6rem 2rem 1.4rem;
+  }
+
+  // .cookie__text
+
+  &__text {
+    @media (min-width: 48em) {
+      max-width: 31rem;
+    }
+
+    a {
+      color: var(--primary-brown);
+      line-height: 130%;
+      text-decoration: none;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--bg-black);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // .cookie__btn
+
+  &__btn {
+  }
+}

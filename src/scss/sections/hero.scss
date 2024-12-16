@@ -1,0 +1,172 @@
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 100dvh;
+
+  @media (min-width: 64em) {
+    padding-bottom: 7rem;
+  }
+
+  @media (max-width: 75em) {
+    padding-bottom: 7rem;
+  }
+
+  @media (min-width: 96em) {
+    padding-bottom: 10rem;
+  }
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+
+    object-position: center center;
+  }
+
+  // .hero__container
+
+  &__container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 12;
+    color: var(--bg-white);
+
+    &.container {
+      padding-top: var(--hero-carousel-padding-top);
+    }
+
+    @media (max-width: 74.999em) {
+      padding-bottom: 6rem;
+    }
+  }
+
+  &__btn {
+    margin-top: 2.8rem;
+
+    @media (min-width: 75em) {
+      margin-top: 4rem;
+    }
+  }
+
+  // .hero__title
+
+  &__title {
+    max-width: 80rem;
+    word-break: break-word;
+
+    @media (min-width: 96em) {
+      max-width: 103rem;
+    }
+  }
+
+  // .hero__text
+
+  &__text {
+    margin-top: 2rem;
+
+    max-width: 80rem;
+
+    text-transform: uppercase;
+
+    @media (min-width: 96em) {
+      margin-top: 3.2rem;
+    }
+
+    @media (min-width: 75em) {
+      margin-top: 2.8rem;
+    }
+  }
+
+  // .hero__btn
+
+  &__btn {
+    margin-top: 2.8rem;
+
+    &.btn {
+      width: auto;
+    }
+
+    @media (min-width: 75em) {
+      margin-top: 4rem;
+    }
+  }
+
+  &__image-wrap {
+    display: block;
+    height: 100%;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center center;
+    object-position: center center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    ._mobile-only {
+      display: none;
+    }
+
+    @media (max-width: 1280px) {
+      ._desktop-only {
+        display: none;
+      }
+      ._mobile-only {
+        display: block;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+
+    &::after {
+      background: #0009;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  // .hero__video
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      height: 100%;
+      width: 100%;
+
+      background: #0009;
+    }
+  }
+}
+
+.txt32 {
+  font: var(--font-text-xl);
+  letter-spacing: var(--font-spacing-7);
+}
