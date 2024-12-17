@@ -8,3 +8,4 @@ import './lib/swiper';
 import './utils/script';
 import './utils/scroll-header';
 import './utils/forms';
+import './utils/modals';

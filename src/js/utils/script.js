@@ -46,7 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
       .querySelector('.cookie__btn')
       .addEventListener('click', function (e) {
         e.target.closest('.cookie').style.display = 'none';
+
+        if (document.querySelector('.cta')) {
+          document.querySelector('.cta').classList.add('_pressed');
+        }
       });
+  } else {
+    if (document.querySelector('.cta')) {
+      document.querySelector('.cta').classList.add('_pressed');
+    }
   }
 
   if (document.querySelectorAll('.select').length) {

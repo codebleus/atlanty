@@ -138,6 +138,9 @@
     &._mobile-only {
       display: none;
     }
+    svg path {
+      fill: #fff;
+    }
     @media (max-width: 1199px) {
       &._desktop-only {
         display: none;

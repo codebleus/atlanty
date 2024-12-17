@@ -1,5 +1,8 @@
 .cookie {
-  margin-top: 1rem;
+  z-index: 49;
+  position: fixed;
+  right: 0;
+  bottom: 0;
   margin-left: auto;
   align-items: center;
   background-color: var(--bg-white);
@@ -27,6 +30,7 @@
   // .cookie__text
 
   &__text {
+    max-width: 99%;
     @media (min-width: 48em) {
       max-width: 31rem;
     }
