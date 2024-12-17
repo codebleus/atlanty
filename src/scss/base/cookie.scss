@@ -1,7 +1,9 @@
 .cookie {
+  margin-top: 1rem;
+  margin-left: auto;
   align-items: center;
   background-color: var(--bg-white);
-  bottom: 0;
+
   display: grid;
   font-size: 1.3rem;
   font-style: normal;
@@ -10,14 +12,8 @@
   grid-template-columns: 1fr;
   line-height: 120%;
   padding: 1.2rem 2rem;
-  position: fixed;
-  right: 0;
-  width: 100%;
-  z-index: 48;
 
-  @media (max-width: 1280px) {
-    display: none;
-  }
+  width: 100%;
 
   @media (min-width: 48em) {
     max-width: 44rem;
@@ -52,5 +48,6 @@
   // .cookie__btn
 
   &__btn {
+    margin-right: auto;
   }
 }

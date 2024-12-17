@@ -25,8 +25,7 @@ body {
   font-style: normal;
   font-weight: normal;
   color: var(--primary-txt-color);
-  // background-color: var(--primary-bg-color);
-  background-color: black;
+  background-color: var(--bg-beige);
   -webkit-animation: bugfix infinite 1s;
 }
 
@@ -95,12 +94,14 @@ button {
   font: inherit;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0;
 }
 
-ul li {
+ul li,
+ol li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -122,7 +123,7 @@ input[type='number'] {
 
   max-width: 160rem;
 
-  @media (min-width: 64em) {
+  @media (min-width: 64em) and (max-width: 96em) {
     padding: 0 10rem;
   }
   @media (min-width: 96em) {

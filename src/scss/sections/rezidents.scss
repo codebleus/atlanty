@@ -24,7 +24,7 @@
     text-align: center;
     text-transform: uppercase;
 
-    @media (min-width: 64em) {
+    @media (min-width: 64em) and (max-width: 96em) {
       margin: 0 0 5.2rem;
     }
 
@@ -47,8 +47,11 @@
       grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     }
 
-    @media (min-width: 64em) {
+    @media (min-width: 64em) and (max-width: 96em) {
       gap: 4.5rem 6rem;
+    }
+
+    @media (min-width: 64em) {
       grid-template-columns: repeat(4, 1fr);
     }
 

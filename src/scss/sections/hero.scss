@@ -4,7 +4,7 @@
   justify-content: center;
   min-height: 100dvh;
 
-  @media (min-width: 64em) {
+  @media (min-width: 64em) and (max-width: 96em) {
     padding-bottom: 7rem;
   }
 
@@ -39,13 +39,14 @@
     text-transform: uppercase;
     z-index: 12;
     color: var(--bg-white);
+    width: 100%;
 
     &.container {
       padding-top: var(--hero-carousel-padding-top);
-    }
 
-    @media (max-width: 74.999em) {
-      padding-bottom: 6rem;
+      @media (max-width: 74.999em) {
+        padding-bottom: 6rem;
+      }
     }
   }
 
@@ -62,9 +63,11 @@
   &__title {
     max-width: 80rem;
     word-break: break-word;
+    // font: var(--font-heading-h1);
 
     @media (min-width: 96em) {
       max-width: 103rem;
+      margin-top: 13vh;
     }
   }
 
@@ -116,7 +119,7 @@
       display: none;
     }
 
-    @media (max-width: 1280px) {
+    @media (max-width: 75em) {
       ._desktop-only {
         display: none;
       }

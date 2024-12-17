@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
+  if (document.querySelector('.block-project__video-wrap')) {
+    const el = document.querySelector('.block-project__video-wrap');
+
+    if (el.querySelector('.block-project__video-btn')) {
+      el.querySelector('.block-project__video-btn').addEventListener(
+        'click',
+        function () {
+          el.innerHTML = `
+<iframe width="560" height="315" src="${el.dataset.src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        `;
+        }
+      );
+    }
+  }
+
+  if (document.querySelector('.project')) {
+    document.querySelector('.header').classList.add('_dark');
+  }
+
   if (document.querySelector('.header__hamburger')) {
     document
       .querySelector('.header__hamburger')
@@ -21,13 +41,13 @@ document.addEventListener('DOMContentLoaded', function () {
         e.target.closest('.cta').style.display = 'none';
       });
   }
-  // if (document.querySelector('.cookie__btn')) {
-  //   document
-  //     .querySelector('.cookie__btn')
-  //     .addEventListener('click', function (e) {
-  //       e.target.closest('.cookie').style.display = 'none';
-  //     });
-  // }
+  if (document.querySelector('.cookie__btn')) {
+    document
+      .querySelector('.cookie__btn')
+      .addEventListener('click', function (e) {
+        e.target.closest('.cookie').style.display = 'none';
+      });
+  }
 
   if (document.querySelectorAll('.select').length) {
     document.querySelectorAll('.select').forEach(select => {
@@ -68,5 +88,14 @@ document.addEventListener('DOMContentLoaded', function () {
           e.target.closest('.dropdown__item').innerText;
       }
     });
+  }
+});
+window.addEventListener('load', function () {
+  const header = document.querySelector('.header');
+  const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+  if (window.scrollY >= startPoint) {
+    !header.classList.contains('_header-scroll')
+      ? header.classList.add('_header-scroll')
+      : null;
   }
 });
