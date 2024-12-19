@@ -53,6 +53,14 @@
     padding: var(--padding-t) var(--padding-x) var(--padding-b);
     color: var(--bg-black);
 
+    .request__text {
+      @media (max-width: 48em) {
+        &._desktop-only {
+          display: none;
+        }
+      }
+    }
+
     @media (min-width: 64em) and (max-width: 75em) {
       --padding-x: 5.2rem;
       --padding-t: 4.8rem;
@@ -61,6 +69,32 @@
 
     .select._is-active .select__btn {
       border-bottom: 1px solid var(--primary-brown);
+    }
+
+    .request__form-wrap {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 48em) {
+        row-gap: 2.8rem;
+      }
+
+      @media (min-width: 96em) {
+        row-gap: 4.8rem;
+      }
+
+      @media (max-width: 47.999em) {
+        margin: 0;
+      }
+
+      .request__text {
+        @media (max-width: 48em) {
+          text-align: center;
+        }
+        @media (min-width: 64em) {
+          max-width: 48rem;
+        }
+      }
     }
 
     .field__label,
@@ -111,92 +145,3 @@
     }
   }
 }
-
-// .modal {
-//   position: fixed;
-//   z-index: 150;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   opacity: 0;
-//   visibility: hidden;
-//   transition: visibility 0.3s ease, opacity 0.3s ease;
-
-//   // .reviews-modal__container
-
-//   &__container {
-// display: flex;
-// flex-direction: column;
-// justify-content: center;
-// align-items: center;
-// flex: 1 1 auto;
-// width: 100%;
-// min-height: 100%;
-//   }
-
-//   &__body {
-//     position: relative;
-
-//     padding: 7.8rem 22.2rem;
-
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     row-gap: 3rem;
-
-//     background-color: $white;
-
-//     @media (max-width: 48em) {
-//       padding: 6.8rem 12.2rem;
-
-//       row-gap: 4rem;
-//       width: 100%;
-//     }
-//   }
-
-//   &__title,
-//   &__text {
-//     text-align: center;
-//   }
-
-//   &__text {
-//     @media (max-width: 48em) {
-//       max-width: 46rem;
-
-//       &.txt20 {
-//         font-size: 2.8rem;
-//         line-height: 144%;
-//       }
-//     }
-//   }
-
-//   // .reviews-modal__close-btn
-
-//   &__close-btn {
-//     position: absolute;
-//     top: 3rem;
-//     right: 3rem;
-
-//     display: inline-flex;
-
-//     transform: rotate(45deg);
-
-//     @media (max-width: 48em) {
-//       top: 2.5rem;
-//       right: 2.5rem;
-
-//       svg {
-//         width: 4rem;
-//         height: 4rem;
-//       }
-//     }
-
-//     svg {
-//       width: 3.2rem;
-//       height: 3.2rem;
-
-//       color: $black;
-//     }
-//   }
-// }

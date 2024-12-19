@@ -29,6 +29,7 @@
 
       @media (max-width: 1023px) and (min-width: 48em) {
         padding: 4.8rem 4.8rem 0;
+        max-width: 100%;
       }
 
       @media (min-width: 64em) and (max-width: 96em) {
@@ -80,12 +81,6 @@
       justify-content: center;
     }
 
-    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-    .swiper-pagination-horizontal.swiper-pagination-bullets
-      .swiper-pagination-bullet {
-      margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
-    }
-
     .swiper-slide img {
       height: 27rem;
       width: auto;
@@ -93,51 +88,6 @@
   }
 
   &__controls {
-    align-items: center;
-    bottom: 0;
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    right: 0;
-    z-index: 12;
-
-    .swiper-pagination-bullet {
-      --swiper-pagination-color: var(--c-primary-lemon);
-      --swiper-pagination-bullet-horizontal-gap: 0.3rem;
-      --swiper-pagination-bullet-width: 0.2rem;
-      --swiper-pagination-bullet-height: 2.4rem;
-      --swiper-pagination-color: var(--c-primary-brown);
-      --swiper-pagination-bullet-inactive-opacity: 0.3;
-      --swiper-pagination-bullet-inactive-color: #ad8366;
-      border-radius: 0;
-      margin: 0;
-      padding: 0;
-      transition: all 0.4s ease;
-
-      display: inline-block;
-      height: var(
-        --swiper-pagination-bullet-height,
-        var(--swiper-pagination-bullet-size, 8px)
-      );
-      width: var(
-        --swiper-pagination-bullet-width,
-        var(--swiper-pagination-bullet-size, 8px)
-      );
-
-      transform: scaleY(0.6);
-      opacity: 0.2;
-      background: var(--primary-lemon);
-
-      &.swiper-pagination-bullet-active {
-        opacity: 1;
-        transform: none;
-      }
-    }
-    @media (max-width: 74.999em) {
-      justify-content: center;
-      margin-top: 4rem;
-      padding: 0 2rem 2rem;
-    }
   }
 
   // .infographics__image-wrap
@@ -273,36 +223,6 @@
       writing-mode: vertical-rl;
       text-orientation: mixed;
     }
-  }
-}
-
-.controls-infographics {
-  // .controls-infographics__btn
-
-  &__btn {
-    display: block;
-
-    background: url(@img/icons/arr.svg) center / contain no-repeat;
-    border: 0;
-    height: 2.4rem;
-    outline: none;
-    width: 2.4rem;
-
-    // .controls-infographics__btn_prev
-
-    &_prev {
-      transform: scaleX(-1);
-    }
-
-    // .controls-infographics__btn_next
-
-    &_next {
-    }
-  }
-
-  // .controls-infographics__pagination
-
-  &__pagination {
   }
 }
 

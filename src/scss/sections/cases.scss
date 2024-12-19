@@ -82,193 +82,6 @@
   // .cases-hero__filters
 
   &__filters {
-    margin-top: 2.2rem;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    @media (min-width: 75em) {
-      margin-top: 2.4rem;
-    }
-    @media (min-width: 96em) {
-      margin-top: 3.2rem;
-    }
-    @media (max-width: 48em) {
-      justify-content: flex-start;
-      overflow-x: scroll;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;
-      &::-webkit-scrollbar {
-        /* WebKit */
-        width: 0;
-        height: 0;
-      }
-    }
-  }
-
-  &__sublist-item {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid transparent;
-    color: var(--bg-black);
-    margin-bottom: 0.9rem;
-    padding-bottom: 0.4rem;
-    text-align: left;
-    text-transform: uppercase;
-    transition: border-color 0.4s ease, color 0.4s ease;
-
-    @media (any-hover: hover) {
-      &:hover {
-        border-color: var(--primary-brown);
-        color: var(--primary-brown);
-      }
-    }
-  }
-
-  // .cases-hero__item
-
-  &__item {
-    padding: 0.6rem 0.8rem 0.4rem;
-    border-bottom: 1px solid transparent;
-    color: var(--primary-brown);
-    font: var(--font-text-xs);
-    transition: background-color 0.4s ease, border-bottom 0.4s ease,
-      color 0.4s ease;
-    &._is-active {
-      background-color: var(--primary-brown);
-      color: var(--bg-white);
-    }
-
-    @media (any-hover: hover) {
-      &:hover {
-        .cases-hero__sublist {
-          display: flex;
-        }
-      }
-    }
-
-    &:not(&_showmore) {
-      @media (any-hover: hover) {
-        &:hover {
-          &:not(._is-active) {
-            background-color: #ad8467b3;
-            border-bottom: 1px solid hsla(25, 30%, 54%, 0.7);
-            color: var(--bg-white);
-          }
-        }
-      }
-    }
-
-    @media (min-width: 48em) {
-      padding: 0.6rem 0.8rem 0.4rem;
-    }
-
-    @media (min-width: 75em) {
-      font-size: var(--font-size-17);
-      letter-spacing: var(--font-spacing-5);
-      line-height: 100%;
-      padding: 0.8rem 1.4rem 0.6rem;
-    }
-
-    @media (min-width: 96em) {
-      font-size: var(--font-size-20);
-      padding: 0.8rem 1.6rem 0.6rem;
-    }
-
-    @media (max-width: 48em) {
-      white-space: nowrap;
-    }
-
-    &._mobile-only {
-      @media (min-width: 48em) {
-        display: none;
-      }
-    }
-
-    // .cases-hero__item_showmore
-
-    &_showmore {
-      align-items: center;
-      cursor: pointer;
-      display: flex;
-      gap: 0.6rem;
-      position: relative;
-
-      @media (max-width: 48em) {
-        display: none;
-      }
-
-      @media (min-width: 75em) {
-        font-size: var(--font-size-17);
-        letter-spacing: var(--font-spacing-5);
-        line-height: 100%;
-        padding: 0.8rem 1.4rem 0.6rem;
-      }
-    }
-  }
-
-  // .cases-hero__item-content
-
-  &__item-content {
-    text-transform: uppercase;
-
-    @media (min-width: 96em) {
-      font-size: var(--font-size-20);
-    }
-  }
-
-  // .cases-hero__sublist
-
-  &__sublist {
-    background: var(--bg-white);
-    display: none;
-    max-height: 16.8rem;
-    min-width: 26rem;
-    overflow-y: auto;
-    padding: 2rem 2.4rem;
-    position: absolute;
-    scrollbar-color: var(--primary-lemon);
-    scrollbar-width: 4px;
-    top: 100%;
-    z-index: 10;
-    align-items: flex-start;
-    flex-direction: column;
-
-    &::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--primary-lemon);
-      border-radius: 0;
-      border-right: 2px solid var(--bg-white);
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: transparent;
-      border: none;
-      border-radius: 0;
-      margin-bottom: 10px;
-      margin-top: 10px;
-    }
-
-    .cases-hero__sublist-item {
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid transparent;
-      color: var(--bg-black);
-      text-align: left;
-      text-transform: uppercase;
-      transition: border-color 0.4s ease, color 0.4s ease;
-
-      &:not(:last-child) {
-        margin-bottom: 0.9rem;
-        padding-bottom: 0.4rem;
-      }
-    }
   }
 }
 
@@ -453,17 +266,15 @@
     background-size: cover;
     display: flex;
     flex-flow: column nowrap;
-    height: 42.2rem;
+    height: 100%;
     justify-content: space-between;
     padding-block-start: 2.4rem;
     @media (min-width: 64em) and (max-width: 96em) {
-      height: 42rem;
       padding-block-start: 2.8rem;
     }
 
     @media (min-width: 96em) {
       padding: 0;
-      height: 100%;
     }
   }
 

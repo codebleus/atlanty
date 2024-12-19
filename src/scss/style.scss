@@ -119,12 +119,27 @@
   overflow: hidden;
 }
 
+.section,
+.section.container {
+  position: relative;
+
+  @media (min-width: 75em) {
+    padding-top: 17.3rem;
+  }
+
+  @media (min-width: 96em) {
+    padding-top: 19.8rem;
+  }
+}
+
 // ------------------------------- common styles ----------------------------
 
 // --------------------------------------------------------------------------
 
 @import 'common/button';
 @import 'common/typo';
+@import 'common/filters';
+@import 'common/controls';
 
 // sections
 @import 'sections/hero';
@@ -133,3 +148,6 @@
 @import 'sections/request';
 @import 'sections/cases';
 @import 'sections/project';
+@import 'sections/calendar';
+@import 'sections/events';
+@import 'sections/residents';

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  if (document.querySelector('.project')) {
+  if (document.querySelector('.project, .calendar-hero')) {
     document.querySelector('.header').classList.add('_dark');
   }
 
@@ -57,6 +57,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  if (document.querySelectorAll('.event-card').length) {
+    document.querySelectorAll('.event-card').forEach(el => {
+      el.addEventListener('click', function (e) {
+        if (e.target.closest('.event-card__toggle')) {
+          e.preventDefault();
+          el.classList.toggle('_is-visible');
+        }
+        if (e.target.closest('.showmore-event-card__btn')) {
+          e.preventDefault();
+        }
+      });
+    });
+  }
   if (document.querySelectorAll('.select').length) {
     document.querySelectorAll('.select').forEach(select => {
       const btn = select.querySelector('.select__btn');

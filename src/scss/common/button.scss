@@ -178,4 +178,12 @@
       gap: 1rem;
     }
   }
+
+  &_brown {
+    color: var(--primary-brown);
+
+    &::after {
+      background: url(@img/icons/cross-brown.svg) center / contain no-repeat;
+    }
+  }
 }

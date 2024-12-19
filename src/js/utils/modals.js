@@ -34,10 +34,7 @@ document.documentElement.addEventListener('click', function (e) {
 
     openModal(e.target.closest('[data-modal]').dataset.modal);
   }
-  if (
-    e.target.closest('.modal_show') &&
-    (!e.target.closest('.modal-body') || e.target.closest('.close-modal-btn'))
-  ) {
+  if (e.target.closest('.modal__close-btn')) {
     closeModal(document.querySelector('.modal_show.modal'));
   }
 });
