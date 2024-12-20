@@ -1,0 +1,120 @@
+.form-exclusive {
+  --col-1: 37.4;
+  --col-2: 44;
+  --gap-x: 6.6;
+  --gap: 3.2rem;
+  margin: 0 auto;
+  max-width: 82rem;
+  padding: 2rem;
+  @media (min-width: 64em) {
+    display: grid;
+    gap: var(--gap);
+    padding: 6.6rem 10rem;
+  }
+  @media (min-width: 96em) {
+    --gap-x: 6.2;
+  }
+  // .form-exclusive__left
+
+  &__left {
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 2.6rem;
+    min-height: 20rem;
+    padding: 2.8rem;
+    position: relative;
+    @media (min-width: 64em) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__image {
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  // .form-exclusive__title
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    color: #ffff00;
+
+    font: var(--font-heading-h3);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    @media (min-width: 75em) {
+      font-size: var(--font-size-24);
+    }
+    @media (min-width: 96em) {
+      font-size: var(--font-size-38);
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  // .form-exclusive__wrap
+
+  &__wrap {
+    color: #ffffff;
+    background-color: #0f0f0f;
+    padding: 2.8rem;
+  }
+
+  // .form-exclusive__desc
+
+  &__desc {
+    @media (max-width: 48em) {
+      font: var(--font-text-s);
+
+      text-transform: uppercase;
+      margin-bottom: 4rem;
+    }
+    @media (min-width: 64em) {
+      max-width: 48rem;
+      font: var(--font-text-m);
+      letter-spacing: var(--font-spacing-5);
+      margin-bottom: 2.4rem;
+      text-transform: uppercase;
+    }
+  }
+
+  // .form-exclusive__form
+
+  &__form {
+    position: relative;
+    display: grid;
+    gap: 3.2rem;
+
+    .field__input,
+    .select__btn {
+      border-bottom: 1px solid var(--bg-black);
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    @media (min-width: 48em) {
+      margin-top: 2.8rem;
+    }
+    @media (min-width: 64em) and (max-width: 96em) {
+      gap: 2.4rem;
+    }
+    @media (min-width: 64em) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 96em) {
+      margin-top: 4.8rem;
+      gap: 3.8rem 3.4rem;
+    }
+  }
+}

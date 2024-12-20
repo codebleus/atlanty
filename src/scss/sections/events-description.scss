@@ -1,0 +1,53 @@
+.events-description {
+  padding: 4rem 0 6rem;
+  @media (min-width: 75em) {
+    padding: 6rem 0 8rem;
+  }
+  @media (min-width: 96em) {
+    padding: 8rem 0 13.6rem;
+  }
+
+  // .events-description__container
+
+  &__container {
+    &.container {
+      max-width: 72.2rem;
+      @media (min-width: 96em) {
+        max-width: 89.2rem;
+      }
+    }
+  }
+
+  // .events-description__title
+
+  &__title {
+    margin: 0 0 2.4rem;
+    text-align: center;
+    @media (min-width: 96em) {
+      margin: 0 0 3.2rem;
+    }
+  }
+
+  // .events-description__wysiwyg
+
+  &__wysiwyg {
+    p {
+      font: var(--font-text-m);
+    }
+    a {
+      color: var(--primary-brown);
+      font: var(--font-text-m);
+      text-decoration: underline;
+      transition: color 0.4s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--bg-black);
+        }
+      }
+    }
+  }
+}
+
+.clamp {
+}

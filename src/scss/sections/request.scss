@@ -4,7 +4,7 @@
   padding-bottom: 6rem;
   padding-top: 4.8rem;
 
-  @media (min-width: 64em) {
+  @media (min-width: 64em) and (max-width: 96em) {
     padding-bottom: 6.8rem;
     padding-top: 6.8rem;
   }
@@ -43,10 +43,14 @@
   // .request__title
 
   &__title {
-    margin-bottom: 3.2rem;
+    margin-bottom: 2rem;
     font: var(--font-heading-h3);
 
     text-transform: uppercase;
+
+    @media (min-width: 96em) {
+      margin-bottom: 3.2rem;
+    }
 
     @media (max-width: 48em) {
       margin-bottom: 2rem;

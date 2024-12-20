@@ -37,7 +37,7 @@
 
     @media (any-hover: hover) {
       &:hover {
-        .cases-hero__sublist {
+        .filters__sublist {
           display: flex;
         }
       }
@@ -59,11 +59,14 @@
       padding: 0.6rem 0.8rem 0.4rem;
     }
 
-    @media (min-width: 75em) {
-      font-size: var(--font-size-17);
-      letter-spacing: var(--font-spacing-5);
+    @media (min-width: 75em) and (max-width: 96em) {
       line-height: 100%;
       padding: 0.8rem 1.4rem 0.6rem;
+
+      .filters__item-content {
+        font-size: var(--font-size-17);
+        letter-spacing: var(--font-spacing-5);
+      }
     }
 
     @media (min-width: 96em) {
@@ -90,15 +93,29 @@
       gap: 0.6rem;
       position: relative;
 
+      .filters__item-content {
+        &::after {
+          background: url(@img/icons/icon-down.svg) center / contain no-repeat;
+          content: '';
+          display: inline-block;
+          height: 1.8rem;
+          width: 1.8rem;
+        }
+      }
+
       @media (max-width: 48em) {
         display: none;
       }
 
       @media (min-width: 75em) {
         font-size: var(--font-size-17);
-        letter-spacing: var(--font-spacing-5);
         line-height: 100%;
+        transform: translateY(-0.3rem);
         padding: 0.8rem 1.4rem 0.6rem;
+
+        &::after {
+          transform: translateY(0.4rem);
+        }
       }
     }
   }
@@ -106,10 +123,14 @@
   // .filters__item-content
 
   &__item-content {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     text-transform: uppercase;
 
     @media (min-width: 96em) {
       font-size: var(--font-size-20);
+      letter-spacing: var(--font-spacing-5);
     }
   }
 

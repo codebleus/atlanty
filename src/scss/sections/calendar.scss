@@ -37,7 +37,7 @@
   }
 
   &__crumbs {
-    margin-bottom: 2.6rem;
+    margin-bottom: 2rem;
     padding-top: 7.8rem;
 
     @media (min-width: 75em) {
@@ -265,6 +265,7 @@
   // .location-slide-calendar-hero__icon
 
   &__icon {
+    display: inline-flex;
     svg {
       height: 2.8rem;
       width: 2.8rem;

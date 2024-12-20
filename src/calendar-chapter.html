@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>
+      МАРКЕТИНГОВАЯ СТРАТЕГИЯ: ЖИТЬ ИЗ БУДУЩЕГО В ПРОШЛОЕ. КАК И ДЛЯ ЧЕГО?
+    </title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- <style>body{opacity: 0;}</style> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="@img/favicon.png" />
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  </head>
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="main">
+        <section class="hero hero_calendar">
+          <div class="hero__container container">
+            <div class="hero__crumbs">
+              <ol class="hero__bread-items bread-items">
+                <li class="bread-items__item">
+                  <a href="#" class="bread-items__inner">Главная</a>
+                </li>
+                <li class="bread-items__item">
+                  <a href="#" class="bread-items__inner">Мероприятия</a>
+                </li>
+                <li class="bread-items__item">
+                  <span class="bread-items__inner"
+                    >"МАРКЕТИНГОВАЯ СТРАТЕГИЯ: ЖИТЬ ИЗ БУДУЩЕГО В ПРОШЛОЕ. КАК И
+                    ДЛЯ ЧЕГО?"</span
+                  >
+                </li>
+              </ol>
+            </div>
+            <h1 class="hero__title h1">
+              "МАРКЕТИНГОВАЯ СТРАТЕГИЯ: ЖИТЬ ИЗ БУДУЩЕГО В ПРОШЛОЕ. КАК И ДЛЯ
+              ЧЕГО?"
+            </h1>
+            <div class="hero__info info-hero">
+              <time class="info-hero__date" datetime="2024-12-24"
+                >24 декабря</time
+              >
+              <div class="info-hero__badge">
+                <svg><use href="#pin-svg"></use></svg>
+                <span>Москва, Дом Атлантов + ZOOM</span>
+              </div>
+              <!---->
+              <div class="info-hero__badge info-hero__badge_dot">
+                <span>online;offline</span>
+              </div>
+              <div class="info-hero__badge info-hero__badge_dot">
+                <span>Закрытое</span>
+              </div>
+            </div>
+            <div class="hero__description">
+              Маркетинговая стратегия на примере наших сказок
+            </div>
+            <button data-modal="booking-modal" class="hero__btn btn">
+              записаться
+            </button>
+          </div>
+          <div class="hero__image-wrap">
+            <img src="@img/content/IMG_1072.webp" class="hero__image" alt="" />
+          </div>
+        </section>
+        @@include('html/events-description.htm',{})
+        @@include('html/form-exclusive.htm',{})
+      </main>
+      @@include('html/_footer.htm',{}) @@include('html/_modals.htm',{})
+    </div>
+
+    @@include('html/_js.htm',{}) @@include('html/_svg.htm',{})
+  </body>
+</html>

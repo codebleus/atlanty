@@ -33,6 +33,7 @@ if (document.querySelector('.residents__swiper') && window.innerWidth <= 1278) {
   new Swiper('.residents__swiper', {
     modules: [Navigation, Pagination],
     speed: 800,
+    slidesPerView: 'auto',
     navigation: {
       prevEl: '.residents .controls__btn_prev',
       nextEl: '.residents .controls__btn_next',
@@ -43,10 +44,7 @@ if (document.querySelector('.residents__swiper') && window.innerWidth <= 1278) {
       clickable: true,
     },
     breakpoints: {
-      639: {
-        slidesPerView: 'auto',
-      },
-      831: {
+      1024: {
         slidesPerGroup: 3,
       },
     },

@@ -70,7 +70,7 @@
   &__showmore-btn {
     margin-top: 6.5rem;
 
-    @media (min-width: 64em) {
+    @media (min-width: 64em) and (max-width: 96em) {
       margin-top: 5.9rem;
     }
 

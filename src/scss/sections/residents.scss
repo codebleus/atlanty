@@ -9,7 +9,9 @@
     @media (min-width: 75em) {
       margin-block-end: 3.2rem;
     }
-
+    @media (min-width: 76em) {
+      justify-content: space-between;
+    }
     @media (min-width: 96em) {
       margin-block-end: 5.5rem;
     }
@@ -26,9 +28,19 @@
   }
 
   .swiper {
-    margin-inline: auto;
     max-width: -moz-fit-content;
     max-width: fit-content;
+
+    @media (min-width: 1441px) {
+      margin-inline: auto;
+    }
+
+    @media (max-width: 1440px) {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+      max-width: none;
+    }
   }
 
   .swiper-slide {
@@ -203,6 +215,7 @@
   // .resident-card__image
 
   &__image {
+    object-position: 0 -2rem;
   }
 }
 .content-container {
