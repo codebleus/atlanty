@@ -118,12 +118,16 @@
                 <label class="search-cases-hero__label"
                   ><button type="submit" class="search-cases-hero__icon">
                     <svg><use href="#search-svg"></use></svg></button
-                  ><input type="text" placeholder="поиск" /><!----></label
+                  ><input
+                    type="text"
+                    placeholder="поиск"
+                    class="search-cases-hero__input" /><!----></label
                 >
               </form>
             </div>
           </div>
         </div>
+        @@include('html/media-lead.htm',{}) @@include('html/media-grid.htm',{})
       </main>
 
       @@include('html/_footer.htm',{}) @@include('html/_modals.htm',{})

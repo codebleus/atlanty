@@ -13,6 +13,10 @@
     padding: 27.6rem 0 3.8rem;
   }
 
+  &__content {
+    position: relative;
+  }
+
   &__bread-items {
     margin-bottom: 3.2rem;
 
@@ -86,6 +90,51 @@
   }
 }
 
+.search-cases-hero {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  // .search-cases-hero__label
+
+  &__label {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 23rem;
+  }
+
+  &__input {
+    color: var(--bg-white);
+    font-size: var(--font-size-14);
+    letter-spacing: var(--font-spacing-7);
+    text-transform: uppercase;
+    background: transparent;
+    border: 0;
+    height: 100%;
+    outline: 0;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--bg-white);
+    }
+  }
+
+  // .search-cases-hero__icon
+
+  &__icon {
+    display: inline-flex;
+
+    svg {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+}
+
 .cases-grid {
   margin-bottom: 5.2rem;
   @media (min-width: 64em) {
@@ -147,8 +196,12 @@
   width: 100%;
   align-content: flex-end;
 
-  @media (min-width: 64em) {
+  @media (min-width: 64em) and (max-width: 96em) {
     height: 42rem;
+  }
+
+  @media (min-width: 96em) {
+    height: 50.1rem;
   }
 
   // .bg-card__image-wrap
@@ -227,10 +280,6 @@
     width: 100%;
     height: 100%;
     background-color: var(--bg-white);
-
-    @media (min-width: 64em) {
-      height: 42rem;
-    }
   }
 
   &__image-wrap {
