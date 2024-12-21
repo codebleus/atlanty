@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/_head.htm',{ "title":"Медиа" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="main">
+        <div class="cases-hero">
+          <div class="cases-hero__container container">
+            <ol class="cases-hero__bread-items bread-items">
+              <li class="bread-items__item">
+                <a href="#" class="bread-items__inner">Главная</a>
+              </li>
+              <li class="bread-items__item">
+                <span class="bread-items__inner">Медиа Атланты</span>
+              </li>
+            </ol>
+            <h1 class="cases-hero__title h1">Медиа Атланты</h1>
+            <div class="cases-hero__content">
+              <ul class="cases-hero__filters filters">
+                <li class="filters__item _is-active">
+                  <button type="button" class="filters__item-content">
+                    Все
+                  </button>
+                </li>
+                <li class="filters__item">
+                  <button type="button" class="filters__item-content">
+                    Франчайзинг
+                  </button>
+                </li>
+                <li class="filters__item">
+                  <button type="button" class="filters__item-content">
+                    Маркетинг и продажи
+                  </button>
+                </li>
+                <li class="filters__item">
+                  <button type="button" class="filters__item-content">
+                    Масштабирование
+                  </button>
+                </li>
+                <li class="filters__item filters__item_showmore">
+                  <span class="filters__item-content"> Ещё </span>
+                  <ul class="filters__sublist">
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Открытие бизнеса
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Комьюнити/окружение
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Инвестиции
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Мышление/Самореализация
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Бизнес-клубы
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Стартапы и предпринимательство
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Персоналии
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Технологии в бизнесе
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Маркетинг и продажи
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Инвестиции и финансы
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Личностный рост
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Управление и лидерство
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Международный бизнес
+                      </button>
+                    </li>
+                    <li class="filters__sublist-item">
+                      <button type="button" class="filters__item-content">
+                        Развитие бизнеса
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="cases-hero__search search-cases-hero">
+                <label class="search-cases-hero__label"
+                  ><button type="submit" class="search-cases-hero__icon">
+                    <svg><use href="#search-svg"></use></svg></button
+                  ><input type="text" placeholder="поиск" /><!----></label
+                >
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      @@include('html/_footer.htm',{}) @@include('html/_modals.htm',{})
+    </div>
+
+    @@include('html/_js.htm',{}) @@include('html/_svg.htm',{})
+  </body>
+</html>

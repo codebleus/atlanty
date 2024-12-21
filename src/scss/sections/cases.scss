@@ -41,6 +41,11 @@
   // .cases-hero__container
 
   &__container {
+    .filters__sublist .filters__item-content {
+      &::after {
+        display: none;
+      }
+    }
     .cases-hero__item_showmore {
       > .cases-hero__item-content {
         align-items: center;
