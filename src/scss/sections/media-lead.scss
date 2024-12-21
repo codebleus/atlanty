@@ -63,6 +63,14 @@
     font: var(--font-heading-h5);
     min-height: 59rem;
   }
+  @media (any-hover: hover) and (min-width: 48em) {
+    &:hover {
+      .banner-media-lead__more {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
 
   // .banner-media-lead__label
 
@@ -251,6 +259,11 @@
       margin-bottom: 1.6rem;
       padding-bottom: 2rem;
     }
+    @media (any-hover: hover) {
+      &:hover {
+        border-bottom: 1px solid var(--primary-brown);
+      }
+    }
   }
 
   // .popular-media-lead__link
@@ -262,6 +275,11 @@
     text-decoration: none;
     transition: color 0.4s ease;
     -webkit-line-clamp: 2;
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--primary-brown);
+      }
+    }
     @media (min-width: 96em) {
       min-height: 5.6rem;
     }

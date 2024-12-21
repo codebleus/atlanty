@@ -64,6 +64,15 @@
   background-color: var(--bg-white);
   display: block;
 
+  @media (any-hover: hover) and (min-width: 48em) {
+    &:hover {
+      .card-media-grid__more {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
   // .card-media-grid__wrapper
 
   &__wrapper {
