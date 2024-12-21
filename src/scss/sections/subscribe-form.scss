@@ -1,0 +1,124 @@
+.subscribe-form {
+  background-color: var(--bg-green);
+  color: var(--bg-white);
+  padding-bottom: 2.8rem;
+  padding-top: 2.8rem;
+  .checkbox {
+    grid-column-start: auto;
+  }
+  @media (min-width: 64em) {
+    padding-bottom: 5.3rem;
+    padding-top: 4.8rem;
+  }
+  @media (min-width: 96em) {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+  }
+
+  // .subscribe-form__container
+
+  &__container {
+  }
+
+  // .subscribe-form__inner
+
+  &__inner {
+    position: relative;
+    display: grid;
+    gap: 2rem;
+    @media (min-width: 48em) {
+      align-items: end;
+      gap: 7rem;
+      grid-template-columns: 1.6fr 37rem;
+    }
+  }
+
+  // .subscribe-form__title
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    @media (min-width: 48em) {
+      font-size: var(--font-size-24);
+    }
+  }
+
+  // .subscribe-form__desc
+
+  &__desc {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+
+    @media (max-width: 64em) and (min-width: 48em) {
+      margin-bottom: 2.8rem;
+    }
+
+    @media (max-width: 48em) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  // .subscribe-form__list
+
+  &__list {
+    display: grid;
+    gap: 2rem;
+    max-width: 40rem;
+    @media (min-width: 48em) {
+      gap: 2rem 3rem;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  // .subscribe-form__checkbox
+
+  &__checkbox {
+  }
+
+  // .subscribe-form__block
+
+  &__block {
+  }
+
+  // .subscribe-form__btn
+
+  &__btn {
+    &.btn {
+      margin-top: 2rem;
+
+      width: 100%;
+
+      text-align: center;
+
+      input,
+      input::placeholder {
+        color: #fff;
+      }
+      @media (min-width: 64em) {
+        margin-bottom: 1.6rem;
+      }
+
+      @media (max-width: 48em) {
+        margin-top: 2.4rem;
+      }
+    }
+  }
+
+  // .subscribe-form__agreement
+
+  &__agreement {
+    font: var(--font-text-xs);
+
+    a {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 48em) {
+      display: block;
+      margin-top: 1.4rem;
+    }
+  }
+}

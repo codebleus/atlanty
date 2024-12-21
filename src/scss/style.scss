@@ -17,6 +17,7 @@
   --primary-txt-color: #262626;
   --primary-bg-color: #ede7e2;
   --bg-white: #fff;
+  --bg-green: #3c4b45;
 
   --font-heading-h7: 500 var(--font-size-13) / 1.2 var(--font-family-main);
   --font-size-80: 8rem;
@@ -140,6 +141,7 @@
 @import 'common/typo';
 @import 'common/filters';
 @import 'common/controls';
+@import 'common/form';
 
 // sections
 @import 'sections/hero';
@@ -155,3 +157,4 @@
 @import 'sections/form-exclusive';
 @import 'sections/media-lead';
 @import 'sections/media-grid';
+@import 'sections/subscribe-form';

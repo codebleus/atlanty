@@ -5,7 +5,7 @@
     <div class="wrapper">
       @@include('html/_header.htm',{})
       <main class="main">
-        <div class="cases-hero">
+        <div class="cases-hero cases-hero_media">
           <div class="cases-hero__container container">
             <ol class="cases-hero__bread-items bread-items">
               <li class="bread-items__item">
@@ -113,21 +113,102 @@
                     </li>
                   </ul>
                 </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Открытие бизнеса
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Комьюнити/окружение
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Инвестиции
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Мышление/Самореализация
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Бизнес-клубы
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Стартапы и предпринимательство
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Персоналии
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Технологии в бизнесе
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Маркетинг и продажи
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Инвестиции и финансы
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Личностный рост
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Управление и лидерство
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Международный бизнес
+                  </button>
+                </li>
+                <li class="filters__item _mobile-only">
+                  <button type="button" class="filters__item-content">
+                    Развитие бизнеса
+                  </button>
+                </li>
               </ul>
               <form class="cases-hero__search search-cases-hero">
-                <label class="search-cases-hero__label"
+                <label class="search-cases-hero__label">
+                  <button type="button" class="search-cases-hero__btn ic-btn">
+                    <svg><use href="#search-svg"></use></svg></button
                   ><button type="submit" class="search-cases-hero__icon">
                     <svg><use href="#search-svg"></use></svg></button
                   ><input
                     type="text"
                     placeholder="поиск"
-                    class="search-cases-hero__input" /><!----></label
-                >
+                    class="search-cases-hero__input" /><!---->
+                  <button
+                    type="button"
+                    class="search-cases-hero__icon search-cases-hero__icon_close">
+                    <svg><use href="#cross-svg"></use></svg>
+                  </button>
+                  <button type="button" class="search-cases-hero__deny">
+                    Отменить
+                  </button>
+                </label>
               </form>
             </div>
           </div>
         </div>
         @@include('html/media-lead.htm',{}) @@include('html/media-grid.htm',{})
+        @@include('html/subscribe-form.htm',{})
       </main>
 
       @@include('html/_footer.htm',{}) @@include('html/_modals.htm',{})

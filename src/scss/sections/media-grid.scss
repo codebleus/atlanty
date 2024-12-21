@@ -1,10 +1,10 @@
 .media-grid {
-  margin-bottom: 5.2rem;
-  @media (min-width: 64em) {
-    margin-bottom: 6.8rem;
+  margin-bottom: 5rem;
+  @media (min-width: 64em) and (max-width: 96em) {
+    margin-bottom: 7rem;
   }
   @media (min-width: 96em) {
-    margin-bottom: 9rem;
+    margin-bottom: 10rem;
   }
 
   // .media-grid__container
@@ -16,27 +16,47 @@
 
   &__list {
     display: grid;
-    gap: 2rem;
+    gap: 2rem 1.5rem;
     grid-auto-flow: dense;
     grid-template-columns: 1fr;
     list-style: none;
     margin: 0;
     padding: 0;
+
+    > li:not(:first-child) {
+      @media (max-width: 48em) {
+        display: none;
+      }
+    }
+
     @media (min-width: 48em) {
       grid-template-columns: repeat(2, 1fr);
     }
     @media (min-width: 75em) {
-      gap: 5.2rem 3.6rem;
+      gap: 5rem 4rem;
       grid-template-columns: repeat(3, 1fr);
     }
     @media (min-width: 96em) {
-      gap: 6rem 3.6rem;
+      gap: 6rem 4rem;
     }
   }
 
   // .media-grid__card
 
   &__card {
+  }
+
+  &__more {
+    margin-top: 6.5rem;
+    @media (max-width: 48em) {
+      display: none;
+    }
+    @media (min-width: 64em) and (max-width: 96em) {
+      margin-top: 5.9rem;
+    }
+    @media (min-width: 96em) {
+      margin-top: 3.4rem;
+    }
   }
 }
 
@@ -88,6 +108,9 @@
   // .card-media-grid__image-wrap
 
   &__image-wrap {
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
   }
 
   // .card-media-grid__image
@@ -95,6 +118,7 @@
   &__image {
     height: 100%;
     object-fit: cover;
+    aspect-ratio: auto 436 / 267;
   }
 
   // .card-media-grid__body
@@ -123,7 +147,7 @@
       padding-bottom: 1.4rem;
     }
     @media (min-width: 96em) {
-      padding-bottom: 2rem;
+      padding-bottom: 1.6rem;
     }
   }
 

@@ -57,6 +57,54 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  if (document.querySelector('.search-cases-hero__input')) {
+    document
+      .querySelector('.search-cases-hero__input')
+      .addEventListener('input', function (e) {
+        if (e.target.value.length) {
+          e.target.parentElement.classList.add('_is-active');
+        } else {
+          e.target.parentElement.classList.remove('_is-active');
+        }
+      });
+  }
+
+  if (document.querySelector('.search-cases-hero__icon_close')) {
+    document
+      .querySelector('.search-cases-hero__icon_close')
+      .addEventListener('click', function (e) {
+        if (
+          document
+            .querySelector('.search-cases-hero__icon_close')
+            .parentElement.querySelector('input')
+        ) {
+          document
+            .querySelector('.search-cases-hero__icon_close')
+            .parentElement.querySelector('input').value = '';
+          e.target.closest('.search-cases-hero__label._is-active') &&
+            e.target
+              .closest('.search-cases-hero__label._is-active')
+              .classList.remove('_is-active');
+        }
+      });
+  }
+
+  if (document.querySelector('.search-cases-hero__btn')) {
+    document
+      .querySelector('.search-cases-hero__btn')
+      .addEventListener('click', function (e) {
+        e.target.closest('.cases-hero').classList.add('_show-search');
+      });
+  }
+
+  if (document.querySelector('.search-cases-hero__deny')) {
+    document
+      .querySelector('.search-cases-hero__deny')
+      .addEventListener('click', function (e) {
+        e.target.closest('.cases-hero').classList.remove('_show-search');
+      });
+  }
+
   if (document.querySelectorAll('.event-card').length) {
     document.querySelectorAll('.event-card').forEach(el => {
       el.addEventListener('click', function (e) {

@@ -2,3 +2,9 @@
   font: var(--font-heading-h1);
   text-transform: uppercase;
 }
+.clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: var(--line-clamp, 5);
+  -webkit-box-orient: vertical;
+}

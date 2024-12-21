@@ -58,6 +58,10 @@
       margin: 0 auto;
       padding: 0 2rem;
 
+      @media (max-width: 64em) and (min-width: 48em) {
+        padding-right: 10rem;
+      }
+
       @media (min-width: 48em) {
         display: grid;
         gap: 3.2rem;
@@ -73,7 +77,6 @@
 
       @media (min-width: 64em) {
         padding-left: 10rem;
-        padding-right: 10rem;
       }
 
       @media (min-width: 96em) {
