@@ -9,10 +9,34 @@
   @media (min-width: 64em) {
     display: grid;
     gap: var(--gap);
-    padding: 6.6rem 10rem;
   }
   @media (min-width: 96em) {
     --gap-x: 6.2;
+  }
+  &:not(&_ext) {
+    @media (min-width: 64em) {
+      padding: 6.6rem 10rem;
+    }
+  }
+
+  &_ext {
+    margin-top: 2.6rem;
+    max-width: 100%;
+    padding: 0;
+
+    @media (min-width: 48em) {
+      margin: 2.6rem auto 0;
+      max-width: 80rem;
+    }
+
+    @media (min-width: 75em) {
+      margin-top: 2.8rem;
+      max-width: 100%;
+    }
+
+    @media (min-width: 96em) {
+      margin-top: 3.2rem;
+    }
   }
 
   // .form-exclusive__left
