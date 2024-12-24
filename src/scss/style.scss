@@ -133,6 +133,11 @@
   }
 }
 
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+
 // ------------------------------- common styles ----------------------------
 
 // --------------------------------------------------------------------------
@@ -158,3 +163,9 @@
 @import 'sections/media-lead';
 @import 'sections/media-grid';
 @import 'sections/subscribe-form';
+@import 'sections/signature';
+@import 'sections/bg-image';
+@import 'sections/carousel';
+@import 'sections/products';
+@import 'sections/mobapp';
+@import 'sections/tg';

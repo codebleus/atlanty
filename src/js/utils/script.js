@@ -69,6 +69,19 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
+  if (document.querySelectorAll('.custom-slider-mobapp__item').length) {
+    document.querySelectorAll('.custom-slider-mobapp__item').forEach(item => {
+      item.addEventListener('click', function () {
+        document
+          .querySelectorAll('.custom-slider-mobapp__item')
+          .forEach(item => {
+            item.classList.remove('_is-active');
+          });
+        item.classList.add('_is-active');
+      });
+    });
+  }
+
   if (document.querySelector('.search-cases-hero__icon_close')) {
     document
       .querySelector('.search-cases-hero__icon_close')

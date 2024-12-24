@@ -4,9 +4,677 @@
   <body>
     <div class="wrapper">
       @@include('html/_header.htm',{})
-      <main class="main">@@include('html/hero.htm',{})</main>
-      @@include('html/_cta.htm',{}) @@include('html/_footer.htm',{})
-      @@include('html/_modals.htm',{})
+      <main class="main">
+        <section class="hero hero_mainpage">
+          <div class="hero__container container">
+            <h1 class="hero__title h1">Атланты — международный бизнес-клуб</h1>
+            <p class="hero__text txt32">
+              объединяющий 1300+ предпринимателей и топ-менеджеров из 43
+              отраслей бизнеса
+            </p>
+            <button data-modal="request-modal" class="hero__btn btn">
+              Оставить заявку
+            </button>
+          </div>
+          <div class="hero__video">
+            <video data-videojs class="video-js">
+              <source src="./files/атланты_ahS0NBx.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </section>
+        @@include('html/signature.htm',{}) @@include('html/bg-image.htm',{})
+        @@include('html/carousel.htm',{}) @@include('html/infographics.htm',{})
+        <section class="residents residents_mainpage">
+          <div class="residents__container">
+            <div class="residents__title">
+              <h2>750+ мероприятий в год</h2>
+              <p>
+                со спикерами из Forbes, мировых бизнес-школ, состоявшимися
+                предпринимателями и признанными экспертами
+              </p>
+            </div>
+            <div class="residents__carousel">
+              <div class="residents__swiper swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="residents__card resident-card">
+                      <div class="resident-card__text">
+                        <span>Ирина Хакамада</span>
+                        <p>Экономист, политический деятель, журналист</p>
+                      </div>
+                      <div class="resident-card__image-wrap">
+                        <img
+                          src="@img/content/lkUpgwO.webp"
+                          class="resident-card__image"
+                          alt="" />
+                      </div>
+                    </div>
+                    <!---->
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="residents__card resident-card">
+                      <div class="resident-card__text">
+                        <span>Ирина Хакамада</span>
+                        <p>Экономист, политический деятель, журналист</p>
+                      </div>
+                      <div class="resident-card__image-wrap">
+                        <img
+                          src="@img/content/lkUpgwO.webp"
+                          class="resident-card__image"
+                          alt="" />
+                      </div>
+                    </div>
+                    <!---->
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="residents__card resident-card">
+                      <div class="resident-card__text">
+                        <span>Ирина Хакамада</span>
+                        <p>Экономист, политический деятель, журналист</p>
+                      </div>
+                      <div class="resident-card__image-wrap">
+                        <img
+                          src="@img/content/lkUpgwO.webp"
+                          class="resident-card__image"
+                          alt="" />
+                      </div>
+                    </div>
+                    <!---->
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="residents__card resident-card">
+                      <div class="resident-card__text">
+                        <span>Ирина Хакамада</span>
+                        <p>Экономист, политический деятель, журналист</p>
+                      </div>
+                      <div class="resident-card__image-wrap">
+                        <img
+                          src="@img/content/lkUpgwO.webp"
+                          class="resident-card__image"
+                          alt="" />
+                      </div>
+                    </div>
+                    <!---->
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="residents__card resident-card">
+                      <div class="resident-card__text">
+                        <span>Ирина Хакамада</span>
+                        <p>Экономист, политический деятель, журналист</p>
+                      </div>
+                      <div class="resident-card__image-wrap">
+                        <img
+                          src="@img/content/lkUpgwO.webp"
+                          class="resident-card__image"
+                          alt="" />
+                      </div>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+                <!----><!----><!---->
+              </div>
+              <a href="#" class="residents__link link link_lemon"
+                >Все мероприятия
+              </a>
+              <!---->
+            </div>
+            <div class="residents__controls controls">
+              <!-- <button class="controls__btn controls__btn_prev"></button> -->
+              <div class="controls__pagination container"></div>
+              <!-- <button class="controls__btn controls__btn_next"></button> -->
+            </div>
+          </div>
+        </section>
+        @@include('html/products.htm',{})
+        <article class="request">
+          <div class="request__container container">
+            <div class="request__text-content">
+              <h2 class="request__title">ОСТАВЬ ЗАЯВКУ</h2>
+              <p class="request__text">
+                И получи эксклюзивное предложение до 31 декабря.
+              </p>
+            </div>
+            <div class="request__form-wrap">
+              <form action="#" class="request__form" novalidate>
+                <label
+                  for="trial-form-block-trial-name"
+                  class="request__field field"
+                  ><span class="field__label" data-input-label>Ваше имя</span
+                  ><span class="field__input-wrap" data-input-wrapper
+                    ><input
+                      id="trial-form-block-trial-name"
+                      placeholder="Ваше имя"
+                      required
+                      data-mask="text"
+                      class="field__input"
+                      name="name"
+                      type="text"
+                      data-input-input
+                      value="" /></span
+                ></label>
+                <label
+                  for="trial-form-block-trial-family"
+                  class="request__field field"
+                  ><span class="field__label" data-input-label
+                    >Ваша фамилия</span
+                  ><span class="field__input-wrap" data-input-wrapper
+                    ><input
+                      id="trial-form-block-trial-family"
+                      placeholder="Ваша фамилия"
+                      required
+                      data-mask="text"
+                      class="field__input"
+                      name="family"
+                      type="text"
+                      data-input-input
+                      value="" /></span
+                ></label>
+                <label
+                  for="trial-form-block-trial-phone"
+                  class="request__field field"
+                  ><span class="field__label" data-input-label
+                    >Номер телефона</span
+                  ><span class="field__input-wrap" data-input-wrapper
+                    ><input
+                      id="trial-form-block-trial-phone"
+                      placeholder="Номер телефона"
+                      required
+                      class="field__input"
+                      name="phone"
+                      type="text"
+                      data-tel-mask
+                      value="" /></span
+                ></label>
+                <label
+                  for="trial-form-block-trial-email"
+                  class="request__field field"
+                  ><span class="field__label" data-input-label
+                    >Введите Ваш Email</span
+                  ><span class="field__input-wrap" data-input-wrapper
+                    ><input
+                      id="trial-form-block-trial-email"
+                      placeholder="Введите Ваш email"
+                      required
+                      class="field__input"
+                      name="email"
+                      type="email"
+                      data-input-input
+                      value="" /></span
+                ></label>
+                <div
+                  class="request__select select"
+                  id="trial-form-block-trial-status"
+                  data-headlessui-state>
+                  <label class="select__label">Ваш статус</label
+                  ><button
+                    id="headlessui-listbox-button-37189"
+                    type="button"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    data-headlessui-state
+                    class="select__btn">
+                    Собственник компании
+                  </button>
+                  <ul
+                    id="headlessui-listbox-options-8"
+                    aria-orientation="vertical"
+                    role="listbox"
+                    tabindex="0"
+                    data-headlessui-state="open"
+                    class="select__dropdown dropdown">
+                    <li
+                      id="headlessui-listbox-option-13"
+                      role="option"
+                      tabindex="-1"
+                      aria-selected="true"
+                      data-headlessui-state="selected"
+                      class="dropdown__item">
+                      Собственник компании
+                    </li>
+                    <li
+                      id="headlessui-listbox-option-14"
+                      role="option"
+                      tabindex="-1"
+                      aria-selected="false"
+                      data-headlessui-state=""
+                      class="dropdown__item">
+                      Топ-менеджер
+                    </li>
+                  </ul>
+                </div>
+                <label
+                  for="trial-form-block-trial-company-name"
+                  class="request__field field"
+                  ><span class="field__label" data-input-label>Компания</span
+                  ><span class="field__input-wrap" data-input-wrapper
+                    ><input
+                      id="trial-form-block-trial-company-name"
+                      placeholder="Например, ООО Название"
+                      required
+                      class="field__input"
+                      name="company"
+                      type="text"
+                      data-input-input
+                      value="" /></span
+                ></label>
+                <div
+                  class="request__select select"
+                  id="trial-form-block-trial-annual_turnover"
+                  data-headlessui-state>
+                  <label class="select__label">Оборот компании</label
+                  ><button
+                    id="headlessui-listbox-button-37191"
+                    type="button"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    data-headlessui-state
+                    class="select__btn">
+                    Собственник компании
+                  </button>
+                  <ul
+                    id="headlessui-listbox-options-10"
+                    aria-orientation="vertical"
+                    role="listbox"
+                    tabindex="0"
+                    data-headlessui-state="open"
+                    class="select__dropdown dropdown">
+                    <li
+                      id="headlessui-listbox-option-35"
+                      role="option"
+                      tabindex="-1"
+                      aria-selected="true"
+                      data-headlessui-state="selected"
+                      class="dropdown__item">
+                      до 60 млн.р
+                    </li>
+                    <li
+                      id="headlessui-listbox-option-36"
+                      role="option"
+                      tabindex="-1"
+                      aria-selected="false"
+                      data-headlessui-state=""
+                      class="dropdown__item">
+                      от 60 млн.р до 200 млн.р
+                    </li>
+                    <li
+                      id="headlessui-listbox-option-37"
+                      role="option"
+                      tabindex="-1"
+                      aria-selected="false"
+                      data-headlessui-state=""
+                      class="dropdown__item">
+                      от 200 млн.р до 800 млн.р
+                    </li>
+                    <li
+                      id="headlessui-listbox-option-38"
+                      role="option"
+                      tabindex="-1"
+                      aria-selected="false"
+                      data-headlessui-state=""
+                      class="dropdown__item">
+                      от 800 млн.р до 2 млрд.р
+                    </li>
+                    <li
+                      id="headlessui-listbox-option-39"
+                      role="option"
+                      tabindex="-1"
+                      aria-selected="false"
+                      data-headlessui-state=""
+                      class="dropdown__item">
+                      от 2 млрд.р до 5 млрд.р
+                    </li>
+                    <li
+                      id="headlessui-listbox-option-40"
+                      role="option"
+                      tabindex="-1"
+                      aria-selected="false"
+                      data-headlessui-state=""
+                      class="dropdown__item">
+                      более 5 млрд.р
+                    </li>
+                  </ul>
+                </div>
+                <label
+                  for="trial-form-block-trial-agreement"
+                  class="request__checkbox checkbox"
+                  ><input
+                    id="trial-form-block-trial-agreement"
+                    required
+                    class="checkbox__check"
+                    name="agreement"
+                    type="checkbox" /><span class="checkbox__input"></span
+                  ><span class="checkbox__label">
+                    Нажимая "Отправить", вы даете согласие на обработку
+                    <a href="#">персональных данных</a></span
+                  ></label
+                >
+                <button class="request__btn btn">Отправить заявку</button>
+              </form>
+            </div>
+          </div>
+        </article>
+
+        @@include('html/mobapp.htm',{})
+        <section class="carousel">
+          <div class="carousel__container container">
+            <h2 class="carousel__title">Медиа Атланты</h2>
+            <div class="carousel__swiper-wrap">
+              <div class="swiper">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <!---->
+                    <article>
+                      <a href="#" class="media-grid__card card-media-grid"
+                        ><!--[-->
+                        <div class="card-media-grid__wrapper">
+                          <span class="card-media-grid__label"
+                            >Маркетинг и продажи</span
+                          >
+                          <div class="card-media-grid__image-wrap">
+                            <img
+                              src="@img/content/unnamed_78f0Zwl.webp"
+                              class="card-media-grid__image"
+                              alt="" />
+                          </div>
+                        </div>
+                        <div class="card-media-grid__body">
+                          <h3 class="card-media-grid__title">
+                            <span class="card-media-grid__title-wrap">
+                              <span class="card-media-grid__title-content"
+                                >Бизнес-тренды на 2025 год</span
+                              >
+                            </span>
+                          </h3>
+                          <div class="card-media-grid__author author">
+                            <div class="author__image-wrap">
+                              <img
+                                src="@img/content/ikar2-optimized_CItPGwF.webp"
+                                class="author__image"
+                                alt="" />
+                            </div>
+                            <div>
+                              <h4 class="author__name">Редакция Атлантов</h4>
+                              <span class="author__info">Автор</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-media-grid__footer">
+                          <ul class="card-media-grid__tags">
+                            <li class="card-media-grid__tag">#медиа_атланты</li>
+                          </ul>
+                          <div class="card-media-grid__more">
+                            <span>Читать</span>
+                          </div>
+                        </div>
+                        <!--]--></a
+                      >
+                    </article>
+                  </li>
+                  <li class="swiper-slide">
+                    <!---->
+                    <article>
+                      <a href="#" class="media-grid__card card-media-grid"
+                        ><!--[-->
+                        <div class="card-media-grid__wrapper">
+                          <span class="card-media-grid__label"
+                            >Маркетинг и продажи</span
+                          >
+                          <div class="card-media-grid__image-wrap">
+                            <img
+                              src="@img/content/unnamed_78f0Zwl.webp"
+                              class="card-media-grid__image"
+                              alt="" />
+                          </div>
+                        </div>
+                        <div class="card-media-grid__body">
+                          <h3 class="card-media-grid__title">
+                            <span class="card-media-grid__title-wrap">
+                              <span class="card-media-grid__title-content"
+                                >Бизнес-тренды на 2025 год</span
+                              >
+                            </span>
+                          </h3>
+                          <div class="card-media-grid__author author">
+                            <div class="author__image-wrap">
+                              <img
+                                src="@img/content/ikar2-optimized_CItPGwF.webp"
+                                class="author__image"
+                                alt="" />
+                            </div>
+                            <div>
+                              <h4 class="author__name">Редакция Атлантов</h4>
+                              <span class="author__info">Автор</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-media-grid__footer">
+                          <ul class="card-media-grid__tags">
+                            <li class="card-media-grid__tag">#медиа_атланты</li>
+                          </ul>
+                          <div class="card-media-grid__more">
+                            <span>Читать</span>
+                          </div>
+                        </div>
+                        <!--]--></a
+                      >
+                    </article>
+                  </li>
+                  <li class="swiper-slide">
+                    <!---->
+                    <article>
+                      <a href="#" class="media-grid__card card-media-grid"
+                        ><!--[-->
+                        <div class="card-media-grid__wrapper">
+                          <span class="card-media-grid__label"
+                            >Маркетинг и продажи</span
+                          >
+                          <div class="card-media-grid__image-wrap">
+                            <img
+                              src="@img/content/unnamed_78f0Zwl.webp"
+                              class="card-media-grid__image"
+                              alt="" />
+                          </div>
+                        </div>
+                        <div class="card-media-grid__body">
+                          <h3 class="card-media-grid__title">
+                            <span class="card-media-grid__title-wrap">
+                              <span class="card-media-grid__title-content"
+                                >Бизнес-тренды на 2025 год</span
+                              >
+                            </span>
+                          </h3>
+                          <div class="card-media-grid__author author">
+                            <div class="author__image-wrap">
+                              <img
+                                src="@img/content/ikar2-optimized_CItPGwF.webp"
+                                class="author__image"
+                                alt="" />
+                            </div>
+                            <div>
+                              <h4 class="author__name">Редакция Атлантов</h4>
+                              <span class="author__info">Автор</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-media-grid__footer">
+                          <ul class="card-media-grid__tags">
+                            <li class="card-media-grid__tag">#медиа_атланты</li>
+                          </ul>
+                          <div class="card-media-grid__more">
+                            <span>Читать</span>
+                          </div>
+                        </div>
+                        <!--]--></a
+                      >
+                    </article>
+                  </li>
+                  <li class="swiper-slide">
+                    <!---->
+                    <article>
+                      <a href="#" class="media-grid__card card-media-grid"
+                        ><!--[-->
+                        <div class="card-media-grid__wrapper">
+                          <span class="card-media-grid__label"
+                            >Маркетинг и продажи</span
+                          >
+                          <div class="card-media-grid__image-wrap">
+                            <img
+                              src="@img/content/unnamed_78f0Zwl.webp"
+                              class="card-media-grid__image"
+                              alt="" />
+                          </div>
+                        </div>
+                        <div class="card-media-grid__body">
+                          <h3 class="card-media-grid__title">
+                            <span class="card-media-grid__title-wrap">
+                              <span class="card-media-grid__title-content"
+                                >Бизнес-тренды на 2025 год</span
+                              >
+                            </span>
+                          </h3>
+                          <div class="card-media-grid__author author">
+                            <div class="author__image-wrap">
+                              <img
+                                src="@img/content/ikar2-optimized_CItPGwF.webp"
+                                class="author__image"
+                                alt="" />
+                            </div>
+                            <div>
+                              <h4 class="author__name">Редакция Атлантов</h4>
+                              <span class="author__info">Автор</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-media-grid__footer">
+                          <ul class="card-media-grid__tags">
+                            <li class="card-media-grid__tag">#медиа_атланты</li>
+                          </ul>
+                          <div class="card-media-grid__more">
+                            <span>Читать</span>
+                          </div>
+                        </div>
+                        <!--]--></a
+                      >
+                    </article>
+                  </li>
+                  <li class="swiper-slide">
+                    <!---->
+                    <article>
+                      <a href="#" class="media-grid__card card-media-grid"
+                        ><!--[-->
+                        <div class="card-media-grid__wrapper">
+                          <span class="card-media-grid__label"
+                            >Маркетинг и продажи</span
+                          >
+                          <div class="card-media-grid__image-wrap">
+                            <img
+                              src="@img/content/unnamed_78f0Zwl.webp"
+                              class="card-media-grid__image"
+                              alt="" />
+                          </div>
+                        </div>
+                        <div class="card-media-grid__body">
+                          <h3 class="card-media-grid__title">
+                            <span class="card-media-grid__title-wrap">
+                              <span class="card-media-grid__title-content"
+                                >Бизнес-тренды на 2025 год</span
+                              >
+                            </span>
+                          </h3>
+                          <div class="card-media-grid__author author">
+                            <div class="author__image-wrap">
+                              <img
+                                src="@img/content/ikar2-optimized_CItPGwF.webp"
+                                class="author__image"
+                                alt="" />
+                            </div>
+                            <div>
+                              <h4 class="author__name">Редакция Атлантов</h4>
+                              <span class="author__info">Автор</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-media-grid__footer">
+                          <ul class="card-media-grid__tags">
+                            <li class="card-media-grid__tag">#медиа_атланты</li>
+                          </ul>
+                          <div class="card-media-grid__more">
+                            <span>Читать</span>
+                          </div>
+                        </div>
+                        <!--]--></a
+                      >
+                    </article>
+                  </li>
+                  <li class="swiper-slide">
+                    <!---->
+                    <article>
+                      <a href="#" class="media-grid__card card-media-grid"
+                        ><!--[-->
+                        <div class="card-media-grid__wrapper">
+                          <span class="card-media-grid__label"
+                            >Маркетинг и продажи</span
+                          >
+                          <div class="card-media-grid__image-wrap">
+                            <img
+                              src="@img/content/unnamed_78f0Zwl.webp"
+                              class="card-media-grid__image"
+                              alt="" />
+                          </div>
+                        </div>
+                        <div class="card-media-grid__body">
+                          <h3 class="card-media-grid__title">
+                            <span class="card-media-grid__title-wrap">
+                              <span class="card-media-grid__title-content"
+                                >Бизнес-тренды на 2025 год</span
+                              >
+                            </span>
+                          </h3>
+                          <div class="card-media-grid__author author">
+                            <div class="author__image-wrap">
+                              <img
+                                src="@img/content/ikar2-optimized_CItPGwF.webp"
+                                class="author__image"
+                                alt="" />
+                            </div>
+                            <div>
+                              <h4 class="author__name">Редакция Атлантов</h4>
+                              <span class="author__info">Автор</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-media-grid__footer">
+                          <ul class="card-media-grid__tags">
+                            <li class="card-media-grid__tag">#медиа_атланты</li>
+                          </ul>
+                          <div class="card-media-grid__more">
+                            <span>Читать</span>
+                          </div>
+                        </div>
+                        <!--]--></a
+                      >
+                    </article>
+                  </li>
+                </ul>
+                <!----><!----><!---->
+                <div class="carousel__controls controls">
+                  <button class="controls__btn controls__btn_prev"></button>
+                  <div class="controls__pagination">
+                    <span class="swiper-pagination-bullet"></span
+                    ><span class="swiper-pagination-bullet"></span
+                    ><span class="swiper-pagination-bullet"></span>
+                  </div>
+                  <button class="controls__btn controls__btn_next"></button>
+                </div>
+              </div>
+              <a href="#" class="carousel__link link">Медиа Атланты </a>
+            </div>
+          </div>
+        </section>
+        @@include('html/tg.htm',{})
+      </main>
+      @@include('html/_footer.htm',{}) @@include('html/_modals.htm',{})
     </div>
 
     @@include('html/_js.htm',{}) @@include('html/_svg.htm',{})

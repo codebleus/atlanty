@@ -213,6 +213,17 @@
     }
   }
 
+  &_mainpage {
+    @media (max-width: 75em) {
+      padding-bottom: 6rem;
+    }
+    .hero {
+      &__title.h1 {
+        font: var(--font-heading-h0);
+      }
+    }
+  }
+
   &_calendar {
     @media (max-width: 63.999em) {
       padding-bottom: 6rem;

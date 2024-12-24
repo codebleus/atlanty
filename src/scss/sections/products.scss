@@ -1,0 +1,219 @@
+.products {
+  background: var(--bg-brown);
+
+  .swiper-slide {
+    width: 27.5rem;
+    // height: 18rem;
+
+    // @media (max-width: 64em) {
+    //   height: 100%;
+    // }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__controls {
+    justify-content: center;
+
+    .controls__pagination {
+      position: static;
+      justify-content: center;
+    }
+
+    @media (max-width: 74.999em) {
+      margin-top: 4rem;
+    }
+
+    @media (min-width: 64.999em) {
+      display: none;
+    }
+  }
+
+  // .products__container
+
+  &__container {
+    margin: 0 auto;
+    max-width: 160rem;
+    padding: 4.8rem 2rem;
+    @media (max-width: 48em) {
+      padding-bottom: 3rem;
+    }
+    @media (min-width: 48em) {
+      padding-bottom: 3rem;
+    }
+    @media (min-width: 75em) {
+      padding: 6.8rem 10rem 10rem;
+    }
+    @media (min-width: 96em) {
+      padding: 9.8rem 11rem 8rem;
+    }
+
+    h2 {
+      color: var(--bg-black);
+      font: var(--font-heading-h2);
+      margin-block-end: 3.2rem;
+      max-width: 32rem;
+      text-transform: uppercase;
+      width: 100%;
+      @media (min-width: 48em) {
+        max-width: 50rem;
+      }
+      @media (min-width: 64em) and (max-width: 96em) {
+        margin-block-end: 6rem;
+        max-width: 90rem;
+      }
+      @media (min-width: 96em) {
+        margin-block-end: 6rem;
+        max-width: 115rem;
+      }
+    }
+  }
+
+  &__carousel-slider {
+    // &.swiper-wrapper {
+    //   display: grid;
+    //   gap: 2.8rem;
+    //   grid-template-columns: 1fr;
+    //   @media (min-width: 40em) {
+    //     gap: 4.6rem 2.8rem;
+    //     grid-template-columns: 1fr 1fr;
+    //   }
+    //   @media (min-width: 48em) {
+    //     gap: 7.6rem 4.8rem;
+    //     grid-template-columns: 1fr 1fr 1fr;
+    //   }
+    // }
+    .swiper-wrapper {
+      @media (min-width: 64.999em) {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 7.6rem 4.8rem;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+
+  // .products__item
+
+  &__item {
+  }
+
+  // .products__carousel
+
+  &__carousel {
+    padding-bottom: 2rem;
+    @media (max-width: 48em) {
+      .controls {
+        padding-bottom: 0;
+      }
+    }
+    @media (min-width: 75em) {
+      padding-bottom: 10rem;
+    }
+    @media (min-width: 96em) {
+      padding-bottom: 8rem;
+    }
+  }
+
+  // .products__slider
+
+  &__slider {
+  }
+
+  // .products__wrapper
+
+  &__wrapper {
+  }
+
+  // .products__slide
+
+  &__slide {
+  }
+
+  // .products__image-wrap
+
+  &__image-wrap {
+  }
+
+  // .products__image
+
+  &__image {
+  }
+}
+.item-products,
+.item-products.swiper-slide {
+  @media (min-width: 64em) {
+    padding-inline-end: 2.8rem;
+    position: relative;
+    width: 100%;
+  }
+
+  @media (min-width: 75em) {
+    padding-inline-end: 4.8rem;
+  }
+  @media (min-width: 96em) {
+    padding-inline-end: 6.8rem;
+  }
+
+  @media (min-width: 48em) {
+    &::before {
+      background: var(--bg-black);
+      content: '';
+      height: 100%;
+      max-height: 18.4rem;
+      position: absolute;
+      right: 0;
+      top: 4rem;
+      width: 0.1rem;
+    }
+  }
+}
+.item-products {
+  // .item-products__title
+
+  &__title {
+    border-bottom: 0.3rem solid var(--bg-black);
+    color: var(--bg-white);
+    display: block;
+    font: var(--font-heading-h5);
+    margin-block-end: 2rem;
+    padding-block-end: 1.2rem;
+    text-transform: uppercase;
+    @media (min-width: 64.999em) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 9rem;
+    }
+    @media (min-width: 75em) {
+      margin-block-end: 1.6rem;
+      padding-block-end: 1.4rem;
+      max-width: 33rem;
+    }
+    @media (min-width: 96em) {
+      margin-block-end: 2.2rem;
+      padding-block-end: 2rem;
+      max-width: 36rem;
+    }
+  }
+
+  // .item-products__text
+
+  &__text {
+    color: var(--bg-white);
+    display: flex;
+    flex-flow: column nowrap;
+    font: var(--font-text-s);
+    row-gap: 1rem;
+    max-width: 35rem;
+    @media (min-width: 96em) {
+      row-gap: 1.2rem;
+    }
+    @media (max-width: 48em) {
+      max-width: 70rem;
+    }
+  }
+}

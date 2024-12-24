@@ -187,3 +187,53 @@
     }
   }
 }
+
+.link {
+  align-items: center;
+  color: var(--primary-brown);
+  display: flex;
+  font: var(--font-text-xs);
+  letter-spacing: var(--font-spacing-7);
+  line-height: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-decoration: inherit;
+  text-underline-offset: 0.3em;
+
+  &::after {
+    content: '';
+    height: 2.4rem;
+    transition: transform 0.4s ease;
+    width: 2.4rem;
+    background: url(@img/icons/arr-brown.svg) center / contain no-repeat;
+
+    @media (min-width: 75em) {
+      height: 4.2rem;
+      width: 4.2rem;
+    }
+
+    @media (min-width: 96em) {
+      height: 5.2rem;
+      width: 5.2rem;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        transform: translate(0.5rem);
+      }
+    }
+  }
+
+  @media (min-width: 96em) {
+    font-size: var(--font-size-14);
+  }
+
+  &_lemon {
+    color: var(--primary-lemon);
+    &::after {
+      background: url(@img/icons/arr-lemon.svg) center / contain no-repeat;
+    }
+  }
+}
