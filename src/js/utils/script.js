@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  if (document.querySelector('.project, .calendar-hero')) {
+  if (document.querySelector('.project, .calendar-hero, .common-page')) {
     document.querySelector('.header').classList.add('_dark');
   }
 
