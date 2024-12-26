@@ -72,6 +72,7 @@
     @media (min-width: 96em) {
       font-size: var(--font-size-20);
       padding: 0.8rem 1.6rem 0.6rem;
+      line-height: 89%;
     }
 
     @media (max-width: 48em) {
@@ -110,7 +111,6 @@
       @media (min-width: 75em) {
         font-size: var(--font-size-17);
         line-height: 100%;
-        transform: translateY(-0.3rem);
         padding: 0.8rem 1.4rem 0.6rem;
 
         &::after {

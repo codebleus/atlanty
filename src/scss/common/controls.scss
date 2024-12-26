@@ -48,7 +48,7 @@
     }
   }
   @media (max-width: 74.999em) {
-    &:not(.carousel &, .residents &) {
+    &:not(.carousel &, .residents &, .mobapp &) {
       justify-content: center;
       margin-top: 4rem;
       padding: 0 2rem 2rem;

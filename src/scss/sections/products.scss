@@ -44,8 +44,9 @@
     @media (min-width: 48em) {
       padding-bottom: 3rem;
     }
-    @media (min-width: 75em) {
+    @media (min-width: 75em) and (max-width: 96em) {
       padding: 6.8rem 10rem 10rem;
+      padding-top: 6.5rem;
     }
     @media (min-width: 96em) {
       padding: 9.8rem 11rem 8rem;

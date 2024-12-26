@@ -1,11 +1,12 @@
 <article class="subscribe-form">
   <div class="subscribe-form__container container">
-    <form class="subscribe-form__inner">
+    <form class="subscribe-form__inner" data-form-validate>
       <div>
         <h2 class="subscribe-form__title">
           Подпишитесь на новостную рассылку<br />
           с инсайтами от масштабных предпринимателей
         </h2>
+
         <p class="subscribe-form__desc">Какие темы интересны?</p>
         <div class="subscribe-form__list">
           <label class="subscribe-form__checkbox checkbox"
@@ -47,13 +48,19 @@
         </div>
       </div>
       <div class="subscribe-form__block">
-        <label class="request__field field"
+        <p class="form-message form-message_message">
+          <span class="form-message__icon"></span>
+          Пожалуйста, проверьте правильность написания почты
+        </p>
+        <label data-field class="request__field field"
           ><span class="field__label">E-mail</span
           ><span class="field__input-wrap"
             ><input
               placeholder="Введите ваш email"
               class="field__input"
-              type="email"
+              type="text"
+              data-mail-mask
+              data-required
               value="" /></span></label
         ><button type="submit" class="subscribe-form__btn btn">
           Подписаться</button

@@ -27,11 +27,10 @@
 
   &__title-wrap {
     text-align: center;
-    @media (max-width: 48em) {
-      padding: 0 2rem;
-    }
+
     span {
       display: block;
+      font: var(--font-heading-h1);
       font-size: 28px;
       color: #fff;
       margin: 0 0 2rem;
@@ -59,5 +58,6 @@
   &__image {
     height: 100%;
     object-fit: cover;
+    object-position: 0;
   }
 }

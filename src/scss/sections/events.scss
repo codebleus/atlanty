@@ -3,17 +3,19 @@
 
   &_past {
     background-color: var(--primary-brown);
-
+    @media (max-width: 64em) {
+      padding-top: 4.5rem;
+    }
     .events {
       &__title {
         color: var(--bg-white);
 
         @media (min-width: 96em) {
-          margin: 0 0 5rem;
+          margin: 0 0 4rem;
         }
 
         @media (max-width: 48em) {
-          margin: 0 0 4rem;
+          margin: 0 0 -1rem;
         }
       }
     }
@@ -173,6 +175,11 @@
     @media (min-width: 96em) {
       margin: 0 auto 5.6rem;
       max-width: 90.8rem;
+    }
+    @media (max-width: 64em) {
+      .events_past & {
+        margin-top: 4.5rem;
+      }
     }
   }
 
@@ -366,11 +373,18 @@
     font: var(--font-heading-h5);
     margin: 0;
     text-transform: uppercase;
+    @media (max-width: 64em) {
+      line-height: 129%;
+    }
 
     @media (max-width: 48em) {
       font-size: var(--font-size-17);
       font-weight: 600;
-      line-height: 120%;
+      line-height: 128%;
+    }
+
+    @media (min-width: 75em) and (max-width: 96em) {
+      line-height: 126%;
     }
   }
 

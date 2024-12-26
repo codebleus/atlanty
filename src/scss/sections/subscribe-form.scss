@@ -14,6 +14,15 @@
     padding-bottom: 5rem;
     padding-top: 5rem;
   }
+  .form-message {
+    margin-bottom: 2.4rem;
+    @media (min-width: 64em) {
+      margin-bottom: 3.2rem;
+    }
+    @media (max-width: 47.999em) {
+      margin-top: 1rem;
+    }
+  }
 
   &_green {
     background-color: rgb(40, 71, 52);

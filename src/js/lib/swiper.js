@@ -103,15 +103,16 @@ if (document.querySelectorAll('.carousel .swiper').length) {
       breakpoints: {
         649: {
           slidesPerView: 2.1,
+          spaceBetween: 25,
         },
         1064: {
           slidesPerView: 3.1,
+          spaceBetween: 36,
         },
       },
     });
   });
 }
-
 if (document.querySelector('.residents__swiper') && window.innerWidth <= 1278) {
   new Swiper('.residents__swiper', {
     modules: [Navigation, Pagination],

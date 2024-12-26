@@ -15,7 +15,7 @@ const openModal = name => {
   }
 };
 
-const closeModal = modal => {
+export const closeModal = modal => {
   const refresh =
     window.location.protocol +
     '//' +
@@ -28,6 +28,18 @@ const closeModal = modal => {
   window.history.replaceState({ path: refresh }, '', refresh);
 };
 
+window.addEventListener('load', function () {
+  if (document.querySelector('.project_media')) openModal('banner-modal');
+
+  if (document.querySelector('[data-modal="special-modal"]')) {
+    document
+      .querySelector('[data-modal="special-modal"]')
+      .addEventListener('click', function () {
+        closeModal(document.getElementById('banner-modal'));
+      });
+  }
+});
+
 document.documentElement.addEventListener('click', function (e) {
   if (e.target.closest('[data-modal]')) {
     e.preventDefault();
@@ -36,6 +48,13 @@ document.documentElement.addEventListener('click', function (e) {
   }
   if (e.target.closest('.modal__close-btn')) {
     closeModal(document.querySelector('.modal_show.modal'));
+  }
+
+  if (
+    e.target.closest('#banner-modal') &&
+    !e.target.closest('#banner-modal .banner-modal__content')
+  ) {
+    closeModal(document.getElementById('banner-modal'));
   }
 });
 

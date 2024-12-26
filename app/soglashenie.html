@@ -87,7 +87,6 @@
 				</a>
 				<div class="header__content">
 					<nav data-da=".header__menu .container,1199,last" class="header__nav">
-						<a href="#" class="header__link header__link_marked">20 декабря</a>
 						<a href="#" class="header__link">Резиденты</a>
 						<a href="#" class="header__link">Кейсы</a>
 						<a href="#" class="header__link">Мероприятия</a>
@@ -446,56 +445,59 @@
 					<div class="request__text-content">
 						<h2 class="request__title">ОСТАВЬ ЗАЯВКУ</h2>
 						<p class="request__text">
-							И получи приглашение на мастер-класс от Михаила Воронина «Партнёрство:
-							главный инструмент развития бизнеса в 2025». 20 декабря в Доме
-							Атлантов
+							И получи эксклюзивное предложение до 31 декабря.
 						</p>
 					</div>
-					<form action="#" class="request__form" novalidate>
-						<label for="request-form-block-trial-name" class="request__field field"><span class="field__label" data-input-label>Ваше имя</span><span class="field__input-wrap" data-input-wrapper><input id="request-form-block-trial-name" placeholder="Ваше имя" required data-mask="text" class="field__input" name="name" type="text" data-input-input value="" /></span></label>
-						<label for="request-form-block-trial-family" class="request__field field"><span class="field__label" data-input-label>Ваша фамилия</span><span class="field__input-wrap" data-input-wrapper><input id="request-form-block-trial-family" placeholder="Ваша фамилия" required data-mask="text" class="field__input" name="family" type="text" data-input-input value="" /></span></label>
-						<label for="request-form-block-trial-phone" class="request__field field"><span class="field__label" data-input-label>Номер телефона</span><span class="field__input-wrap" data-input-wrapper><input id="request-form-block-trial-phone" placeholder="Номер телефона" required class="field__input" name="phone" type="text" data-tel-mask value="" /></span></label>
-						<label for="request-form-block-trial-email" class="request__field field"><span class="field__label" data-input-label>Введите Ваш Email</span><span class="field__input-wrap" data-input-wrapper><input id="request-form-block-trial-email" placeholder="Введите Ваш email" required class="field__input" name="email" type="email" data-input-input value="" /></span></label>
-						<div class="request__select select" id="request-form-block-trial-status" data-headlessui-state>
-							<label class="select__label">Ваш статус</label><button type="button" aria-haspopup="listbox" aria-expanded="false" data-headlessui-state class="select__btn">
+					<form action="#" class="request__form" data-form-validate>
+						<p class="request__form-message form-message form-message_message">
+							<span class="form-message__icon"></span>
+							Пожалуйста, проверьте правильность заполнения телефона, он должен
+							соответствовать образцу +7 (999) 999 — 99 — 99
+						</p>
+						<label for="trial-form-block-trial-name" data-field class="request__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input id="trial-form-block-trial-name" placeholder="Ваше имя" data-mask="text" class="field__input" name="name" type="text" data-required autocomplete="off" value="" /></span></label>
+						<label for="trial-form-block-trial-family" class="request__field field"><span class="field__label">Ваша фамилия</span><span class="field__input-wrap"><input id="trial-form-block-trial-family" placeholder="Ваша фамилия" data-mask="text" autocomplete="off" class="field__input" name="family" type="text" value="" /></span></label>
+						<label for="trial-form-block-trial-phone" data-field class="request__field field"><span class="field__label">Номер телефона</span><span class="field__input-wrap"><input id="trial-form-block-trial-phone" placeholder="Номер телефона" data-required class="field__input" name="phone" type="text" data-tel-mask autocomplete="off" value="" /></span></label>
+						<label for="trial-form-block-trial-email" data-field class="request__field field"><span class="field__label">Введите Ваш Email</span><span class="field__input-wrap"><input id="trial-form-block-trial-email" placeholder="Введите Ваш email" class="field__input" name="email" type="text" autocomplete="off" data-mail-mask data-required value="" /></span></label>
+						<div class="request__select select" id="trial-form-block-trial-status" data-headlessui-state>
+							<label class="select__label">Ваш статус</label><button id="headlessui-listbox-button-37189" type="button" aria-haspopup="listbox" aria-expanded="false" data-headlessui-state class="select__btn">
 								Собственник компании
 							</button>
-							<ul aria-orientation="vertical" role="listbox" tabindex="0" data-headlessui-state="open" class="select__dropdown dropdown">
-								<li role="option" tabindex="-1" aria-selected="true" data-headlessui-state="selected" class="dropdown__item">
+							<ul id="headlessui-listbox-options-8" aria-orientation="vertical" role="listbox" tabindex="0" data-headlessui-state="open" class="select__dropdown dropdown">
+								<li id="headlessui-listbox-option-13" role="option" tabindex="-1" aria-selected="true" data-headlessui-state="selected" class="dropdown__item">
 									Собственник компании
 								</li>
-								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								<li id="headlessui-listbox-option-14" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
 									Топ-менеджер
 								</li>
 							</ul>
 						</div>
-						<label for="request-form-block-trial-company-name" class="request__field field"><span class="field__label" data-input-label>Компания</span><span class="field__input-wrap" data-input-wrapper><input id="request-form-block-trial-company-name" placeholder="Например, ООО Название" required class="field__input" name="company" type="text" data-input-input value="" /></span></label>
-						<div class="request__select select" id="request-form-block-trial-annual_turnover" data-headlessui-state>
-							<label class="select__label">Оборот компании</label><button type="button" aria-haspopup="listbox" aria-expanded="false" data-headlessui-state class="select__btn">
+						<label for="trial-form-block-trial-company-name" class="request__field field"><span class="field__label">Компания</span><span class="field__input-wrap"><input id="trial-form-block-trial-company-name" placeholder="Например, ООО Название" class="field__input" name="company" autocomplete="off" type="text" value="" /></span></label>
+						<div class="request__select select" id="trial-form-block-trial-annual_turnover" data-headlessui-state>
+							<label class="select__label">Оборот компании</label><button id="headlessui-listbox-button-37191" type="button" aria-haspopup="listbox" aria-expanded="false" data-headlessui-state class="select__btn">
 								Собственник компании
 							</button>
-							<ul aria-orientation="vertical" role="listbox" tabindex="0" data-headlessui-state="open" class="select__dropdown dropdown">
-								<li role="option" tabindex="-1" aria-selected="true" data-headlessui-state="selected" class="dropdown__item">
+							<ul id="headlessui-listbox-options-10" aria-orientation="vertical" role="listbox" tabindex="0" data-headlessui-state="open" class="select__dropdown dropdown">
+								<li id="headlessui-listbox-option-35" role="option" tabindex="-1" aria-selected="true" data-headlessui-state="selected" class="dropdown__item">
 									до 60 млн.р
 								</li>
-								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								<li id="headlessui-listbox-option-36" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
 									от 60 млн.р до 200 млн.р
 								</li>
-								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								<li id="headlessui-listbox-option-37" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
 									от 200 млн.р до 800 млн.р
 								</li>
-								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								<li id="headlessui-listbox-option-38" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
 									от 800 млн.р до 2 млрд.р
 								</li>
-								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								<li id="headlessui-listbox-option-39" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
 									от 2 млрд.р до 5 млрд.р
 								</li>
-								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								<li id="headlessui-listbox-option-40" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
 									более 5 млрд.р
 								</li>
 							</ul>
 						</div>
-						<label for="request-form-block-trial-agreement" class="request__checkbox checkbox"><input id="request-form-block-trial-agreement" required class="checkbox__check" name="agreement" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">
+						<label for="trial-form-block-trial-agreement" class="request__checkbox checkbox" data-field><input id="trial-form-block-trial-agreement" data-required autocomplete="off" class="checkbox__check" name="agreement" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">
 								Нажимая "Отправить", вы даете согласие на обработку
 								<a href="#">персональных данных</a></span></label>
 						<button class="request__btn btn">Отправить заявку</button>
@@ -522,11 +524,11 @@
 							Найдите новых друзей, партнеров, менторов или инвесторов с близкими
 							ценностями для достижения бизнес и личных целей
 						</p>
-						<form action="#" class="request__form" novalidate>
-							<label class="request__field field"><span class="field__label" data-input-label>Ваше имя</span><span class="field__input-wrap" data-input-wrapper><input placeholder="Ваше имя" required data-mask="text" class="field__input" name="name" type="text" data-input-input value="" /></span></label>
-							<label class="request__field field"><span class="field__label" data-input-label>Ваша фамилия</span><span class="field__input-wrap" data-input-wrapper><input placeholder="Ваша фамилия" required data-mask="text" class="field__input" name="family" type="text" value="" /></span></label>
-							<label class="request__field field"><span class="field__label" data-input-label>Номер телефона</span><span class="field__input-wrap" data-input-wrapper><input placeholder="Номер телефона" required class="field__input" name="phone" type="text" data-tel-mask value="" /></span></label>
-							<label class="request__field field"><span class="field__label" data-input-label>Введите Ваш Email</span><span class="field__input-wrap" data-input-wrapper><input placeholder="Введите Ваш email" required class="field__input" name="email" type="email" value="" /></span></label>
+						<form action="#" class="request__form" data-form-validate>
+							<label data-field class="request__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input placeholder="Ваше имя" data-required class="field__input" name="name" type="text" value="" /></span></label>
+							<label class="request__field field"><span class="field__label">Ваша фамилия</span><span class="field__input-wrap"><input placeholder="Ваша фамилия" data-mask="text" class="field__input" name="family" type="text" value="" /></span></label>
+							<label data-field class="request__field field"><span class="field__label">Номер телефона</span><span class="field__input-wrap"><input placeholder="Номер телефона" data-required class="field__input" name="phone" type="text" data-tel-mask value="" /></span></label>
+							<label data-field class="request__field field"><span class="field__label">Введите Ваш Email</span><span class="field__input-wrap"><input placeholder="Введите Ваш email" data-required class="field__input" name="email" data-mail-mask="" value="" /></span></label>
 							<div class="request__select select" data-headlessui-state>
 								<label class="select__label">Ваш статус</label><button type="button" aria-haspopup="listbox" aria-expanded="false" class="select__btn">
 									Собственник компании
@@ -540,7 +542,7 @@
 									</li>
 								</ul>
 							</div>
-							<label class="request__field field"><span class="field__label" data-input-label>Компания</span><span class="field__input-wrap" data-input-wrapper><input placeholder="Например, ООО Название" required class="field__input" name="company" type="text" data-input-input value="" /></span></label>
+							<label class="request__field field"><span class="field__label">Компания</span><span class="field__input-wrap"><input placeholder="Например, ООО Название" class="field__input" name="company" type="text" value="" /></span></label>
 							<div class="request__select select" data-headlessui-state>
 								<label class="select__label">Оборот компании</label><button type="button" aria-haspopup="listbox" aria-expanded="false" data-headlessui-state class="select__btn">
 									Собственник компании
@@ -566,7 +568,7 @@
 									</li>
 								</ul>
 							</div>
-							<label class="request__checkbox checkbox"><input required class="checkbox__check" name="agreement" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">
+							<label data-field class="request__checkbox checkbox"><input data-required class="checkbox__check" name="agreement" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">
 									Нажимая "Отправить", вы даете согласие на обработку
 									<a href="#">персональных данных</a></span></label>
 							<button class="request__btn btn">Отправить заявку</button>
@@ -579,6 +581,84 @@
 					<use href="#cross-svg"></use>
 				</svg>
 			</button>
+		</div>
+		<div id="banner-modal" class="modal banner-modal">
+			<div class="modal__container">
+				<div class="modal__content">
+					<div class="banner-modal__wrapper">
+						<div class="banner-modal__container" style="--max-width: 780px">
+							<div>
+								<div class="banner-modal__content">
+									<div class="banner-modal__detail-banner detail-banner-banner-modal" style="background-color: rgb(38, 38, 38)">
+										<div class="detail-banner-banner-modal__left">
+											<h3 class="detail-banner-banner-modal__subtitle" style="color: rgb(255, 255, 255)">
+												Получи гайд от бизнес-клуба «Атланты»
+											</h3>
+											<h2 class="detail-banner-banner-modal__title" style="color: rgb(255, 255, 255)">
+												Как построить эффективное партнёрство в бизнесе
+											</h2>
+											<button data-modal="special-modal" type="button" class="detail-banner-banner-modal__btn btn">
+												Получить гайд
+											</button>
+										</div>
+										<div class="detail-banner-banner-modal__image-wrap">
+											<img src="img/content/2024-12-11_172425.webp" alt="" />
+										</div>
+									</div>
+									<button class="modal__close-btn ic-btn">
+										<svg>
+											<use href="#cross-svg"></use>
+										</svg>
+									</button>
+									<!---->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="special-modal" class="modal">
+			<div class="modal__container">
+				<div class="modal__content request__container">
+					<div class="request__text-content">
+						<h2 class="request__title">
+							Заполните форму для получения специального предложения
+						</h2>
+					</div>
+					<div class="request__form-wrap">
+						<form action="#" class="request__form" data-form-validate>
+							<p class="request__form-message form-message form-message_message">
+								<span class="form-message__icon"></span>
+								Пожалуйста, проверьте правильность заполнения телефона, он должен
+								соответствовать образцу +7 (999) 999 — 99 — 99
+							</p>
+							<label data-field class="request__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input placeholder="Ваше имя" data-required data-name-mask class="field__input" name="name" type="text" value="" /></span></label>
+
+							<label data-field class="request__field field"><span class="field__label">Номер телефона</span><span class="field__input-wrap"><input placeholder="Номер телефона" data-required class="field__input" name="phone" type="text" data-tel-mask value="" /></span></label>
+							<label data-field class="request__field field"><span class="field__label">Введите Ваш Email</span><span class="field__input-wrap"><input placeholder="Введите Ваш email" data-required class="field__input" name="email" data-mail-mask="" value="" /></span></label>
+
+							<label data-field class="request__checkbox checkbox"><input data-required class="checkbox__check" name="agreement" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">
+									Нажимая "Отправить", вы даете согласие на обработку
+									<a href="#">персональных данных</a></span></label>
+							<button class="request__btn btn">Отправить</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<button class="modal__close-btn ic-btn">
+				<svg>
+					<use href="#cross-svg"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="form-message form-message_success">
+			<span class="form-message__icon"></span>
+			заявка принята. скоро с вами свяжется команда
+		</div>
+		<div class="form-message form-message_alert">
+			<span class="form-message__icon"></span>
+			ошибка
 		</div>
 
 	</div>

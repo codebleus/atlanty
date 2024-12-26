@@ -1,3 +1,25 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '.media-lead',
+    start: 'top top',
+    onEnter: () => {
+      if (document.querySelector('.cases-hero_media')) {
+        document.querySelector('.cases-hero_media').classList.add('_sticky');
+      }
+    },
+    onLeaveBack: () => {
+      if (document.querySelector('.cases-hero_media')) {
+        document.querySelector('.cases-hero_media').classList.remove('_sticky');
+      }
+    },
+  },
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.block-project__video-wrap')) {
     const el = document.querySelector('.block-project__video-wrap');

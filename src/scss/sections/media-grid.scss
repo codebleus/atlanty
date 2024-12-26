@@ -1,5 +1,5 @@
 .media-grid {
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
   @media (min-width: 64em) and (max-width: 96em) {
     margin-bottom: 7rem;
   }
@@ -16,28 +16,40 @@
 
   &__list {
     display: grid;
-    gap: 2rem 1.5rem;
+    gap: 2.1rem 2.5rem;
     grid-auto-flow: dense;
     grid-template-columns: 1fr;
     list-style: none;
     margin: 0;
     padding: 0;
 
-    > li:not(:first-child) {
+    // > li:not(:first-child) {
+    //   @media (max-width: 48em) {
+    //     display: none;
+    //   }
+    // }
+
+    .bg-card {
       @media (max-width: 48em) {
-        display: none;
+        height: 43.6rem;
+      }
+    }
+
+    .bg-card__image {
+      @media (min-width: 1600px) {
+        max-height: 58.5rem;
       }
     }
 
     @media (min-width: 48em) {
       grid-template-columns: repeat(2, 1fr);
     }
-    @media (min-width: 75em) {
-      gap: 5rem 4rem;
+    @media (min-width: 75em) and (max-width: 96em) {
+      gap: 4.6rem 4rem;
       grid-template-columns: repeat(3, 1fr);
     }
     @media (min-width: 96em) {
-      gap: 6rem 4rem;
+      gap: 6rem 3.4rem;
     }
   }
 
@@ -48,9 +60,7 @@
 
   &__more {
     margin-top: 6.5rem;
-    @media (max-width: 48em) {
-      display: none;
-    }
+
     @media (min-width: 64em) and (max-width: 96em) {
       margin-top: 5.9rem;
     }
@@ -151,6 +161,9 @@
     padding-bottom: 1.2rem;
     position: relative;
     text-transform: uppercase;
+    .media-grid & {
+      padding-bottom: 0.7rem;
+    }
     @media (min-width: 75em) {
       margin: 0 0 2rem;
       padding-bottom: 1.4rem;
@@ -183,6 +196,11 @@
     overflow: hidden;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    .media-grid & {
+      @media (max-width: 64em) {
+        line-height: 170%;
+      }
+    }
   }
 
   // .card-media-grid__author

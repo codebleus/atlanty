@@ -97,6 +97,12 @@
       }
     }
 
+    .request__form-message {
+      @media (min-width: 48em) {
+        grid-column: span 2;
+      }
+    }
+
     .field__label,
     .select__label,
     .field__input,
@@ -114,6 +120,19 @@
     .field__input,
     .select__btn {
       border-bottom: 1px solid var(--bg-black);
+    }
+
+    .field__input:focus {
+      border-bottom: 1px solid var(--primary-brown);
+    }
+
+    .field__input,
+    .select__btn {
+      @media (any-hover: hover) {
+        &:hover {
+          border-bottom: 1px solid var(--primary-brown);
+        }
+      }
     }
 
     .request__form {
@@ -142,6 +161,191 @@
       --padding-x: 8rem;
       --padding-t: 7.2rem;
       --padding-b: 8rem;
+    }
+  }
+}
+
+.banner-modal {
+  background-color: transparent;
+  @media (max-width: 48em) {
+    .modal__container {
+      padding: 0;
+    }
+    .modal__content {
+      margin-top: auto;
+    }
+    .modal__wrapper {
+      display: flex;
+    }
+  }
+  .modal__close-btn {
+    position: absolute;
+
+    &.ic-btn {
+      border: 1px solid hsla(25, 30%, 54%, 0.4);
+      background-color: transparent;
+    }
+  }
+  // .banner-modal__wrapper
+
+  &__wrapper {
+  }
+
+  // .banner-modal__container
+
+  &__container {
+    --padding-x: 4rem;
+    --padding-t: 3.6rem;
+    --padding-b: 4.2rem;
+    --c-bg: var(--c-bg-beige);
+    margin: auto;
+    // padding: var(--padding-t) var(--padding-x) var(--padding-b);
+    padding: 0;
+    position: relative;
+    width: 100%;
+    &::after {
+      content: '';
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(10px);
+    }
+    @media (min-width: 48em) {
+      box-shadow: 4.6px 4.6px 2.7px #00000006, 9.3px 9.3px 6.1px #0000000a,
+        15px 15px 10.8px #0000000d, 22.7px 22.7px 17.3px #0000000f,
+        34.9px 34.9px 27.2px #0001, 56px 56px 44.8px #00000013,
+        100px 100px 90px #0000001a;
+      width: min(var(--max-width), 100%);
+    }
+
+    // @media (min-width: 48em) and (max-width: 64em) {
+    //   --padding-t: 4.6rem;
+    //   --padding-b: 4.6rem;
+    // }
+    // @media (min-width: 64em) and (max-width: 64em) {
+    //   --padding-x: 5.2rem;
+    //   --padding-t: 4.8rem;
+    //   --padding-b: 5.4rem;
+    // }
+    // @media (min-width: 96em) {
+    //   padding: 0;
+    // }
+  }
+
+  // .banner-modal__header
+
+  &__header {
+  }
+
+  // .banner-modal__title
+
+  &__title {
+  }
+
+  // .banner-modal__btn
+
+  &__btn {
+  }
+
+  // .banner-modal__content
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-width: 780px;
+    width: 100%;
+  }
+
+  // .banner-modal__detail-banner
+
+  &__detail-banner {
+  }
+}
+.sr-only {
+}
+
+.detail-banner-banner-modal {
+  display: grid;
+  gap: 2rem;
+  min-height: 1rem;
+  padding: 2.65rem 2rem 0 2.65rem;
+  width: 100%;
+  @media (min-width: 40em) {
+    padding: 2.65rem 4rem 0 2.65rem;
+  }
+  @media (min-width: 40em) and (max-width: 70em) {
+    gap: 4rem;
+    grid-template-columns: 1fr minmax(100px, 250px);
+  }
+  @media (min-width: 70em) and (max-width: 80em) {
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 80em) and (max-width: 96em) {
+    grid-template-columns: 1fr minmax(100px, 210px);
+  }
+  @media (min-width: 96em) {
+    grid-template-columns: 1fr minmax(100px, 250px);
+  }
+
+  // .detail-banner-banner-modal__left
+
+  &__left {
+    @media (min-width: 40em) and (max-width: 70em) {
+      padding-bottom: 4.65rem;
+    }
+    @media (min-width: 70em) and (max-width: 80em) {
+      padding-bottom: 0;
+    }
+    @media (min-width: 80em) and (max-width: 96em) {
+      padding-bottom: 4.65rem;
+    }
+    @media (min-width: 96em) {
+      padding-bottom: 4.65rem;
+    }
+  }
+
+  // .detail-banner-banner-modal__subtitle
+
+  &__subtitle {
+    font-size: var(--font-size-16);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    max-width: 25rem;
+    text-transform: uppercase;
+    @media (min-width: 96em) {
+      font-size: var(--font-size-20);
+    }
+  }
+
+  // .detail-banner-banner-modal__title
+
+  &__title {
+    font-family: var(--font-family-second);
+    font-size: var(--font-size-24);
+    line-height: 110%;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    @media (min-width: 96em) {
+      font-size: var(--font-size-34);
+    }
+  }
+
+  // .detail-banner-banner-modal__btn
+
+  &__btn {
+  }
+
+  // .detail-banner-banner-modal__image-wrap
+
+  &__image-wrap {
+    align-self: end;
+    max-width: 200px;
+    width: 100%;
+    @media (min-width: 64em) {
+      max-width: 100%;
     }
   }
 }

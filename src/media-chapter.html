@@ -1381,41 +1381,48 @@
                       Выгода до 35%. Оставьте заявку, чтобы получить специальное
                       предложение
                     </p>
-                    <form class="form-exclusive__form">
-                      <label class="request__field field"
+                    <form data-form-validate="" class="form-exclusive__form">
+                      <p
+                        class="request__form-message form-message form-message_message">
+                        <span class="form-message__icon"></span>
+                        Пожалуйста, проверьте правильность заполнения телефона,
+                        он должен соответствовать образцу +7 (999) 999 — 99 — 99
+                      </p>
+                      <label data-field class="request__field field"
                         ><span class="field__label">Ваше имя</span
                         ><span class="field__input-wrap"
                           ><input
                             placeholder="Ваше имя"
-                            required
-                            data-mask="text"
+                            data-required
+                            data-name-mask
                             class="field__input"
                             name="name"
                             type="text"
                             value="" /></span
                       ></label>
 
-                      <label class="request__field field"
+                      <label data-field class="request__field field"
                         ><span class="field__label">Номер телефона</span
                         ><span class="field__input-wrap"
                           ><input
                             placeholder="Номер телефона"
-                            required
+                            data-required
                             class="field__input"
                             name="phone"
                             type="text"
                             data-tel-mask
                             value="" /></span
                       ></label>
-                      <label class="request__field field"
+                      <label data-field="" class="request__field field"
                         ><span class="field__label">Введите Ваш Email</span
                         ><span class="field__input-wrap"
                           ><input
                             placeholder="Введите Ваш email"
-                            required
+                            data-required
+                            data-mail-mask=""
                             class="field__input"
                             name="email"
-                            type="email"
+                            type="text"
                             value="" /></span
                       ></label>
 
@@ -1424,7 +1431,6 @@
                         ><span class="field__input-wrap"
                           ><input
                             placeholder="Например, ООО Название"
-                            required
                             class="field__input"
                             name="company"
                             type="text"
@@ -1530,9 +1536,9 @@
                           </li>
                         </ul>
                       </div>
-                      <label class="request__checkbox checkbox"
+                      <label data-field class="request__checkbox checkbox"
                         ><input
-                          required
+                          data-required
                           class="checkbox__check"
                           name="agreement"
                           type="checkbox" /><span class="checkbox__input"></span
@@ -1552,12 +1558,13 @@
 
         <article class="subscribe-form subscribe-form_green">
           <div class="subscribe-form__container container">
-            <form class="subscribe-form__inner">
+            <form class="subscribe-form__inner" data-form-validate>
               <div>
                 <h2 class="subscribe-form__title">
-                  Подпишитесь на новостную рассылку с инсайтами от масштабных
-                  предпринимателей
+                  Подпишитесь на новостную рассылку<br />
+                  с инсайтами от масштабных предпринимателей
                 </h2>
+
                 <p class="subscribe-form__desc">Какие темы интересны?</p>
                 <div class="subscribe-form__list">
                   <label class="subscribe-form__checkbox checkbox"
@@ -1600,13 +1607,19 @@
                 </div>
               </div>
               <div class="subscribe-form__block">
-                <label class="request__field field"
+                <p class="form-message form-message_message">
+                  <span class="form-message__icon"></span>
+                  Пожалуйста, проверьте правильность написания почты
+                </p>
+                <label data-field class="request__field field"
                   ><span class="field__label">E-mail</span
                   ><span class="field__input-wrap"
                     ><input
                       placeholder="Введите ваш email"
                       class="field__input"
-                      type="email"
+                      type="text"
+                      data-mail-mask
+                      data-required
                       value="" /></span></label
                 ><button type="submit" class="subscribe-form__btn btn">
                   Подписаться</button

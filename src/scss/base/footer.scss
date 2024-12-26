@@ -75,7 +75,7 @@
         padding-right: 10rem;
       }
 
-      @media (min-width: 64em) {
+      @media (min-width: 64em) and (max-width: 96em) {
         padding-left: 10rem;
       }
 
@@ -171,7 +171,7 @@
       gap: 7.2rem;
     }
     @media (min-width: 96em) {
-      gap: 10.8rem;
+      gap: 10rem;
     }
   }
 
@@ -346,6 +346,20 @@
   flex-wrap: wrap;
   gap: 0.8rem;
 
+  .ic-btn {
+    height: 3.6rem;
+    width: 3.6rem;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+    @media (min-width: 1441px) {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
   // .socials-top-footer__item
 
   &__item {
@@ -362,8 +376,7 @@
     }
   }
 }
-.ic-btn {
-}
+
 .btn {
   // .btn_ghost
 

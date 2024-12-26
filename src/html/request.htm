@@ -8,59 +8,78 @@
       </p>
     </div>
     <div class="request__form-wrap">
-      <form action="#" class="request__form" novalidate>
-        <label for="trial-form-block-trial-name" class="request__field field"
-          ><span class="field__label" data-input-label>Ваше имя</span
-          ><span class="field__input-wrap" data-input-wrapper
+      <form action="#" class="request__form" data-form-validate>
+        <div class="request__form-message form-message form-message_alert">
+          <span class="form-message__icon"></span>
+          ошибка
+        </div>
+        <p class="request__form-message form-message form-message_message">
+          <span class="form-message__icon"></span>
+          Пожалуйста, проверьте правильность заполнения телефона, он должен
+          соответствовать образцу +7 (999) 999 — 99 — 99
+        </p>
+        <label
+          for="trial-form-block-trial-name"
+          data-field
+          class="request__field field"
+          ><span class="field__label">Ваше имя</span
+          ><span class="field__input-wrap"
             ><input
               id="trial-form-block-trial-name"
               placeholder="Ваше имя"
-              required
               data-mask="text"
               class="field__input"
               name="name"
               type="text"
-              data-input-input
+              data-required
+              autocomplete="off"
               value="" /></span
         ></label>
         <label for="trial-form-block-trial-family" class="request__field field"
-          ><span class="field__label" data-input-label>Ваша фамилия</span
-          ><span class="field__input-wrap" data-input-wrapper
+          ><span class="field__label">Ваша фамилия</span
+          ><span class="field__input-wrap"
             ><input
               id="trial-form-block-trial-family"
               placeholder="Ваша фамилия"
-              required
               data-mask="text"
+              autocomplete="off"
               class="field__input"
               name="family"
               type="text"
-              data-input-input
               value="" /></span
         ></label>
-        <label for="trial-form-block-trial-phone" class="request__field field"
-          ><span class="field__label" data-input-label>Номер телефона</span
-          ><span class="field__input-wrap" data-input-wrapper
+        <label
+          for="trial-form-block-trial-phone"
+          data-field
+          class="request__field field"
+          ><span class="field__label">Номер телефона</span
+          ><span class="field__input-wrap"
             ><input
               id="trial-form-block-trial-phone"
               placeholder="Номер телефона"
-              required
+              data-required
               class="field__input"
               name="phone"
               type="text"
               data-tel-mask
+              autocomplete="off"
               value="" /></span
         ></label>
-        <label for="trial-form-block-trial-email" class="request__field field"
-          ><span class="field__label" data-input-label>Введите Ваш Email</span
-          ><span class="field__input-wrap" data-input-wrapper
+        <label
+          for="trial-form-block-trial-email"
+          data-field
+          class="request__field field"
+          ><span class="field__label">Введите Ваш Email</span
+          ><span class="field__input-wrap"
             ><input
               id="trial-form-block-trial-email"
               placeholder="Введите Ваш email"
-              required
               class="field__input"
               name="email"
-              type="email"
-              data-input-input
+              type="text"
+              autocomplete="off"
+              data-mail-mask
+              data-required
               value="" /></span
         ></label>
         <div
@@ -107,16 +126,15 @@
         <label
           for="trial-form-block-trial-company-name"
           class="request__field field"
-          ><span class="field__label" data-input-label>Компания</span
-          ><span class="field__input-wrap" data-input-wrapper
+          ><span class="field__label">Компания</span
+          ><span class="field__input-wrap"
             ><input
               id="trial-form-block-trial-company-name"
               placeholder="Например, ООО Название"
-              required
               class="field__input"
               name="company"
+              autocomplete="off"
               type="text"
-              data-input-input
               value="" /></span
         ></label>
         <div
@@ -199,9 +217,11 @@
         <label
           for="trial-form-block-trial-agreement"
           class="request__checkbox checkbox"
+          data-field
           ><input
             id="trial-form-block-trial-agreement"
-            required
+            data-required
+            autocomplete="off"
             class="checkbox__check"
             name="agreement"
             type="checkbox" /><span class="checkbox__input"></span
