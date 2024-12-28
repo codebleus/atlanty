@@ -58,8 +58,8 @@
       margin: 0 auto;
       padding: 0 2rem;
 
-      @media (max-width: 64em) and (min-width: 48em) {
-        padding-right: 10rem;
+      @media (min-width: 64em) and (max-width: 75em) {
+        padding: 0 10rem;
       }
 
       @media (min-width: 48em) {
@@ -69,14 +69,6 @@
       }
       @media (min-width: 48em) {
         column-gap: 3.2rem;
-      }
-
-      @media (min-width: 64em) and (max-width: 44.9em) {
-        padding-right: 10rem;
-      }
-
-      @media (min-width: 64em) and (max-width: 96em) {
-        padding-left: 10rem;
       }
 
       @media (min-width: 96em) {
@@ -93,6 +85,8 @@
         --inner-pd-y: 3.2rem;
         display: grid;
         grid-template-columns: 1fr 34.2rem;
+        padding-left: 10rem;
+        padding-right: 10rem;
         padding-bottom: var(--inner-pd-y);
         padding-right: 0;
         padding-top: var(--inner-pd-y);

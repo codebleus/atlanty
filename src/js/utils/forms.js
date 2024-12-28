@@ -105,6 +105,41 @@ if (document.querySelectorAll('[data-form-validate]').length) {
           form.querySelector('._has-error') ||
           inputs.length !== form.querySelectorAll('._is-filled').length
         ) {
+          const message = form.querySelector('.form-message_message');
+          const placeholder =
+            form.querySelector('.field._has-error input') &&
+            form.querySelector('.field._has-error input').placeholder;
+
+          if (message) {
+            const htm = '<span class="form-message__icon"></span>';
+            const setText = txt => {
+              message.innerHTML = `
+               ${htm}
+               ${txt}
+              `;
+            };
+
+            if (placeholder) {
+              if (placeholder.includes('Ваше имя')) {
+                setText(
+                  'Пожалуйста, проверьте правильность написания вашего имени. Оно может содержать только буквы и пробелы.'
+                );
+              } else if (placeholder.includes('телефон')) {
+                setText(
+                  'Пожалуйста, проверьте правильность заполнения телефона, он должен соответствовать образцу +7 (999) 999 — 99 — 99'
+                );
+              } else if (placeholder.includes('email')) {
+                setText('Пожалуйста, проверьте правильность написания почты');
+              }
+            } else {
+              if (form.querySelector('.checkbox._has-error input')) {
+                setText(
+                  'Пожалуйста, дайте согласие на обработку персональных данных'
+                );
+              }
+            }
+          }
+
           return false;
         } else {
           modal && closeModal(modal);

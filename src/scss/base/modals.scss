@@ -1,3 +1,20 @@
+.modal-show body::after {
+  opacity: 1;
+  visibility: visible;
+}
+body::after {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 .modal.modal_show {
   opacity: 1;
   visibility: visible;
@@ -67,8 +84,33 @@
       --padding-b: 5.4rem;
     }
 
+    .request__checkbox {
+      @media (min-width: 48em) {
+        grid-column: 1/2;
+      }
+    }
+
     .select._is-active .select__btn {
       border-bottom: 1px solid var(--primary-brown);
+    }
+
+    .subscribe-form {
+      &__title {
+        @media (min-width: 64.999em) {
+          margin-top: 2.1rem;
+          max-width: 64rem;
+        }
+      }
+      &__inner {
+        margin-top: 1.8rem;
+        @media (max-width: 64em) and (min-width: 48em) {
+          grid-template-columns: 1.6fr 1fr;
+        }
+      }
+    }
+
+    .checkbox {
+      grid-column-start: unset;
     }
 
     .request__form-wrap {
@@ -135,6 +177,10 @@
       }
     }
 
+    .subscribe-form__inner .form-message {
+      margin-bottom: 2.4rem;
+    }
+
     .request__form {
       @media (max-width: 47.999em) {
         margin-top: 4.2rem;
@@ -165,19 +211,59 @@
   }
 }
 
-.banner-modal {
+.modal._has-bg {
+  display: flex;
   background-color: transparent;
-  @media (max-width: 48em) {
-    .modal__container {
+
+  .modal {
+    &__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    &__content {
+      --padding-x: 4rem;
+      --padding-t: 3.6rem;
+      --padding-b: 4.2rem;
       padding: 0;
+      padding: var(--padding-t) var(--padding-x) var(--padding-b);
+      background-color: var(--bg-beige);
+      @media (min-width: 48em) {
+        --padding-t: 4.6rem;
+        --padding-b: 4.6rem;
+      }
+      @media (min-width: 64em) {
+        --padding-x: 5.2rem;
+        --padding-t: 4.8rem;
+        --padding-b: 5.4rem;
+      }
     }
-    .modal__content {
-      margin-top: auto;
+    &__close-btn {
+      z-index: 3;
     }
-    .modal__wrapper {
-      display: flex;
+    &__container {
+      position: relative;
+      z-index: 2;
+      padding: 0;
+      margin: auto;
+      width: 100%;
+      min-height: auto;
+
+      @media (min-width: 48em) {
+        box-shadow: 4.6px 4.6px 2.7px #00000006, 9.3px 9.3px 6.1px #0000000a,
+          15px 15px 10.8px #0000000d, 22.7px 22.7px 17.3px #0000000f,
+          34.9px 34.9px 27.2px #0001, 56px 56px 44.8px #00000013,
+          100px 100px 90px #0000001a;
+        // width: min(var(--max-width), 100%);
+      }
+
+      @media (max-width: 47.999em) {
+        margin: unset;
+        margin-top: auto;
+      }
     }
   }
+
   .modal__close-btn {
     position: absolute;
 
@@ -185,6 +271,19 @@
       border: 1px solid hsla(25, 30%, 54%, 0.4);
       background-color: transparent;
     }
+  }
+
+  @media (max-width: 48em) {
+    .modal__wrapper {
+      display: flex;
+    }
+  }
+}
+
+.banner-modal {
+  .modal__content,
+  &.modal._has-bg .modal__content {
+    padding: 0;
   }
   // .banner-modal__wrapper
 
@@ -194,31 +293,7 @@
   // .banner-modal__container
 
   &__container {
-    --padding-x: 4rem;
-    --padding-t: 3.6rem;
-    --padding-b: 4.2rem;
-    --c-bg: var(--c-bg-beige);
-    margin: auto;
     // padding: var(--padding-t) var(--padding-x) var(--padding-b);
-    padding: 0;
-    position: relative;
-    width: 100%;
-    &::after {
-      content: '';
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      backdrop-filter: blur(10px);
-    }
-    @media (min-width: 48em) {
-      box-shadow: 4.6px 4.6px 2.7px #00000006, 9.3px 9.3px 6.1px #0000000a,
-        15px 15px 10.8px #0000000d, 22.7px 22.7px 17.3px #0000000f,
-        34.9px 34.9px 27.2px #0001, 56px 56px 44.8px #00000013,
-        100px 100px 90px #0000001a;
-      width: min(var(--max-width), 100%);
-    }
 
     // @media (min-width: 48em) and (max-width: 64em) {
     //   --padding-t: 4.6rem;
@@ -251,20 +326,14 @@
 
   // .banner-modal__content
 
-  &__content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
+  .modal__container {
     max-width: 780px;
-    width: 100%;
   }
 
   // .banner-modal__detail-banner
 
   &__detail-banner {
   }
-}
-.sr-only {
 }
 
 .detail-banner-banner-modal {

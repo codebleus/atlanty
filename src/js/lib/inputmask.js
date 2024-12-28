@@ -59,7 +59,7 @@ const initInputmask = () => {
         jitMasking: true,
         regex: '^[а-яА-Яa-zA-Z]*[ ][а-яА-Яa-zA-Z]*$',
         onincomplete: function () {
-          handleOnIncomplete(input);
+          // handleOnIncomplete(input);
         },
         oncomplete: function () {
           // handleOnComplete(input);

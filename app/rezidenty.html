@@ -585,7 +585,9 @@
 						</div>
 					</div>
 					<div class="top-footer__btns">
-						<button class="top-footer__btn">Подписаться на рассылку</button>
+						<button data-modal="newsletter-modal" class="top-footer__btn">
+							Подписаться на рассылку
+						</button>
 						<a href="" class="top-footer__btn">Merchstore</a>
 					</div>
 				</div>
@@ -622,7 +624,7 @@
 							Пожалуйста, проверьте правильность заполнения телефона, он должен
 							соответствовать образцу +7 (999) 999 — 99 — 99
 						</p>
-						<label for="trial-form-block-trial-name" data-field class="request__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input id="trial-form-block-trial-name" placeholder="Ваше имя" data-mask="text" class="field__input" name="name" type="text" data-required autocomplete="off" value="" /></span></label>
+						<label for="trial-form-block-trial-name" data-field class="request__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input id="trial-form-block-trial-name" placeholder="Ваше имя" data-name-mask class="field__input" name="name" type="text" data-required autocomplete="off" value="" /></span></label>
 						<label for="trial-form-block-trial-family" class="request__field field"><span class="field__label">Ваша фамилия</span><span class="field__input-wrap"><input id="trial-form-block-trial-family" placeholder="Ваша фамилия" data-mask="text" autocomplete="off" class="field__input" name="family" type="text" value="" /></span></label>
 						<label for="trial-form-block-trial-phone" data-field class="request__field field"><span class="field__label">Номер телефона</span><span class="field__input-wrap"><input id="trial-form-block-trial-phone" placeholder="Номер телефона" data-required class="field__input" name="phone" type="text" data-tel-mask autocomplete="off" value="" /></span></label>
 						<label for="trial-form-block-trial-email" data-field class="request__field field"><span class="field__label">Введите Ваш Email</span><span class="field__input-wrap"><input id="trial-form-block-trial-email" placeholder="Введите Ваш email" class="field__input" name="email" type="text" autocomplete="off" data-mail-mask data-required value="" /></span></label>
@@ -750,13 +752,13 @@
 				</svg>
 			</button>
 		</div>
-		<div id="banner-modal" class="modal banner-modal">
+		<div id="banner-modal" class="modal banner-modal _has-bg">
 			<div class="modal__container">
 				<div class="modal__content">
 					<div class="banner-modal__wrapper">
 						<div class="banner-modal__container" style="--max-width: 780px">
 							<div>
-								<div class="banner-modal__content">
+								<div class="banner-modal__content modal__content">
 									<div class="banner-modal__detail-banner detail-banner-banner-modal" style="background-color: rgb(38, 38, 38)">
 										<div class="detail-banner-banner-modal__left">
 											<h3 class="detail-banner-banner-modal__subtitle" style="color: rgb(255, 255, 255)">
@@ -827,6 +829,44 @@
 		<div class="form-message form-message_alert">
 			<span class="form-message__icon"></span>
 			ошибка
+		</div>
+		<div id="newsletter-modal" class="modal _has-bg">
+			<div style="max-width: 1160px" class="modal__container">
+				<div class="modal__content modal__content">
+					<form class="subscribe-form__inner" data-form-validate="">
+						<div>
+							<h2 class="subscribe-form__title">
+								Подпишитесь на новостную рассылку<br />
+								с инсайтами от масштабных предпринимателей
+							</h2>
+
+							<p class="subscribe-form__desc">Какие темы интересны?</p>
+							<div class="subscribe-form__list">
+								<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Окружение</span><!----></label>
+								<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Исследования</span><!----></label>
+								<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Рост прибыли</span><!----></label>
+								<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Внедрение инноваций</span><!----></label>
+								<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Масштабирование</span><!----></label>
+								<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Инсайты предпринимателей</span><!----></label>
+							</div>
+						</div>
+						<div class="subscribe-form__block">
+							<p class="form-message form-message_message">
+								<span class="form-message__icon"></span>
+								Пожалуйста, проверьте правильность написания почты
+							</p>
+							<label data-field="" class="request__field field"><span class="field__label">E-mail</span><span class="field__input-wrap"><input placeholder="Введите ваш email" class="field__input" type="text" data-mail-mask="" data-required="" value="" inputmode="text" /></span></label><button type="submit" class="subscribe-form__btn btn">
+								Подписаться</button><span class="subscribe-form__agreement">Нажимая на кнопку, вы даете согласие на обработку
+								<a href="#">персональных данных</a></span>
+						</div>
+					</form>
+				</div>
+				<button class="modal__close-btn ic-btn">
+					<svg>
+						<use href="#cross-svg"></use>
+					</svg>
+				</button>
+			</div>
 		</div>
 
 	</div>

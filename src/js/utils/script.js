@@ -8,17 +8,50 @@ gsap.timeline({
     trigger: '.media-lead',
     start: 'top top',
     onEnter: () => {
-      if (document.querySelector('.cases-hero_media')) {
-        document.querySelector('.cases-hero_media').classList.add('_sticky');
+      if (
+        document.querySelector('.cases-hero__carousel') &&
+        !document.querySelector('.cases-hero__carousel._is-visible')
+      ) {
+        document
+          .querySelector('.cases-hero__carousel')
+          .classList.add('_is-visible');
       }
     },
     onLeaveBack: () => {
-      if (document.querySelector('.cases-hero_media')) {
-        document.querySelector('.cases-hero_media').classList.remove('_sticky');
+      if (
+        document.querySelector('.cases-hero__carousel') &&
+        document.querySelector('.cases-hero__carousel._is-visible')
+      ) {
+        document
+          .querySelector('.cases-hero__carousel')
+          .classList.remove('_is-visible');
       }
     },
   },
 });
+// gsap.timeline({
+//   scrollTrigger: {
+//     trigger: '.cases-hero_media',
+//     start: 'bottom top',
+//     preventOverlaps: true,
+//     onEnterBack: () => {
+//       if (
+//         document.querySelector('.cases-hero_media') &&
+//         document.querySelector('.cases-hero_media._sticky')
+//       ) {
+//         document.querySelector('.cases-hero_media').classList.remove('_sticky');
+//       }
+//     },
+//     onLeaveBack: () => {
+//       // if (
+//       //   document.querySelector('.cases-hero_media') &&
+//       //   document.querySelector('.cases-hero_media._sticky')
+//       // ) {
+//       //   document.querySelector('.cases-hero_media').classList.remove('_sticky');
+//       // }
+//     },
+//   },
+// });
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.block-project__video-wrap')) {
@@ -79,16 +112,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  if (document.querySelector('.search-cases-hero__input')) {
-    document
-      .querySelector('.search-cases-hero__input')
-      .addEventListener('input', function (e) {
+  if (document.querySelectorAll('.search-cases-hero__input').length) {
+    document.querySelectorAll('.search-cases-hero__input').forEach(input => {
+      input.addEventListener('input', function (e) {
         if (e.target.value.length) {
           e.target.parentElement.classList.add('_is-active');
         } else {
           e.target.parentElement.classList.remove('_is-active');
         }
       });
+    });
   }
 
   if (document.querySelectorAll('.custom-slider-mobapp__item').length) {
@@ -102,42 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
         item.classList.add('_is-active');
       });
     });
-  }
-
-  if (document.querySelector('.search-cases-hero__icon_close')) {
-    document
-      .querySelector('.search-cases-hero__icon_close')
-      .addEventListener('click', function (e) {
-        if (
-          document
-            .querySelector('.search-cases-hero__icon_close')
-            .parentElement.querySelector('input')
-        ) {
-          document
-            .querySelector('.search-cases-hero__icon_close')
-            .parentElement.querySelector('input').value = '';
-          e.target.closest('.search-cases-hero__label._is-active') &&
-            e.target
-              .closest('.search-cases-hero__label._is-active')
-              .classList.remove('_is-active');
-        }
-      });
-  }
-
-  if (document.querySelector('.search-cases-hero__btn')) {
-    document
-      .querySelector('.search-cases-hero__btn')
-      .addEventListener('click', function (e) {
-        e.target.closest('.cases-hero').classList.add('_show-search');
-      });
-  }
-
-  if (document.querySelector('.search-cases-hero__deny')) {
-    document
-      .querySelector('.search-cases-hero__deny')
-      .addEventListener('click', function (e) {
-        e.target.closest('.cases-hero').classList.remove('_show-search');
-      });
   }
 
   if (document.querySelectorAll('.event-card').length) {
@@ -193,11 +190,39 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.search-cases-hero__deny')) {
+      e.target.closest('.cases-hero').classList.remove('_show-search');
+    }
+    if (e.target.closest('.search-cases-hero__icon_close')) {
+      if (
+        e.target
+          .closest('.search-cases-hero__icon_close')
+          .parentElement.querySelector('input')
+      ) {
+        e.target
+          .closest('.search-cases-hero__icon_close')
+          .parentElement.querySelector('input').value = '';
+        e.target.closest('.search-cases-hero__label._is-active') &&
+          e.target
+            .closest('.search-cases-hero__label._is-active')
+            .classList.remove('_is-active');
+      }
+    }
+    if (e.target.closest('.search-cases-hero__btn')) {
+      e.target.closest('.cases-hero').classList.add('_show-search');
+    }
+  });
 });
+
 window.addEventListener('load', function () {
   const header = document.querySelector('.header');
   const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
-  if (window.scrollY >= startPoint) {
+  if (
+    window.scrollY >= startPoint &&
+    !document.querySelector('.cases-hero_media._show-search')
+  ) {
     !header.classList.contains('_header-scroll')
       ? header.classList.add('_header-scroll')
       : null;

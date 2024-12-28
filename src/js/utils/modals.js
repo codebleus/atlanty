@@ -49,6 +49,9 @@ document.documentElement.addEventListener('click', function (e) {
   if (e.target.closest('.modal__close-btn')) {
     closeModal(document.querySelector('.modal_show.modal'));
   }
+  if (e.target.closest('._has-bg') && !e.target.closest('.modal__content')) {
+    closeModal(e.target.closest('._has-bg'));
+  }
 
   if (
     e.target.closest('#banner-modal') &&
