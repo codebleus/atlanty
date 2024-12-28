@@ -1,0 +1,118 @@
+.error-page {
+  background-color: var(--bg-black);
+  min-height: 80dvh;
+  padding: 24.5rem 0;
+  @media (min-width: 75em) {
+    padding: 17rem 0 1.6rem;
+  }
+  @media (min-width: 96em) {
+    padding: 21rem 0 22rem;
+  }
+
+  // .error-page__wrapper
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 160rem;
+    padding: 0 2rem;
+    width: 100%;
+    @media (min-width: 48em) {
+      align-items: center;
+      display: grid;
+      gap: 8rem;
+      grid-template-columns: minmax(16rem, 47.8rem) minmax(16rem, 52.16rem);
+      padding: 0 10rem;
+    }
+    @media (min-width: 96em) {
+      grid-template-columns: minmax(16rem, 62.8rem) minmax(16rem, 67.2rem);
+      padding: 0 11rem;
+    }
+  }
+
+  // .error-page__image-wrap
+
+  &__image-wrap {
+    display: block;
+    height: auto;
+    margin-bottom: 3.2rem;
+    width: 100%;
+    @media (min-width: 75em) {
+      margin-bottom: 0;
+    }
+  }
+
+  // .error-page__image
+
+  &__image {
+  }
+
+  // .error-page__title
+
+  &__title {
+    color: #fff;
+    font-family: var(--font-family-second);
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin: 0 0 1.6rem;
+    text-align: center;
+    text-transform: uppercase;
+    @media (min-width: 48em) {
+      text-align: left;
+    }
+    @media (min-width: 75em) {
+      font-size: 3.8rem;
+      margin: 0 0 2rem;
+    }
+    @media (min-width: 96em) {
+      font-size: 4.8rem;
+      line-height: 116%;
+    }
+  }
+
+  // .error-page__text
+
+  &__text {
+    color: #fff;
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 1.6rem;
+    text-align: center;
+    text-transform: uppercase;
+    @media (min-width: 48em) {
+      text-align: left;
+    }
+    @media (min-width: 75em) {
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 96em) {
+      font-size: 2rem;
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  // .error-page__btn
+
+  &__btn {
+    &.link {
+      justify-content: center;
+    }
+    @media (min-width: 48em) {
+      justify-content: flex-start;
+      margin: 0 0 3.2rem;
+      &.link {
+        display: inline-flex;
+      }
+    }
+    @media (min-width: 96em) {
+      font-size: 1.4rem;
+      letter-spacing: 0.098rem;
+    }
+  }
+}
+.link {
+}
