@@ -70,21 +70,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  if (
-    document.querySelector(
-      '.request #trial-form-block-trial-annual_turnover [aria-selected="true"]'
-    )
-  ) {
-    document.querySelector(
-      '.request #trial-form-block-trial-annual_turnover .select__btn'
-    ).innerHTML = `
-     ${
-       document.querySelector(
-         '.request #trial-form-block-trial-annual_turnover [aria-selected="true"]'
-       ).innerText
-     }
+  if (document.querySelectorAll('.select').length) {
+    document.querySelectorAll('.select').forEach(el => {
+      if (el.querySelector('[aria-selected="true"]')) {
+        el.querySelector('.select__btn').innerHTML = `
+     ${el.querySelector('[aria-selected="true"]').innerHTML}
      `;
+      }
+    });
   }
+
+  // if (
+  //   document.querySelector(
+  //     '.request #trial-form-block-trial-annual_turnover [aria-selected="true"]'
+  //   )
+  // ) {
+  //   document.querySelector(
+  //     '.request #trial-form-block-trial-annual_turnover .select__btn'
+  //   ).innerHTML = `
+  //  ${
+  //    document.querySelector(
+  //      '.request #trial-form-block-trial-annual_turnover [aria-selected="true"]'
+  //    ).innerText
+  //  }
+  //  `;
+  // }
 
   if (document.querySelector('.project, .calendar-hero, .common-page')) {
     document.querySelector('.header').classList.add('_dark');

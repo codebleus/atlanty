@@ -538,14 +538,13 @@
       grid-column: span 2;
     }
   }
-  @media (any-hover: hover) {
-    &:hover {
-      .authors-card-cases-grid__more {
-        opacity: 1;
-        visibility: visible;
-      }
+  &:hover {
+    .authors-card-cases-grid__more {
+      opacity: 1;
+      visibility: visible;
     }
   }
+
   @media (min-width: 96em) {
     height: 50.1rem;
     padding-block-start: 3.8rem;
@@ -733,14 +732,14 @@
   &__footer {
     border-top: 0.1rem solid hsla(25, 30%, 54%, 0.6);
     min-height: 4.8rem;
-    padding: 1.4rem 2.8rem;
+    padding: 1.6rem 2rem;
     position: relative;
     @media (min-width: 64em) and (max-width: 96em) {
       padding: 1.6rem 2.4rem;
     }
     @media (min-width: 96em) {
       min-height: 6.2rem;
-      padding: 1.2rem 2.8rem;
+      padding: 1.8rem 2.8rem;
     }
   }
 

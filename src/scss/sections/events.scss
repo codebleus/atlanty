@@ -309,7 +309,7 @@
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
       padding: 0;
-      row-gap: 0;
+      gap: 0;
     }
 
     @media (min-width: 96em) {
@@ -327,6 +327,10 @@
     border-left: 1px solid var(--bg-beige);
     @media (min-width: 48em) {
       display: none;
+    }
+    @media (max-width: 48em) {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -348,7 +352,6 @@
       align-items: center;
       margin-bottom: 0;
       border-bottom: 1px solid var(--bg-beige);
-      transform: translate(1.2rem, -0.2rem);
     }
   }
 

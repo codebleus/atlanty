@@ -122,6 +122,62 @@
   overflow: hidden;
 }
 
+.table-wrapper {
+  font: var(--font-text-m);
+  margin-bottom: 2rem;
+  max-width: 100%;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    height: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--bg-brown);
+    border-radius: 0.625rem;
+  }
+
+  table {
+    border: none;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 602px;
+    font: var(--font-text-m);
+
+    tbody tr {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+      &:first-child {
+        p {
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+    }
+
+    td {
+      border-bottom: 1px solid #000000;
+      vertical-align: top;
+      padding: 7px 7px 7px 7px;
+      border-top: 1px solid #000000;
+      border-right: 1px solid #000000;
+      border-left: 1px solid #000000;
+      color: var(--c-bg-black);
+    }
+
+    p {
+      line-height: 1.2;
+      text-align: left;
+      font: var(--font-text-m);
+      color: rgb(0, 0, 0);
+    }
+  }
+}
+
 .section,
 .section.container {
   position: relative;

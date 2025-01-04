@@ -193,12 +193,8 @@
   flex-flow: column nowrap;
   height: 32rem;
   justify-content: space-between;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
 
-  @media (max-width: 39.999em) {
-    width: auto;
-  }
   // .resident-card__text
 
   &__text {
