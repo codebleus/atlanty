@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-// import 'swiper/css';
+import 'swiper/css';
 import {
   Navigation,
   Pagination,
@@ -13,44 +13,6 @@ import gsap from 'gsap';
 const mm = gsap.matchMedia();
 
 window.addEventListener('load', function () {
-  if (document.querySelector('.residents__swiper')) {
-    // let swiper;
-
-    mm.add('(max-width: 1278px)', () => {
-      let swiper = new Swiper('.residents__swiper', {
-        modules: [Navigation, Pagination],
-        speed: 300,
-        hashNavigation: {
-          watchState: true,
-        },
-        navigation: {
-          prevEl: '.residents .controls__btn_prev',
-          nextEl: '.residents .controls__btn_next',
-        },
-        pagination: {
-          el: '.residents .controls__pagination',
-          type: 'bullets',
-          clickable: true,
-        },
-        breakpoints: {
-          767: {
-            slidesPerView: 'auto',
-          },
-          1024: {
-            slidesPerGroup: 3,
-          },
-          1278: {
-            slidesPerView: 5,
-          },
-        },
-      });
-
-      return () => {
-        swiper.destroy();
-        swiper = null;
-      };
-    });
-  }
   if (document.querySelector('.infographics__swiper')) {
     new Swiper('.infographics__swiper', {
       modules: [Navigation, Pagination],
@@ -160,6 +122,44 @@ window.addEventListener('load', function () {
           },
         },
       });
+    });
+  }
+  if (document.querySelector('.residents__swiper')) {
+    // let swiper;
+
+    mm.add('(max-width: 1278px)', () => {
+      let swiper = new Swiper('.residents__swiper', {
+        modules: [Navigation, Pagination],
+        speed: 300,
+        hashNavigation: {
+          watchState: true,
+        },
+        navigation: {
+          prevEl: '.residents .controls__btn_prev',
+          nextEl: '.residents .controls__btn_next',
+        },
+        pagination: {
+          el: '.residents .controls__pagination',
+          type: 'bullets',
+          clickable: true,
+        },
+        breakpoints: {
+          767: {
+            slidesPerView: 'auto',
+          },
+          1024: {
+            slidesPerGroup: 3,
+          },
+          1278: {
+            slidesPerView: 5,
+          },
+        },
+      });
+
+      return () => {
+        swiper.destroy();
+        swiper = null;
+      };
     });
   }
 });
