@@ -1,5 +1,10 @@
 .project {
   padding-top: 8rem;
+
+  h3:not(.content-plate__subtitle) {
+    font: var(--font-heading-h3);
+  }
+
   @media (min-width: 75em) {
     padding-top: 17rem;
   }
@@ -157,6 +162,110 @@
     }
   }
 }
+
+.content-plate {
+  margin-bottom: 2.6rem;
+  @media (min-width: 75em) {
+    margin-bottom: 2.8rem;
+  }
+  @media (min-width: 96em) {
+    margin-bottom: 3.2rem;
+  }
+
+  // .content-plate__inner
+
+  &__inner {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2.6rem;
+    min-height: 1rem;
+    padding: 2.65rem 2rem 0 2.65rem;
+    width: 100%;
+    background-color: rgb(38, 38, 38);
+    @media (min-width: 40em) and (max-width: 80rem) {
+      gap: 4rem;
+      grid-template-columns: 1fr minmax(100px, 250px);
+      padding: 2.65rem 4rem 0 2.65rem;
+    }
+    @media (min-width: 70rem) {
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 80rem) {
+      grid-template-columns: 1fr minmax(100px, 210px);
+    }
+    @media (min-width: 96em) {
+      grid-template-columns: 1fr minmax(100px, 250px);
+      margin-bottom: 2.8rem;
+    }
+  }
+
+  // .content-plate__left
+
+  &__left {
+    @media (min-width: 40em) {
+      padding-bottom: 4.65rem;
+    }
+    @media (min-width: 70rem) {
+      padding-bottom: 0;
+    }
+    @media (min-width: 80rem) {
+      padding-bottom: 4.65rem;
+    }
+    @media (min-width: 96em) {
+      padding-bottom: 4.65rem;
+    }
+  }
+
+  // .content-plate__subtitle
+
+  &__subtitle {
+    color: rgb(255, 255, 255);
+    font-size: var(--font-size-16);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    max-width: 25rem;
+    text-transform: uppercase;
+    @media (min-width: 96em) {
+      font-size: var(--font-size-20);
+    }
+  }
+
+  // .content-plate__title
+
+  &__title {
+    color: rgb(255, 255, 255);
+    font-family: var(--font-family-second);
+    font-size: var(--font-size-24);
+    line-height: 110%;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    @media (min-width: 96em) {
+      font-size: var(--font-size-34);
+    }
+  }
+
+  // .content-plate__btn
+
+  &__btn {
+  }
+
+  // .content-plate__image-wrap
+
+  &__image-wrap {
+    align-self: end;
+    max-width: 200px;
+    width: 100%;
+    @media (min-width: 64em) {
+      max-width: 100%;
+    }
+  }
+
+  // .content-plate__image
+
+  &__image {
+  }
+}
+
 .bread-items {
   align-items: center;
   display: flex;
