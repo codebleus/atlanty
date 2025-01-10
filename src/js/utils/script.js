@@ -29,31 +29,15 @@ gsap.timeline({
     },
   },
 });
-// gsap.timeline({
-//   scrollTrigger: {
-//     trigger: '.cases-hero_media',
-//     start: 'bottom top',
-//     preventOverlaps: true,
-//     onEnterBack: () => {
-//       if (
-//         document.querySelector('.cases-hero_media') &&
-//         document.querySelector('.cases-hero_media._sticky')
-//       ) {
-//         document.querySelector('.cases-hero_media').classList.remove('_sticky');
-//       }
-//     },
-//     onLeaveBack: () => {
-//       // if (
-//       //   document.querySelector('.cases-hero_media') &&
-//       //   document.querySelector('.cases-hero_media._sticky')
-//       // ) {
-//       //   document.querySelector('.cases-hero_media').classList.remove('_sticky');
-//       // }
-//     },
-//   },
-// });
 
 document.addEventListener('DOMContentLoaded', function () {
+  if (
+    document.querySelector('.project table') &&
+    document.querySelectorAll('.project table col').length > 3
+  ) {
+    document.querySelector('.project table').classList.add('_alt');
+  }
+
   if (document.querySelector('.block-project__video-wrap')) {
     const el = document.querySelector('.block-project__video-wrap');
 
