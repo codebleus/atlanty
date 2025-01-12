@@ -450,10 +450,6 @@
   width: 100%;
   align-content: flex-end;
 
-  @media (max-width: 64em) {
-    order: 1;
-  }
-
   &:not(.media-grid &) {
     @media (min-width: 64em) and (max-width: 96em) {
       height: 42rem;
@@ -507,12 +503,6 @@
 
   &_video {
     color: var(--bg-white);
-
-    &:not(.media-grid &) {
-      @media (max-width: 64em) {
-        order: 1;
-      }
-    }
 
     .card-cases-grid__title {
       padding-bottom: 0;
