@@ -261,11 +261,14 @@
 
 .search-cases-hero {
   order: -1;
-  @media (min-width: 64.999em) {
+  @media (min-width: 1025px) {
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+  }
+  @media (max-width: 1388px) {
+    right: -9rem;
   }
 
   &__deny {
@@ -341,7 +344,7 @@
     &.ic-btn {
       background-color: var(--bg-black);
     }
-    @media (min-width: 64.999em) {
+    @media (min-width: 1024px) {
       display: none;
     }
   }

@@ -147,11 +147,9 @@ window.addEventListener('load', function () {
           767: {
             slidesPerView: 'auto',
           },
-          1024: {
-            slidesPerGroup: 3,
-          },
           1278: {
             slidesPerView: 5,
+            slidesPerGroup: 3,
           },
         },
       });

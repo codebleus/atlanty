@@ -1,6 +1,9 @@
 .carousel {
   background-color: var(--bg-beige);
   padding: 4rem 0 6rem;
+  .swiper-slide {
+    height: auto;
+  }
   @media (min-width: 75em) {
     padding: 6.8rem 0 4rem;
   }
@@ -149,6 +152,9 @@
 }
 
 .recommend-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background-color: var(--bg-white);
 
   &:hover {
@@ -220,6 +226,8 @@
 
   &__body {
     padding: 0 2rem;
+    margin-bottom: auto;
+
     @media (min-width: 75em) {
       padding: 0 2.4rem;
     }
