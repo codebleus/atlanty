@@ -7,10 +7,12 @@
   right: 0;
   z-index: 12;
   column-gap: 1.6rem;
-  .swiper-pagination-bullets.swiper-pagination-bullets-dynamic.swiper-pagination-horizontal {
-    position: static;
-    transform: none;
-    margin: auto;
+  .carousel & {
+    .swiper-pagination-bullets.swiper-pagination-bullets-dynamic.swiper-pagination-horizontal {
+      position: static;
+      transform: none;
+      margin: auto;
+    }
   }
 
   .swiper-pagination-bullet {
@@ -56,12 +58,20 @@
   }
 
   &__pagination {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 5rem;
     width: auto !important;
     bottom: 0 !important;
+
+    &:not(.carousel &) {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel & {
+      transform: translate(0) !important;
+    }
   }
 
   &__btn {

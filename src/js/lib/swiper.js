@@ -121,6 +121,19 @@ window.addEventListener('load', function () {
             spaceBetween: 36,
           },
         },
+        on: {
+          beforeInit: swiper => {
+            const slides = swiper.el.querySelectorAll('.swiper-slide');
+
+            if (slides.length) {
+              slides.forEach(slide => {
+                if (slide.classList.contains('card-cases-grid_large')) {
+                  slide.remove();
+                }
+              });
+            }
+          },
+        },
       });
     });
   }

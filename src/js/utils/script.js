@@ -168,6 +168,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (document.querySelector('.project, .calendar-hero, .common-page')) {
     document.querySelector('.header').classList.add('_dark');
+
+    if (document.querySelector('.header [style="color: #ffff00;"]')) {
+      document.querySelector('.header [style="color: #ffff00;"]').style.color =
+        '#151515';
+    }
   }
 
   if (document.querySelector('.header__hamburger')) {

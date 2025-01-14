@@ -20,7 +20,7 @@
     }
 
     @media (min-width: 75em) {
-      padding-top: 17.3rem;
+      // padding-top: 17.3rem;
       .swiper-slide {
         min-height: 45.8rem;
         padding-bottom: 6rem;
@@ -28,7 +28,7 @@
     }
 
     @media (min-width: 96em) {
-      padding-top: 19.8rem;
+      // padding-top: 19.8rem;
       .swiper-slide {
         min-height: 54rem;
         padding-bottom: 8.8rem;
@@ -38,15 +38,23 @@
 
   &__crumbs {
     margin-bottom: 2rem;
-    padding-top: 7.8rem;
+    padding-top: 8rem;
+
+    @media (min-width: 48em) {
+      padding-top: 9rem;
+    }
 
     @media (min-width: 75em) {
-      display: none;
+      padding-top: 17.3rem;
       margin-bottom: 3.2rem;
+
+      .bread-items {
+        justify-content: flex-start;
+      }
     }
 
     @media (min-width: 96em) {
-      margin-bottom: 4.8rem;
+      padding-top: 19.8rem;
     }
   }
 

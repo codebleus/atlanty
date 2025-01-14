@@ -79,6 +79,10 @@
     .swiper-slide img {
       height: 27rem;
       width: auto;
+
+      @media (max-width: 48em) {
+        width: 100%;
+      }
     }
   }
 
