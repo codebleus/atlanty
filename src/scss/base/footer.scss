@@ -300,10 +300,8 @@
     text-transform: uppercase;
     transition: background 0.4s ease;
 
-    @media (any-hover: hover) {
-      &:hover {
-        background: #fff6;
-      }
+    &:hover {
+      background: #fff6;
     }
 
     &:first-child {
@@ -362,10 +360,11 @@
 
   &__item-content {
     transition: background-color var(--transition-duration);
-    @media (any-hover: hover) {
-      &:hover {
-        background-color: #ffffff29;
-      }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #ffffff29;
     }
   }
 }

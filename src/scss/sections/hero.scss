@@ -6,6 +6,32 @@
   min-height: 100dvh;
   overflow: hidden;
 
+  &_residents {
+    .hero__title {
+      margin: 0;
+    }
+
+    .bread-items {
+      @media (min-width: 75em) {
+        margin-top: 13vh;
+      }
+      margin-bottom: 6rem;
+    }
+
+    .bread-items__item:last-child .bread-items__inner {
+      color: #fff9;
+    }
+
+    .bread-items__item {
+      &:not(:last-child) {
+        &::after {
+          background: url(@img/icons/breadlinkwhite.svg) center / contain
+            no-repeat;
+        }
+      }
+    }
+  }
+
   @media (min-width: 64em) and (max-width: 96em) {
     padding-bottom: 7rem;
   }

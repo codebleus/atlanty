@@ -77,10 +77,10 @@
     width: -moz-fit-content;
     width: fit-content;
 
-    @media (any-hover: hover) {
-      &:hover {
-        color: var(--primary-brown);
-      }
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--primary-brown);
     }
   }
 }

@@ -2,13 +2,13 @@ const openModal = name => {
   const modalEl = document.getElementById(name);
 
   if (modalEl) {
-    const refresh =
-      window.location.protocol +
-      '//' +
-      window.location.host +
-      window.location.pathname +
-      `?modal=${name}`;
-    window.history.pushState({ path: refresh }, '', refresh);
+    // const refresh =
+    //   window.location.protocol +
+    //   '//' +
+    //   window.location.host +
+    //   window.location.pathname +
+    //   `?modal=${name}`;
+    // window.history.pushState({ path: refresh }, '', refresh);
 
     document.documentElement.classList.add('modal-show');
     modalEl.classList.add('modal_show');
@@ -16,16 +16,22 @@ const openModal = name => {
 };
 
 export const closeModal = modal => {
-  const refresh =
-    window.location.protocol +
-    '//' +
-    window.location.host +
-    window.location.pathname;
+  // const refresh =
+  //   window.location.protocol +
+  //   '//' +
+  //   window.location.host +
+  //   window.location.pathname;
 
   document.documentElement.classList.remove('modal-show');
   modal.classList.remove('modal_show');
 
-  window.history.replaceState({ path: refresh }, '', refresh);
+  if (document.querySelectorAll('[data-modal]._has-focus').length) {
+    document.querySelectorAll('[data-modal]._has-focus').forEach(el => {
+      el.classList.remove('_has-focus');
+    });
+  }
+
+  // window.history.replaceState({ path: refresh }, '', refresh);
 };
 
 window.addEventListener('load', function () {
@@ -40,9 +46,22 @@ window.addEventListener('load', function () {
   }
 });
 
+if (document.querySelectorAll('[data-modal]').length) {
+  document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('touchstart', function (e) {
+      document.querySelectorAll('[data-modal]').forEach(btni => {
+        btni.classList.remove('_has-focus');
+      });
+      btn.classList.add('_has-focus');
+    });
+  });
+}
+
 document.documentElement.addEventListener('click', function (e) {
   if (e.target.closest('[data-modal]')) {
     e.preventDefault();
+
+    e.target.closest('[data-modal]').classList.add('_has-focus');
 
     openModal(e.target.closest('[data-modal]').dataset.modal);
   }
@@ -58,23 +77,5 @@ document.documentElement.addEventListener('click', function (e) {
     !e.target.closest('#banner-modal .banner-modal__content')
   ) {
     closeModal(document.getElementById('banner-modal'));
-  }
-});
-
-window.addEventListener('load', function (e) {
-  if (document.querySelectorAll('.modal').length) {
-    document.querySelectorAll('.modal').forEach(item => {
-      if (window.location.href.includes(`?modal=${item.id}`)) {
-        openModal(item.id);
-      } else {
-        const refresh =
-          window.location.protocol +
-          '//' +
-          window.location.host +
-          window.location.pathname;
-
-        window.history.replaceState({ path: refresh }, '', refresh);
-      }
-    });
   }
 });

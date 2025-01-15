@@ -80,16 +80,17 @@
     transition-duration: var(--transition-duration);
     transition-property: color, background-color;
 
-    :disabled {
+    &:disabled {
       --bg: var(--system-gray-1);
     }
 
-    @media (any-hover: hover) {
-      &:hover {
-        --color: var(--primary-lemon);
-        --bg: var(--primary-brown);
-        color: var(--primary-lemon);
-      }
+    &:hover,
+    &:focus,
+    &:active,
+    &._has-focus {
+      --color: var(--primary-lemon);
+      --bg: var(--primary-brown);
+      color: var(--primary-lemon);
     }
   }
 }
@@ -102,10 +103,11 @@
   text-decoration-line: underline;
   transition: color 0.4s ease;
 
-  @media (any-hover: hover) {
-    &:hover {
-      color: var(--bg-black);
-    }
+  &:hover,
+  &:focus,
+  &:active,
+  &._has-focus {
+    color: var(--bg-black);
   }
 
   @media (min-width: 75em) {
@@ -130,12 +132,13 @@
   transition: all 0.4s ease;
   width: 100%;
 
-  @media (any-hover: hover) {
-    &:hover {
-      background-color: var(--primary-brown) !important;
-      border: 1px solid transparent;
-      color: var(--primary-lemon);
-    }
+  &:hover,
+  &:focus,
+  &:active,
+  &._has-focus {
+    background-color: var(--primary-brown) !important;
+    border: 1px solid transparent;
+    color: var(--primary-lemon);
   }
 }
 
