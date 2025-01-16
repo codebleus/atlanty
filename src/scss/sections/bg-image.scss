@@ -28,13 +28,18 @@
   &__title-wrap {
     text-align: center;
 
-    span {
+    span,
+    h3 {
       display: block;
       font: var(--font-heading-h1);
       font-size: 28px;
       color: #fff;
       margin: 0 0 2rem;
       line-height: 32px;
+
+      &:last-child:not(:first-child) {
+        color: var(--primary-lemon);
+      }
     }
   }
 
