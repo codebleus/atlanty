@@ -5,6 +5,30 @@
   margin-bottom: 2.4rem;
   padding: 8.3rem 0 1.4rem;
 
+  + span {
+    margin: 0 auto;
+    margin-bottom: 5.2rem;
+    max-width: 160rem;
+    padding: 0 2rem;
+    width: 100%;
+
+    @media (min-width: 64em) {
+      padding: 0 10rem;
+    }
+
+    @media (min-width: 96em) {
+      padding: 0 11rem;
+    }
+  }
+  + span,
+  + span b {
+    font: var(--font-heading-h4);
+    font-weight: 600;
+
+    text-align: center;
+    text-transform: uppercase;
+  }
+
   &_media {
     .filters {
       -ms-overflow-style: none;
@@ -284,12 +308,12 @@
   order: -1;
   @media (min-width: 64em) {
     position: absolute;
-    right: 0;
+    right: -8rem;
     top: 50%;
     transform: translateY(-50%);
   }
   @media (max-width: 1388px) {
-    right: -9rem;
+    right: -15rem;
   }
 
   &__deny {
