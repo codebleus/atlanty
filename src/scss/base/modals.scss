@@ -212,6 +212,38 @@ body::after {
   }
 }
 
+.modal-content {
+  --padding-x: 4rem;
+  --padding-t: 3.6rem;
+  --padding-b: 4.2rem;
+  --c-bg: var(--bg-beige);
+  background-color: var(--bg);
+  border-radius: var(--rounded-base);
+  margin: auto;
+  padding: var(--padding-t) var(--padding-x) var(--padding-b);
+  position: relative;
+  width: 100%;
+
+  &__text {
+    display: block;
+    font: var(--font-heading-h4);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  @media (min-width: 48em) {
+    --padding-t: 4.6rem;
+    --padding-b: 4.6rem;
+    width: min(var(--max-width), 100%);
+  }
+
+  @media (min-width: 64em) {
+    --padding-x: 5.2rem;
+    --padding-t: 4.8rem;
+    --padding-b: 5.4rem;
+  }
+}
+
 .modal._has-bg {
   display: flex;
   background-color: transparent;

@@ -173,6 +173,17 @@
   }
 }
 .item-products {
+  padding-inline-end: 2.8rem;
+  position: relative;
+  width: 100%;
+
+  @media (min-width: 75em) {
+    padding-inline-end: 4.8rem;
+  }
+
+  @media (min-width: 96em) {
+    padding-inline-end: 6.8rem;
+  }
   // .item-products__title
 
   &__title {

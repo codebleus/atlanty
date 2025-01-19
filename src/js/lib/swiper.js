@@ -79,7 +79,7 @@ window.addEventListener('load', function () {
       },
     });
   }
-  if (document.querySelector('.mobapp .swiper') && window.innerWidth <= 1024) {
+  if (document.querySelector('.mobapp .swiper') && window.innerWidth <= 1200) {
     new Swiper('.mobapp .swiper', {
       modules: [Pagination],
       speed: 300,
@@ -171,6 +171,47 @@ window.addEventListener('load', function () {
         swiper.destroy();
         swiper = null;
       };
+    });
+  }
+});
+window.addEventListener('resize', function () {
+  if (
+    document.querySelector('.products__carousel-slider') &&
+    window.innerWidth <= 1024
+  ) {
+    new Swiper('.products__carousel-slider', {
+      modules: [Pagination, Navigation],
+      speed: 300,
+      spaceBetween: remToPx(4.8),
+      loop: true,
+      slidesPerView: 1,
+      navigation: {
+        prevEl: '.products .controls__btn_prev',
+        nextEl: '.products .controls__btn_next',
+      },
+      pagination: {
+        el: '.products .controls__pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      breakpoints: {
+        767.999: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  }
+  if (document.querySelector('.mobapp .swiper') && window.innerWidth <= 1200) {
+    new Swiper('.mobapp .swiper', {
+      modules: [Pagination],
+      speed: 300,
+      spaceBetween: remToPx(4.8),
+      loop: true,
+      pagination: {
+        el: '.mobapp__controls .controls__pagination',
+        type: 'bullets',
+        clickable: true,
+      },
     });
   }
 });

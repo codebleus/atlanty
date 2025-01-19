@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import { openModal } from './modals';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -164,6 +165,14 @@ document.addEventListener('DOMContentLoaded', function () {
      `;
       }
     });
+  }
+
+  if (document.querySelector('#special-modal form')) {
+    document
+      .querySelector('#special-modal form')
+      .addEventListener('submit', function () {
+        openModal('banner-modal-success');
+      });
   }
 
   if (document.querySelector('.project, .calendar-hero, .common-page')) {

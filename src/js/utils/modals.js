@@ -1,4 +1,4 @@
-const openModal = name => {
+export const openModal = name => {
   const modalEl = document.getElementById(name);
 
   if (modalEl) {
