@@ -35,7 +35,11 @@ export const closeModal = modal => {
 };
 
 window.addEventListener('load', function () {
-  if (document.querySelector('.project_media')) openModal('banner-modal');
+  if (document.querySelector('.project_media')) {
+    setTimeout(() => {
+      openModal('banner-modal');
+    }, 30000);
+  }
 
   if (document.querySelector('[data-modal="special-modal"]')) {
     document

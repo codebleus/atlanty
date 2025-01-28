@@ -143,16 +143,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (document.querySelector('.block-project__video-wrap')) {
     const el = document.querySelector('.block-project__video-wrap');
+    el.innerHTML = `
+<iframe width="560" height="315" src="${el.dataset.src}" title="YouTube video player" frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+        `;
     if (el.querySelector('.block-project__video-btn')) {
       el.querySelector('.block-project__video-btn').addEventListener(
         'click',
-        function () {
-          el.innerHTML = `
-<iframe width="560" height="315" src="${el.dataset.src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-        `;
-        }
+        function () {}
       );
     }
   }
