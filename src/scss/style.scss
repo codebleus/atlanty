@@ -131,6 +131,17 @@
   }
 }
 
+[data-read-more] {
+  &::after {
+    @media (min-width: 48.01em) {
+      .silicone & {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}
+
 .vfm-marquee-container {
   display: flex;
   flex-direction: row;

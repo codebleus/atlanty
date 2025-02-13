@@ -13,7 +13,6 @@ import gsap from 'gsap';
 const mm = gsap.matchMedia();
 
 const initFraction = (cur, activeIdx, total, length) => {
-  console.log(activeIdx);
   cur.innerHTML = `
             ${activeIdx < 10 ? '0' + (activeIdx + 1) : activeIdx}
           `;
@@ -50,7 +49,11 @@ window.addEventListener('load', function () {
       });
 
       return () => {
-        swiper && swiper.destroy();
+        try {
+          swiper.destroy();
+        } catch (error) {
+          console.error(error);
+        }
       };
     });
     mm.add('(max-width: 768px)', () => {
@@ -79,7 +82,11 @@ window.addEventListener('load', function () {
       });
 
       return () => {
-        swiper && swiper.destroy();
+        try {
+          swiper.destroy();
+        } catch (error) {
+          console.error(error);
+        }
       };
     });
   }
@@ -137,8 +144,11 @@ window.addEventListener('load', function () {
       });
 
       return () => {
-        swiper && swiper.destroy();
-        swiper = null;
+        try {
+          swiper.destroy();
+        } catch (error) {
+          console.warn(error);
+        }
       };
     });
   }
@@ -354,8 +364,11 @@ window.addEventListener('load', function () {
       });
 
       return () => {
-        swiper && swiper.destroy();
-        swiper = null;
+        try {
+          swiper.destroy();
+        } catch (error) {
+          console.error(error);
+        }
       };
     });
   }

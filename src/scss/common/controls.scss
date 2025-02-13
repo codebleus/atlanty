@@ -170,6 +170,12 @@
     color: #ad8366;
     line-height: 20%;
 
+    .silicone & {
+      @media (min-width: 96.01em) {
+        font-size: 2rem;
+      }
+    }
+
     &::before {
       content: '/';
     }

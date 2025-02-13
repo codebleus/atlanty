@@ -4,6 +4,12 @@
 
   background-color: var(--bg-white);
 
+  @media (min-width: 48.01em) {
+    .fraction {
+      display: none;
+    }
+  }
+
   @media (max-width: 48em) {
     padding: 18rem 0 14rem;
   }
@@ -13,6 +19,7 @@
   &__container {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   // .testimonials__heading
@@ -54,6 +61,10 @@
 
   &__controls {
     justify-content: center;
+
+    @media (min-width: 48.01em) {
+      margin: 0 auto;
+    }
   }
 }
 

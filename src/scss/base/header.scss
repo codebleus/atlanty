@@ -290,6 +290,12 @@
   &__tel-txt {
     font: var(--font-heading-h7);
 
+    @media (min-width: 96em) {
+      .silicone & {
+        font-size: 1.5rem;
+      }
+    }
+
     @media (max-width: 74.999em) {
       display: none;
     }
