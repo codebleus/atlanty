@@ -1,0 +1,149 @@
+.testimonials {
+  padding: 10rem 0;
+  padding-bottom: 8rem;
+
+  background-color: var(--bg-white);
+
+  @media (max-width: 48em) {
+    padding: 18rem 0 14rem;
+  }
+
+  // .testimonials__container
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .testimonials__heading
+
+  &__heading {
+    margin-bottom: 5rem;
+
+    @media (max-width: 48em) {
+      margin-bottom: 8rem;
+    }
+  }
+
+  // .testimonials__slider
+
+  &__slider {
+    &.swiper {
+      margin: 0;
+      margin-bottom: 3.9rem;
+
+      width: 100%;
+
+      @media (max-width: 48em) {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+
+  // .testimonials__wrapper
+
+  &__wrapper {
+  }
+
+  // .testimonials__slide
+
+  &__slide {
+  }
+
+  // .testimonials__controls
+
+  &__controls {
+    justify-content: center;
+  }
+}
+
+.slide-testimonials {
+  padding: 2.2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-beige);
+
+  @media (max-width: 48em) {
+    padding: 4rem;
+  }
+
+  // .slide-testimonials__head
+
+  &__head {
+    margin-bottom: 2.2rem;
+
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+
+    @media (max-width: 48em) {
+      margin-bottom: 4.4rem;
+
+      column-gap: 4rem;
+    }
+  }
+
+  // .slide-testimonials__author
+
+  &__author {
+    width: 6.7rem;
+    height: 6.7rem;
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    @media (max-width: 48em) {
+      width: 13.4rem;
+      height: 13.4rem;
+    }
+
+    img {
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  // .slide-testimonials__name
+
+  &__name {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+
+    @media (max-width: 48em) {
+      font-size: 3.6rem;
+    }
+  }
+
+  // .slide-testimonials__txt
+
+  &__txt {
+    margin-bottom: 2.2rem;
+
+    font-size: 1.8rem;
+
+    @media (max-width: 48em) {
+      margin-bottom: 4.4rem;
+
+      font-size: 3.6rem;
+    }
+  }
+
+  // .slide-testimonials__image
+
+  &__image {
+    height: 26rem;
+
+    @media (max-width: 48em) {
+      height: 52rem;
+    }
+
+    img {
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+}

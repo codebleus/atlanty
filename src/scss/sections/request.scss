@@ -138,16 +138,42 @@
   display: block;
   max-width: 100%;
 
+  &_dark {
+    .field {
+      &__label {
+        color: #000000;
+      }
+      &__input {
+        --c-text: #787878;
+        --c-border: #000000;
+
+        @media (any-hover: hover) {
+          &:hover {
+            --c-border: var(--bg-brown);
+          }
+        }
+      }
+    }
+  }
+
   // .field__label
 
   &__label {
     display: block;
     font: var(--font-heading-h7);
     letter-spacing: var(--font-spacing-7);
-    letter-spacing: 0.07em;
     margin-bottom: 0.2rem;
+    font-weight: 400;
     text-transform: uppercase;
     color: var(--bg-white);
+
+    @media (max-width: 48em) {
+      .silicone & {
+        margin-bottom: 1.8rem;
+
+        font-size: 3.2rem;
+      }
+    }
 
     @media (min-width: 96em) {
       margin-bottom: 0.4rem;
@@ -197,6 +223,17 @@
     padding-top: var(--pd-y);
     width: 100%;
 
+    @media (max-width: 48em) {
+      .silicone & {
+        --pd-y: 1.8rem;
+
+        font-size: 3.2rem;
+
+        &::placeholder {
+          font-size: 3.2rem;
+        }
+      }
+    }
     @media (any-hover: hover) {
       &:hover {
         --c-border: var(--primary-lemon);
@@ -212,14 +249,22 @@
   &__label {
     display: block;
     font: var(--font-heading-h7);
+    font-weight: 400;
     letter-spacing: var(--font-spacing-7);
-    letter-spacing: 0.07em;
     margin-bottom: 0.2rem;
     text-transform: uppercase;
     color: var(--bg-white);
 
     @media (min-width: 96em) {
       margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 48em) {
+      .silicone & {
+        margin-bottom: 1.8rem;
+
+        font-size: 3.2rem;
+      }
     }
   }
 
@@ -246,6 +291,14 @@
     width: 100%;
     --pd-y: 1.2rem;
 
+    @media (max-width: 48em) {
+      .silicone & {
+        --pd-y: 1.9rem;
+
+        font-size: 3.2rem;
+      }
+    }
+
     ._is-active & {
       &::after {
         transform: rotate(-180deg);
@@ -267,9 +320,43 @@
       width: 2rem;
       mask: url(@img/icons/chevron-down.svg) no-repeat center / contain;
 
+      @media (max-width: 48em) {
+        .silicone & {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+
       @media (min-width: 96em) {
         height: 2.2rem;
         width: 2.2rem;
+      }
+    }
+  }
+  &._act {
+    .select__btn {
+      --c-text: var(--bg-super-black);
+    }
+  }
+  &_dark {
+    .select {
+      &__label {
+        color: var(--bg-super-black);
+      }
+      &__btn {
+        --c-text: rgba(0, 0, 0, 0.4);
+        --c-border: rgba(0, 0, 0, 0.8);
+        --c-placeholder: rgba(0, 0, 0, 0.4);
+
+        &::after {
+          background-color: var(--bg-super-black);
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            --c-border: var(--bg-brown);
+          }
+        }
       }
     }
   }
@@ -293,6 +380,12 @@
     opacity var(--transition-duration);
   transform-origin: left top;
 
+  @media (max-width: 48em) {
+    .silicone & {
+      padding: 4.2rem 4.8rem 5.6rem;
+    }
+  }
+
   ._is-active & {
     transform: scaleY(1);
     opacity: 1;
@@ -309,6 +402,12 @@
     text-decoration-color: transparent;
     transition-duration: var(--transition-duration);
     transition-property: color, text-decoration-color;
+
+    @media (max-width: 48em) {
+      .silicone & {
+        font-size: 3.2rem;
+      }
+    }
 
     @media (any-hover: hover) {
       &:hover {

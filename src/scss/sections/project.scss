@@ -647,6 +647,19 @@
     padding-left: 2.5rem;
     list-style-type: none;
 
+    a {
+      color: var(--primary-brown);
+      font: var(--font-text-m);
+      text-decoration: underline;
+      transition: color 0.4s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--bg-black);
+        }
+      }
+    }
+
     li {
       margin-bottom: 0.8rem;
       position: relative;

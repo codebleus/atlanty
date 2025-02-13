@@ -1,0 +1,181 @@
+.hero-club {
+  position: relative;
+
+  display: flex;
+
+  // .hero-club__container
+
+  &__container {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100dvh;
+    width: 100%;
+
+    color: var(--bg-white);
+  }
+
+  // .hero-club__content
+
+  &__content {
+    padding-top: 20.4rem;
+    padding-bottom: 8.6rem;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @media (max-width: 48em) {
+      padding-top: 37rem;
+      padding-bottom: 12rem;
+    }
+  }
+
+  // .hero-club__info
+
+  &__info {
+    margin-top: auto;
+    margin-bottom: 2rem;
+
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
+
+    @media (max-width: 48em) {
+      margin-bottom: 2.6rem;
+    }
+  }
+
+  // .hero-club__info-item
+
+  &__info-item {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.8rem;
+
+    font-size: 2rem;
+    line-height: 120%;
+    text-transform: uppercase;
+
+    @media (max-width: 48em) {
+      font-size: 2.6rem;
+
+      ._primary-lemon {
+        font-size: 3.4rem;
+      }
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: '|';
+      }
+    }
+  }
+
+  // .hero-club__wrap
+
+  &__wrap {
+    margin-bottom: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    width: 67.1rem;
+
+    @media (max-width: 48em) {
+      margin-bottom: 12.8rem;
+
+      row-gap: 0;
+      width: 100%;
+    }
+  }
+
+  // .hero-club__title
+
+  &__title {
+    font: var(--font-heading-h1-large);
+
+    @media (min-width: 96em) {
+      font: var(--font-heading-h1);
+    }
+    @media (max-width: 48em) {
+      margin-bottom: 5.2rem;
+
+      font-size: 5.6rem;
+      line-height: 100%;
+    }
+  }
+
+  // .hero-club__txt
+
+  &__txt {
+    margin-bottom: 12.6rem;
+
+    font-size: 3.4rem;
+    line-height: 130%;
+
+    @media (min-width: 48.01em) {
+      margin-bottom: 0;
+      max-width: 55.9rem;
+
+      font-size: 2rem;
+      line-height: 140%;
+    }
+  }
+
+  // .hero-club__text
+
+  &__text {
+    font-size: 3.4rem;
+    line-height: 130%;
+
+    text-transform: uppercase;
+
+    @media (min-width: 48.01em) {
+      max-width: 99%;
+
+      font-size: 2.4rem;
+      line-height: 140%;
+    }
+  }
+
+  // .hero-club__btn
+
+  &__btn {
+    margin-right: auto;
+
+    &.btn {
+      padding: 2.5rem 3.5rem;
+    }
+  }
+
+  // .hero-club__bg
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    img {
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      background-color: rgba(0, 0, 0);
+
+      opacity: 0.42;
+    }
+  }
+}

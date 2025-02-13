@@ -17,6 +17,22 @@ html {
   @media (max-width: 74.999em) {
     // font-size: 62.5%;
   }
+
+  &.silicone {
+    font-size: 9px;
+    @media (max-width: 1440px) {
+      font-size: 62.5%;
+    }
+
+    @media (max-width: 1200px) {
+      // font-size: 0.5208335vw;
+      font-size: 0.8vw;
+    }
+
+    @media (max-width: 768px) {
+      font-size: calc((100 / 375) * 5vw);
+    }
+  }
 }
 
 body {

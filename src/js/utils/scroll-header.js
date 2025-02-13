@@ -2,7 +2,7 @@ let addWindowScrollEvent = false;
 
 export function headerScroll() {
   addWindowScrollEvent = true;
-  const header = document.querySelector('header.header');
+  const header = document.querySelector('[data-scroll-show]');
   if (header) {
     const headerShow = header.hasAttribute('data-scroll-show');
     const headerShowTimer = header.dataset.scrollShow

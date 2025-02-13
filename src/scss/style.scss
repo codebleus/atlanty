@@ -5,6 +5,7 @@
   --font-family-main: 'Futura', sans-serif;
   --font-family-second: 'Circe Contrast', serif;
   --font-size-13: 1.3rem;
+  --font-size-116: 11.6rem;
   --font-heading-h7: 500 var(--font-size-13) / 1.2 var(--font-family-main);
 
   --bg-super-black: #151515;
@@ -12,6 +13,7 @@
   --primary-lemon: #ff0;
   --primary-brown: #ad8366;
   --bg-beige: #ede7e2;
+  --bg-gray: rgba(120, 120, 120);
   --bg-blue-green: #26333c;
   --bg-brown: #9f6f5d;
   --primary-txt-color: #262626;
@@ -20,11 +22,14 @@
   --bg-green: #3c4b45;
 
   --font-heading-h7: 500 var(--font-size-13) / 1.2 var(--font-family-main);
+  --font-heading-h1-large: 400 var(--font-size-116) / 100%
+    var(--font-family-second);
   --font-size-80: 8rem;
   --font-size-64: 6.4rem;
   --font-size-60: 6rem;
   --font-size-52: 5.2rem;
   --font-size-48: 4.8rem;
+  --font-size-50: 5rem;
   --font-size-38: 3.8rem;
   --font-size-34: 3.4rem;
   --font-size-28: 2.8rem;
@@ -77,7 +82,7 @@
   @media (min-width: 64em) {
     --font-heading-h0: 400 var(--font-size-64) / 1.08 var(--font-family-second);
     --font-heading-h1: 400 var(--font-size-52) / 1.16 var(--font-family-second);
-    --font-heading-h2: 400 var(--font-size-48) / 1.2 var(--font-family-second);
+    --font-heading-h2: 400 var(--font-size-50) / 100% var(--font-family-second);
     --font-heading-h3: 400 var(--font-size-38) / 1.4 var(--font-family-second);
     --font-heading-h4: 600 var(--font-size-24) / 1.4 var(--font-family-main);
     --font-heading-h5: 600 var(--font-size-20) / 1.32 var(--font-family-main);
@@ -277,6 +282,9 @@
   -webkit-transition-timing-function: linear !important;
   transition-timing-function: linear !important;
 }
+._primary-lemon {
+  color: var(--primary-lemon);
+}
 
 // ------------------------------- common styles ----------------------------
 
@@ -309,3 +317,9 @@
 @import 'sections/products';
 @import 'sections/mobapp';
 @import 'sections/tg';
+@import 'sections/hero-club';
+@import 'sections/guests';
+@import 'sections/time';
+@import 'sections/schedule';
+@import 'sections/gallery';
+@import 'sections/testimonials';

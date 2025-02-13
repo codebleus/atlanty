@@ -2,6 +2,18 @@
   font: var(--font-heading-h1);
   text-transform: uppercase;
 }
+.h2 {
+  font: var(--font-heading-h2);
+  text-transform: uppercase;
+
+  .silicone & {
+    font-size: 5.6rem;
+  }
+}
+.h3 {
+  font: var(--font-heading-h3);
+  text-transform: uppercase;
+}
 .clamp {
   display: -webkit-box;
   overflow: hidden;

@@ -1,6 +1,8 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { openModal } from './modals';
+import { initTabsSlider } from './tabs-slider';
+import { initReadMore } from './read-more';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -283,6 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
           .classList.remove('_is-active');
       }
       if (e.target.closest('.dropdown__item')) {
+        e.target.closest('.select').classList.add('_act');
         e.target
           .closest('.dropdown')
           .querySelectorAll('.dropdown__item')
@@ -292,6 +295,7 @@ document.addEventListener('DOMContentLoaded', function () {
         e.target
           .closest('.dropdown__item')
           .setAttribute('aria-selected', 'true');
+
         e.target.closest('.select').classList.remove('_is-active');
         e.target.closest('.select').querySelector('.select__btn').innerText =
           e.target.closest('.dropdown__item').innerText;
@@ -325,17 +329,27 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('load', function () {
+  if (document.querySelector('.hero-club')) {
+    document.documentElement.classList.add('silicone');
+  }
   const header = document.querySelector('.header');
-  const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
-  if (
-    window.scrollY >= startPoint &&
-    !document.querySelector('.cases-hero_media._show-search')
-  ) {
-    !header.classList.contains('_header-scroll')
-      ? header.classList.add('_header-scroll')
-      : null;
+  if (header) {
+    const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+    if (
+      window.scrollY >= startPoint &&
+      !document.querySelector('.cases-hero_media._show-search')
+    ) {
+      !header.classList.contains('_header-scroll')
+        ? header.classList.add('_header-scroll')
+        : null;
+    }
   }
 
   document.querySelectorAll('.vfm-parent').length &&
     horizontalLoop(document.querySelectorAll('.vfm-parent'), { speed: 0.6 });
+
+  initTabsSlider();
+  initReadMore(() => {
+    document.querySelector('[data-tabs-slider]').classList.toggle('_shrink');
+  });
 });
