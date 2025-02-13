@@ -81,6 +81,14 @@
     row-gap: 2.4rem;
 
     transition: visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
+
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   // .guests__tab

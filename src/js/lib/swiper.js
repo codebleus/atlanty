@@ -23,9 +23,9 @@ const initFraction = (cur, activeIdx, total, length) => {
 };
 
 window.addEventListener('load', function () {
-  if (document.querySelector('.gallery__slider')) {
+  if (document.querySelector('.gallery__slider_main')) {
     mm.add('(min-width: 768px)', () => {
-      let swiper = new Swiper('.gallery__slider', {
+      let swiper = new Swiper('.gallery__slider_main', {
         modules: [Navigation, Pagination],
         speed: 500,
         spaceBetween: 4.2,
@@ -38,7 +38,6 @@ window.addEventListener('load', function () {
         },
         pagination: {
           el: '.gallery .controls__pagination',
-          type: 'bullets',
           clickable: true,
         },
         breakpoints: {
@@ -52,7 +51,7 @@ window.addEventListener('load', function () {
         try {
           swiper.destroy();
         } catch (error) {
-          console.error(error);
+          console.warn(error);
         }
       };
     });
@@ -85,7 +84,7 @@ window.addEventListener('load', function () {
         try {
           swiper.destroy();
         } catch (error) {
-          console.error(error);
+          console.warn(error);
         }
       };
     });
@@ -367,7 +366,7 @@ window.addEventListener('load', function () {
         try {
           swiper.destroy();
         } catch (error) {
-          console.error(error);
+          console.warn(error);
         }
       };
     });
