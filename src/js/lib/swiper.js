@@ -131,6 +131,7 @@ window.addEventListener('load', function () {
         speed: 500,
         spaceBetween: 20,
         loop: true,
+        autoHeight: true,
         navigation: {
           prevEl: '.schedule .controls__btn_prev',
           nextEl: '.schedule .controls__btn_next',
