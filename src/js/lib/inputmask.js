@@ -33,11 +33,12 @@ const initInputmask = () => {
   if (mailInputCollection.length) {
     mailInputCollection.forEach(input => {
       Inputmask({
-        mask: '*{3,20}@*{3,20}.*{2,7}',
+        // mask: '*{3,20}@*{3,20}.*{2,7}',
         showMaskOnHover: false,
         jitMasking: true,
         clearMaskOnLostFocus: true,
         clearIncomplete: true,
+        alias: 'email',
         onincomplete: function () {
           // handleOnIncomplete(input);
           if (input.closest('.field')) {
@@ -66,6 +67,20 @@ const initInputmask = () => {
         },
       }).mask(input);
     });
+  }
+  if (document.querySelector('[data-input="company-name"]')) {
+    Inputmask({
+      showMaskOnHover: false,
+      jitMasking: true,
+      regex:
+        '^[а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*$',
+      onincomplete: function () {
+        // handleOnIncomplete(input);
+      },
+      oncomplete: function () {
+        // handleOnComplete(input);
+      },
+    }).mask(document.querySelector('[data-input="company-name"]'));
   }
 };
 initInputmask();

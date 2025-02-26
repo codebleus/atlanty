@@ -93,8 +93,10 @@
   // .hero-club__title
 
   &__title {
-    font: var(--font-heading-h1-large);
-
+    font: var(--font-heading-h2);
+    @media (max-width: 96em) {
+      font-size: 5.6rem;
+    }
     @media (min-width: 96em) {
       font: var(--font-heading-h1);
     }

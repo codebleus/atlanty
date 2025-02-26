@@ -39,6 +39,8 @@ window.addEventListener('load', function () {
         pagination: {
           el: '.gallery .controls__pagination',
           clickable: true,
+          dynamicBullets: true,
+          dynamicMainBullets: 3,
         },
         breakpoints: {
           1441: {

@@ -1,11 +1,12 @@
 .header {
   padding-top: 1.6rem;
   position: fixed;
+  top: 0;
   transition: transform 0.3s ease 0.2s, background-color 0.3s;
   width: 100%;
   z-index: 50;
 
-  @media (max-width: 48em) {
+  @media (max-width: 74.999em) {
     padding-top: 0;
     padding-bottom: 0.6rem;
   }
@@ -205,6 +206,15 @@
     }
     &._mobile-only {
       display: none;
+
+      @media (max-width: 74.999em) {
+        display: inline-flex;
+      }
+    }
+    &._desktop-only {
+      @media (max-width: 74.999em) {
+        display: none;
+      }
     }
   }
 

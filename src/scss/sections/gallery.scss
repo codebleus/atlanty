@@ -4,6 +4,17 @@
 
   background-color: var(--bg-beige);
 
+  .controls__pagination:not(.carousel .controls__pagination) {
+    display: block;
+  }
+
+  .swiper-horizontal
+    > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+  .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    left: 0;
+    transform: none;
+  }
+
   @media (max-width: 48em) {
     padding: 14rem 0;
   }

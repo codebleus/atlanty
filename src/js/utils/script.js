@@ -149,12 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
 <iframe width="560" height="315" src="${el.dataset.src}" title="YouTube video player" frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
         `;
-    if (el.querySelector('.block-project__video-btn')) {
-      el.querySelector('.block-project__video-btn').addEventListener(
-        'click',
-        function () {}
-      );
-    }
   }
 
   if (document.querySelectorAll('.select').length) {
@@ -324,6 +318,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (e.target.closest('.search-cases-hero__btn')) {
       e.target.closest('.cases-hero').classList.add('_show-search');
+    }
+    if (
+      e.target.closest('.chat__close-btn') ||
+      (document.querySelector('._show-chat') &&
+        !e.target.closest('.chat') &&
+        !e.target.closest('.chat-btn'))
+    ) {
+      document.documentElement.classList.remove('_show-chat');
     }
   });
 });
