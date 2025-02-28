@@ -216,7 +216,7 @@ window.addEventListener('load', function () {
             if (option.checked) {
               const group = option.closest('.chat__group');
 
-              toNext(group, chatStep);
+              // toNext(group, chatStep);
             }
           });
         });
@@ -227,7 +227,7 @@ window.addEventListener('load', function () {
           field.addEventListener('keypress', function (e) {
             const code = e.keyCode ? e.keyCode : e.which;
             if (code === 13) {
-              toNext(e.target.closest('.chat__group'), chatStep);
+              // toNext(e.target.closest('.chat__group'), chatStep);
             }
           });
         });
@@ -236,7 +236,7 @@ window.addEventListener('load', function () {
       if (btns.length) {
         btns.forEach(btn => {
           btn.addEventListener('click', function (e) {
-            toNext(e.target.closest('.chat__group'), chatStep);
+            // toNext(e.target.closest('.chat__group'), chatStep);
           });
         });
       }
