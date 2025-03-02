@@ -50,10 +50,11 @@ window.addEventListener('load', function () {
 
             next.classList.add('_is-active');
 
-            scrollInst.contentWrapperEl.scrollTo({
-              top: scrollInst.contentEl.clientHeight,
-              behavior: 'smooth',
-            });
+            scrollInst &&
+              scrollInst.contentWrapperEl.scrollTo({
+                top: scrollInst.contentEl.clientHeight,
+                behavior: 'smooth',
+              });
 
             group.classList.add('_is-checked');
 
