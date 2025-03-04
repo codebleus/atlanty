@@ -100,6 +100,19 @@ window.addEventListener('load', function () {
           });
       }
 
+      document
+        .querySelectorAll('.inviting-modal .chat-option__input')
+        .forEach(input => {
+          input.addEventListener('change', function () {
+            if (input.checked) {
+              toNext(
+                input.closest('.inviting-modal__group'),
+                +current.innerHTML
+              );
+            }
+          });
+        });
+
       if (current && total) {
         current.innerHTML = '01';
         total.innerHTML =
