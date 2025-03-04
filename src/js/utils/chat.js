@@ -85,130 +85,134 @@ window.addEventListener('load', function () {
     };
 
     const initModal = () => {
-      const nextBtn = document.querySelector('.inviting-modal__btn_next');
-      const submitBtn = document.querySelector('.inviting-modal__btn_submit');
-      const groups = document.querySelectorAll('.inviting-modal__group');
+      if (document.querySelector('.inviting-modal')) {
+        const nextBtn = document.querySelector('.inviting-modal__btn_next');
+        const submitBtn = document.querySelector('.inviting-modal__btn_submit');
+        const groups = document.querySelectorAll('.inviting-modal__group');
 
-      if (document.querySelector('.inviting-modal__reg-btn')) {
+        if (document.querySelector('.inviting-modal__reg-btn')) {
+          document
+            .querySelector('.inviting-modal__reg-btn')
+            .addEventListener('click', function () {
+              document
+                .getElementById('inviting-modal')
+                .classList.add('_show-main-content');
+              openModal('inviting-modal');
+            });
+        }
+
         document
-          .querySelector('.inviting-modal__reg-btn')
-          .addEventListener('click', function () {
-            document
-              .getElementById('inviting-modal')
-              .classList.add('_show-main-content');
-            openModal('inviting-modal');
+          .querySelectorAll('.inviting-modal .chat-option__input')
+          .forEach(input => {
+            input.addEventListener('change', function () {
+              if (input.checked) {
+                toNext(
+                  input.closest('.inviting-modal__group'),
+                  +current.innerHTML
+                );
+              }
+            });
           });
-      }
 
-      document
-        .querySelectorAll('.inviting-modal .chat-option__input')
-        .forEach(input => {
-          input.addEventListener('change', function () {
-            if (input.checked) {
-              toNext(
-                input.closest('.inviting-modal__group'),
-                +current.innerHTML
-              );
-            }
-          });
-        });
+        if (current && total) {
+          current.innerHTML = '01';
+          total.innerHTML =
+            groups.length < 10 ? `0${groups.length}` : groups.length;
+        }
 
-      if (current && total) {
-        current.innerHTML = '01';
-        total.innerHTML =
-          groups.length < 10 ? `0${groups.length}` : groups.length;
-      }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', function () {
+            const group = document.querySelector(
+              '.inviting-modal__group._is-active:not(._is-checked)'
+            );
 
-      if (nextBtn) {
-        nextBtn.addEventListener('click', function () {
-          const group = document.querySelector(
-            '.inviting-modal__group._is-active:not(._is-checked)'
-          );
+            if (group) {
+              const options = group.querySelectorAll('.chat-option__input');
 
-          if (group) {
-            const options = group.querySelectorAll('.chat-option__input');
-
-            if (options) {
-              options.forEach(option => {
-                if (option.checked) {
-                  toNext(group, +current.innerHTML);
-                }
-              });
-            }
-          }
-        });
-      }
-
-      if (prevBtn) {
-        prevBtn.addEventListener('click', function () {
-          let step = +current.innerHTML - 1;
-
-          const group = groups[step];
-
-          group.closest('.inviting-modal').classList.remove('_form');
-
-          if (group) {
-            const prev = group.previousElementSibling;
-            const next = group.nextElementSibling;
-
-            // if (!group.classList.contains('_is-checked')) {
-            // step -= 1;
-
-            if (prev) {
-              removeClasses(groups, '_is-active');
-              removeClasses(groups, '_is-checked');
-
-              prev.classList.add('_is-active');
-              prev.classList.remove('_is-checked');
-
-              current.innerHTML = step < 10 ? `0${step}` : step;
-
-              group.closest('.inviting-modal').dataset.step = current.innerHTML;
-
-              if (window.innerWidth < 768) {
-                document.querySelector(
-                  '.inviting-modal__form-body'
-                ).style.height = `${prev.offsetHeight}px`;
+              if (options) {
+                options.forEach(option => {
+                  if (option.checked) {
+                    toNext(group, +current.innerHTML);
+                  }
+                });
               }
             }
+          });
+        }
 
-            if (+current.innerHTML === 1) {
-              prevBtn.classList.remove('_is-visible');
-            }
-            // }
-          }
-        });
-      }
+        if (prevBtn) {
+          prevBtn.addEventListener('click', function () {
+            let step = +current.innerHTML - 1;
 
-      document
-        .querySelector('.inviting-modal__form')
-        .addEventListener('submit', function (e) {
-          let arr = [];
+            const group = groups[step];
 
-          e.preventDefault();
+            group.closest('.inviting-modal').classList.remove('_form');
 
-          if (
-            groups[groups.length - 1].querySelectorAll('.inviting-modal__input')
-              .length
-          ) {
-            groups[groups.length - 1]
-              .querySelectorAll('.inviting-modal__input')
-              .forEach(input => {
-                if (!input.value.length) {
-                  arr.push(input);
-                } else {
-                  arr.indexOf(input) && arr.slice(arr.indexOf(input), 1);
+            if (group) {
+              const prev = group.previousElementSibling;
+              const next = group.nextElementSibling;
+
+              // if (!group.classList.contains('_is-checked')) {
+              // step -= 1;
+
+              if (prev) {
+                removeClasses(groups, '_is-active');
+                removeClasses(groups, '_is-checked');
+
+                prev.classList.add('_is-active');
+                prev.classList.remove('_is-checked');
+
+                current.innerHTML = step < 10 ? `0${step}` : step;
+
+                group.closest('.inviting-modal').dataset.step =
+                  current.innerHTML;
+
+                if (window.innerWidth < 768) {
+                  document.querySelector(
+                    '.inviting-modal__form-body'
+                  ).style.height = `${prev.offsetHeight}px`;
                 }
-              });
-          }
+              }
 
-          if (arr.length) {
-            window.alert('Пожалуйста, заполните все поля');
-          } else {
-            closeModal(document.getElementById('inviting-modal'));
-            openModal('request-sent-modal');
-          }
-        });
+              if (+current.innerHTML === 1) {
+                prevBtn.classList.remove('_is-visible');
+              }
+              // }
+            }
+          });
+        }
+
+        document
+          .querySelector('.inviting-modal__form')
+          .addEventListener('submit', function (e) {
+            let arr = [];
+
+            e.preventDefault();
+
+            if (
+              groups[groups.length - 1].querySelectorAll(
+                '.inviting-modal__input'
+              ).length
+            ) {
+              groups[groups.length - 1]
+                .querySelectorAll('.inviting-modal__input')
+                .forEach(input => {
+                  if (!input.value.length) {
+                    arr.push(input);
+                  } else {
+                    arr.indexOf(input) && arr.slice(arr.indexOf(input), 1);
+                  }
+                });
+            }
+
+            if (arr.length) {
+              window.alert('Пожалуйста, заполните все поля');
+            } else {
+              closeModal(document.getElementById('inviting-modal'));
+              openModal('request-sent-modal');
+            }
+          });
+      }
     };
 
     const initChat = () => {
