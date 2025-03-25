@@ -4,6 +4,9 @@ import { openModal } from './modals';
 import { initTabsSlider } from './tabs-slider';
 import { initReadMore } from './read-more';
 
+if (document.querySelector('.guests'))
+  document.querySelector('.guests').style.opacity = 0;
+
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.timeline({
@@ -331,6 +334,35 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('load', function () {
+  document.documentElement.classList.add('_pages-loaded');
+
+  if (document.querySelector('.item-schedule__heading')) {
+    document.querySelectorAll('.item-schedule__heading').forEach(el => {
+      if (
+        el.innerText.length === 0 &&
+        el.closest('.item-schedule').querySelector('.item-schedule__list')
+      ) {
+        el.closest('.item-schedule')
+          .querySelector('.item-schedule__list')
+          .classList.add('_nb');
+      }
+    });
+  }
+  if (document.querySelector('.guests'))
+    document.querySelector('.guests').style.opacity = 1;
+  if (
+    document.querySelectorAll('.guests__tab').length &&
+    document.querySelectorAll('.guests__tab').length === 1
+  ) {
+    document.querySelector('.guests').classList.add('_shrink');
+
+    const heading = document.createElement('div');
+    heading.innerHTML = document.querySelector('.guests__tab').innerHTML;
+    heading.classList.add('guests__subtitle');
+
+    document.querySelector('.info-slide-guests__inner').appendChild(heading);
+  }
+
   if (document.querySelector('.hero-club')) {
     document.documentElement.classList.add('silicone');
   }

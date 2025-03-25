@@ -165,7 +165,14 @@
 
     display: flex;
     flex-direction: column;
+
     border-top: 1px solid var(--bg-super-black);
+
+    &._nb {
+      padding-top: 0;
+
+      border-top: none;
+    }
 
     @media (max-width: 48em) {
       row-gap: 2rem;

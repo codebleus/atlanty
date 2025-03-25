@@ -315,20 +315,15 @@
       display: block;
       background-color: var(--bg-white);
       transition: transform var(--transition-duration);
-      height: 2rem;
-      width: 2rem;
-      mask: url(@img/icons/chevron-down.svg) no-repeat center / contain;
+      height: 1.5rem;
+      width: 1.5rem;
+      background: url(@img/icons/Vector12.svg) no-repeat center / contain;
 
       @media (max-width: 48em) {
         .silicone & {
-          width: 4rem;
-          height: 4rem;
+          width: 2.5rem;
+          height: 2.5rem;
         }
-      }
-
-      @media (min-width: 96em) {
-        height: 2.2rem;
-        width: 2.2rem;
       }
     }
   }

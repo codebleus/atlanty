@@ -4,6 +4,16 @@
 
   .swiper-slide {
     height: auto;
+
+    &:not(._pages-loaded &) {
+      width: 100%;
+
+      @media (min-width: 48.01em) {
+        margin-right: 3.6rem;
+
+        width: 47rem;
+      }
+    }
   }
   @media (min-width: 75em) {
     padding: 6.8rem 0 4rem;
@@ -74,6 +84,12 @@
 
   &__swiper-wrap {
     position: relative;
+
+    @media (max-width: 48em) {
+      &:not(._page-loaded &) {
+        overflow: hidden;
+      }
+    }
 
     .swiper-slide.card-cases-grid {
       height: 42.2rem;

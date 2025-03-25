@@ -1388,45 +1388,51 @@
                     </div>
                   </div>
                 </section>
-                <div class="form-exclusive form-exclusive_ext">
-                  <div class="form-exclusive__left">
-                    <h2 class="form-exclusive__title">
-                      Вступите в бизнес-клуб «Атланты» на самых выгодных
-                      условиях до 31 декабря
-                    </h2>
-                    <div class="form-exclusive__image-wrap">
-                      <img
-                        src="@img/content/2024-12-10_183659.webp"
-                        class="form-exclusive__image"
-                        alt="" />
-                    </div>
+
+                <div class="reg-banner">
+                  <div class="reg-banner__image-wrap">
+                    <span class="reg-banner__subtitle"
+                      >Получи гостевой доступ в бизнес-клуб «Атланты» в
+                      марте</span
+                    >
+                    <img
+                      src="@img/content/image8.webp"
+                      class="reg-banner__image"
+                      alt="" />
                   </div>
-                  <div class="form-exclusive__wrap">
-                    <p class="form-exclusive__desc">
-                      Выгода до 35%. Оставьте заявку, чтобы получить специальное
-                      предложение
-                    </p>
-                    <form data-form-validate="" class="form-exclusive__form">
-                      <p
-                        class="request__form-message form-message form-message_message">
-                        <span class="form-message__icon"></span>
-                        Пожалуйста, проверьте правильность заполнения телефона,
-                        он должен соответствовать образцу +7 (999) 999 — 99 — 99
-                      </p>
-                      <label data-field class="request__field field"
+                  <div class="reg-banner__content">
+                    <div class="reg-banner__title-wrap">
+                      <span class="reg-banner__title">Регистрация</span>
+                    </div>
+                    <form
+                      data-form-validate=""
+                      action="#"
+                      class="reg-banner__form">
+                      <label data-field class="reg-banner__field field"
                         ><span class="field__label">Ваше имя</span
                         ><span class="field__input-wrap"
                           ><input
                             placeholder="Ваше имя"
                             data-required
-                            data-name-mask
                             class="field__input"
                             name="name"
                             type="text"
                             value="" /></span
                       ></label>
 
-                      <label data-field class="request__field field"
+                      <label data-field class="reg-banner__field field"
+                        ><span class="field__label">Ваша фамилия</span
+                        ><span class="field__input-wrap"
+                          ><input
+                            placeholder="Ваша фамилия"
+                            data-required
+                            class="field__input"
+                            name="lastname"
+                            type="text"
+                            value="" /></span
+                      ></label>
+
+                      <label data-field class="reg-banner__field field"
                         ><span class="field__label">Номер телефона</span
                         ><span class="field__input-wrap"
                           ><input
@@ -1438,7 +1444,7 @@
                             data-tel-mask
                             value="" /></span
                       ></label>
-                      <label data-field="" class="request__field field"
+                      <label data-field="" class="reg-banner__field field"
                         ><span class="field__label">Введите Ваш Email</span
                         ><span class="field__input-wrap"
                           ><input
@@ -1451,17 +1457,9 @@
                             value="" /></span
                       ></label>
 
-                      <label class="request__field field"
-                        ><span class="field__label">Компания</span
-                        ><span class="field__input-wrap"
-                          ><input
-                            placeholder="Например, ООО Название"
-                            class="field__input"
-                            name="company"
-                            type="text"
-                            value="" /></span
-                      ></label>
-                      <div class="request__select select" data-headlessui-state>
+                      <div
+                        class="reg-banner__select select"
+                        data-headlessui-state>
                         <label class="select__label">Ваш статус</label
                         ><button
                           type="button"
@@ -1495,7 +1493,9 @@
                           </li>
                         </ul>
                       </div>
-                      <div class="request__select select" data-headlessui-state>
+                      <div
+                        class="reg-banner__select select"
+                        data-headlessui-state>
                         <label class="select__label">Оборот компании</label
                         ><button
                           type="button"
@@ -1561,7 +1561,7 @@
                           </li>
                         </ul>
                       </div>
-                      <label data-field class="request__checkbox checkbox"
+                      <label data-field class="reg-banner__checkbox checkbox"
                         ><input
                           data-required
                           class="checkbox__check"
@@ -1572,7 +1572,11 @@
                           <a href="#">персональных данных</a></span
                         ></label
                       >
-                      <button class="request__btn btn">Отправить заявку</button>
+                      <button
+                        type="submit"
+                        class="reg-banner__btn btn btn_brown">
+                        Отправить заявку
+                      </button>
                     </form>
                   </div>
                 </div>
