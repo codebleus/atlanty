@@ -726,34 +726,431 @@
 			</div>
 		</footer>
 
-		<div id="guide-modal" class="modal guide-modal _has-bg">
-			<div class="modal__container">
-				<div class="modal__content modal__content">
-					<div class="guide-modal__left">
-						<a href="/" class="guide-modal__logo"><img src="img/logo-2.webp" alt="" /></a>
-						<span data-da=".guide-modal__right,768,first" class="guide-modal__heading">Получи гайд от бизнес-клуба «Атланты»</span>
-						<span class="guide-modal__txt">Как управлять большими дистанционными командами</span>
-						<div data-da=".guide-modal__form,768,last" class="guide-modal__image">
-							<img src="img/content/guide.webp" alt="" />
+	</div>
+	<div id="request-modal" class="modal">
+		<div class="modal__container">
+			<div class="modal__content request__container">
+				<div class="request__text-content">
+					<h2 class="request__title">ОСТАВЬ ЗАЯВКУ</h2>
+					<p class="request__text">
+						И получи эксклюзивное предложение до 31 декабря.
+					</p>
+				</div>
+				<form action="#" class="request__form" data-form-validate>
+					<p class="request__form-message form-message form-message_message">
+						<span class="form-message__icon"></span>
+						Пожалуйста, проверьте правильность заполнения телефона, он должен
+						соответствовать образцу +7 (999) 999 — 99 — 99
+					</p>
+					<label for="trial-form-block-trial-name" data-field class="request__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input id="trial-form-block-trial-name" placeholder="Ваше имя" data-name-mask class="field__input" name="name" type="text" data-required autocomplete="off" value="" /></span></label>
+					<label for="trial-form-block-trial-family" class="request__field field"><span class="field__label">Ваша фамилия</span><span class="field__input-wrap"><input id="trial-form-block-trial-family" placeholder="Ваша фамилия" data-name-mask autocomplete="off" class="field__input" name="family" type="text" value="" /></span></label>
+					<label for="trial-form-block-trial-phone" data-field class="request__field field"><span class="field__label">Номер телефона</span><span class="field__input-wrap"><input id="trial-form-block-trial-phone" placeholder="Номер телефона" data-required class="field__input" name="phone" type="text" data-tel-mask autocomplete="off" value="" /></span></label>
+					<label for="trial-form-block-trial-email" data-field class="request__field field"><span class="field__label">Введите Ваш Email</span><span class="field__input-wrap"><input id="trial-form-block-trial-email" placeholder="Введите Ваш email" class="field__input" name="email" type="text" autocomplete="off" data-mail-mask data-required value="" /></span></label>
+					<div class="request__select select" id="trial-form-block-trial-status" data-headlessui-state>
+						<label class="select__label">Ваш статус</label><button id="headlessui-listbox-button-37189" type="button" aria-haspopup="listbox" aria-expanded="false" data-headlessui-state class="select__btn">
+							Собственник компании
+						</button>
+						<ul id="headlessui-listbox-options-8" aria-orientation="vertical" role="listbox" tabindex="0" data-headlessui-state="open" class="select__dropdown dropdown">
+							<li id="headlessui-listbox-option-13" role="option" tabindex="-1" aria-selected="true" data-headlessui-state="selected" class="dropdown__item">
+								Собственник компании
+							</li>
+							<li id="headlessui-listbox-option-14" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								Топ-менеджер
+							</li>
+						</ul>
+					</div>
+					<label for="trial-form-block-trial-company-name" class="request__field field"><span class="field__label">Компания</span><span class="field__input-wrap"><input id="trial-form-block-trial-company-name" placeholder="Например, ООО Название" class="field__input" name="company" autocomplete="off" type="text" value="" /></span></label>
+					<div class="request__select select" id="trial-form-block-trial-annual_turnover" data-headlessui-state>
+						<label class="select__label">Оборот компании</label><button id="headlessui-listbox-button-37191" type="button" aria-haspopup="listbox" aria-expanded="false" data-headlessui-state class="select__btn">
+							Собственник компании
+						</button>
+						<ul id="headlessui-listbox-options-10" aria-orientation="vertical" role="listbox" tabindex="0" data-headlessui-state="open" class="select__dropdown dropdown">
+							<li id="headlessui-listbox-option-35" role="option" tabindex="-1" aria-selected="true" data-headlessui-state="selected" class="dropdown__item">
+								до 60 млн.р
+							</li>
+							<li id="headlessui-listbox-option-36" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								от 60 млн.р до 200 млн.р
+							</li>
+							<li id="headlessui-listbox-option-37" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								от 200 млн.р до 800 млн.р
+							</li>
+							<li id="headlessui-listbox-option-38" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								от 800 млн.р до 2 млрд.р
+							</li>
+							<li id="headlessui-listbox-option-39" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								от 2 млрд.р до 5 млрд.р
+							</li>
+							<li id="headlessui-listbox-option-40" role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+								более 5 млрд.р
+							</li>
+						</ul>
+					</div>
+					<label for="trial-form-block-trial-agreement" class="request__checkbox checkbox" data-field><input id="trial-form-block-trial-agreement" data-required class="checkbox__check" name="agreement" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">
+							Нажимая "Отправить", вы даете согласие на обработку
+							<a href="#">персональных данных</a></span></label>
+					<button class="request__btn btn">Отправить заявку</button>
+				</form>
+			</div>
+		</div>
+		<button class="modal__close-btn ic-btn">
+			<svg>
+				<use href="#cross-svg"></use>
+			</svg>
+		</button>
+	</div>
+	<div id="booking-modal" class="modal">
+		<div class="modal__container">
+			<div class="modal__content request__container">
+				<div class="request__text-content">
+					<h2 class="request__title">Запись на мероприятие</h2>
+					<p class="request__text _desktop-only">
+						Заполните форму, мы свяжемся с вами в течение одного рабочего дня
+					</p>
+				</div>
+				<div class="request__form-wrap">
+					<p class="request__text">
+						Найдите новых друзей, партнеров, менторов или инвесторов с близкими
+						ценностями для достижения бизнес и личных целей
+					</p>
+					<form action="#" class="request__form" data-form-validate>
+						<label data-field class="request__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input placeholder="Ваше имя" data-required class="field__input" name="name" type="text" value="" /></span></label>
+						<label class="request__field field"><span class="field__label">Ваша фамилия</span><span class="field__input-wrap"><input placeholder="Ваша фамилия" data-name-mask class="field__input" name="family" type="text" value="" /></span></label>
+						<label data-field class="request__field field"><span class="field__label">Номер телефона</span><span class="field__input-wrap"><input placeholder="Номер телефона" data-required class="field__input" name="phone" type="text" data-tel-mask value="" /></span></label>
+						<label data-field class="request__field field"><span class="field__label">Введите Ваш Email</span><span class="field__input-wrap"><input placeholder="Введите Ваш email" data-required class="field__input" name="email" data-mail-mask="" value="" /></span></label>
+						<div class="request__select select" data-headlessui-state>
+							<label class="select__label">Ваш статус</label><button type="button" aria-haspopup="listbox" aria-expanded="false" class="select__btn">
+								Собственник компании
+							</button>
+							<ul aria-orientation="vertical" role="listbox" tabindex="0" data-headlessui-state="open" class="select__dropdown dropdown">
+								<li role="option" tabindex="-1" aria-selected="true" data-headlessui-state="selected" class="dropdown__item">
+									Собственник компании
+								</li>
+								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+									Топ-менеджер
+								</li>
+							</ul>
+						</div>
+						<label class="request__field field"><span class="field__label">Компания</span><span class="field__input-wrap"><input placeholder="Например, ООО Название" class="field__input" name="company" type="text" value="" /></span></label>
+						<div class="request__select select" data-headlessui-state>
+							<label class="select__label">Оборот компании</label><button type="button" aria-haspopup="listbox" aria-expanded="false" data-headlessui-state class="select__btn">
+								Собственник компании
+							</button>
+							<ul aria-orientation="vertical" role="listbox" tabindex="0" data-headlessui-state="open" class="select__dropdown dropdown">
+								<li role="option" tabindex="-1" aria-selected="true" data-headlessui-state="selected" class="dropdown__item">
+									до 60 млн.р
+								</li>
+								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+									от 60 млн.р до 200 млн.р
+								</li>
+								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+									от 200 млн.р до 800 млн.р
+								</li>
+								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+									от 800 млн.р до 2 млрд.р
+								</li>
+								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+									от 2 млрд.р до 5 млрд.р
+								</li>
+								<li role="option" tabindex="-1" aria-selected="false" data-headlessui-state="" class="dropdown__item">
+									более 5 млрд.р
+								</li>
+							</ul>
+						</div>
+						<label data-field class="request__checkbox checkbox"><input data-required class="checkbox__check" name="agreement" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">
+								Нажимая "Отправить", вы даете согласие на обработку
+								<a href="#">персональных данных</a></span></label>
+						<button class="request__btn btn">Отправить заявку</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<button class="modal__close-btn ic-btn">
+			<svg>
+				<use href="#cross-svg"></use>
+			</svg>
+		</button>
+	</div>
+	<div id="banner-modal" class="modal banner-modal _has-bg">
+		<div class="modal__container">
+			<div class="modal__content">
+				<div class="banner-modal__wrapper">
+					<div class="banner-modal__container" style="--max-width: 780px">
+						<div>
+							<div class="banner-modal__content modal__content">
+								<div class="banner-modal__detail-banner detail-banner-banner-modal" style="background-color: rgb(38, 38, 38)">
+									<div class="detail-banner-banner-modal__left">
+										<h3 class="detail-banner-banner-modal__subtitle" style="color: rgb(255, 255, 255)">
+											Получи гайд от бизнес-клуба «Атланты»
+										</h3>
+										<h2 class="detail-banner-banner-modal__title" style="color: rgb(255, 255, 255)">
+											Как построить эффективное партнёрство в бизнесе
+										</h2>
+										<button data-modal="special-modal" type="button" class="detail-banner-banner-modal__btn btn">
+											Получить гайд
+										</button>
+									</div>
+									<div class="detail-banner-banner-modal__image-wrap">
+										<img src="img/content/2024-12-11_172425.webp" alt="" />
+									</div>
+								</div>
+								<button class="modal__close-btn ic-btn">
+									<svg>
+										<use href="#cross-svg"></use>
+									</svg>
+								</button>
+								<!---->
+							</div>
 						</div>
 					</div>
-					<div class="guide-modal__right">
-						<span class="guide-modal__subtitle">ЗАПОЛНИТЕ ФОРМУ</span>
-						<form action="#" data-validate class="guide-modal__form">
-							<label data-field class="guide-modal__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input placeholder="Ваше имя" data-required data-name-mask class="field__input" name="name" type="text" value="" /></span></label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="banner-modal-success" class="modal banner-modal _has-bg">
+		<div class="modal__container">
+			<div class="modal__content">
+				<div class="banner-modal__wrapper">
+					<div class="banner-modal__container" style="--max-width: 780px">
+						<div>
+							<div class="banner-modal__content modal__content">
+								<div class="modal-content">
+									<h2 class="modal-content__text">Гайд уже у Вас на почте</h2>
+								</div>
 
-							<label data-field class="guide-modal__field field"><span class="field__label">Номер телефона</span><span class="field__input-wrap"><input placeholder="Номер телефона" data-required class="field__input" name="phone" type="text" data-tel-mask value="" /></span></label>
-							<label data-field class="guide-modal__field field"><span class="field__label">Введите Ваш Email</span><span class="field__input-wrap"><input placeholder="Введите Ваш email" data-required class="field__input" name="email" data-mail-mask="" value="" /></span></label>
-
-							<label data-field class="guide-modal__checkbox checkbox"><input data-required class="checkbox__check" name="agreement" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">
-									Нажимая "Отправить", вы даете согласие на обработку
-									<a href="#">персональных данных</a></span></label>
-							<button type="submit" class="guide-modal__btn btn">
-								получить гайд
-							</button>
-						</form>
+								<button class="modal__close-btn ic-btn">
+									<svg>
+										<use href="#cross-svg"></use>
+									</svg>
+								</button>
+								<!---->
+							</div>
+						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+	<div id="special-modal" class="modal">
+		<div class="modal__container">
+			<div class="modal__content request__container">
+				<div class="request__text-content">
+					<h2 class="request__title">
+						Заполните форму для получения специального предложения
+					</h2>
+				</div>
+				<div class="request__form-wrap">
+					<form action="#" class="request__form" data-form-validate>
+						<p class="request__form-message form-message form-message_message">
+							<span class="form-message__icon"></span>
+							Пожалуйста, проверьте правильность заполнения телефона, он должен
+							соответствовать образцу +7 (999) 999 — 99 — 99
+						</p>
+						<label data-field class="request__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input placeholder="Ваше имя" data-required data-name-mask class="field__input" name="name" type="text" value="" /></span></label>
+
+						<label data-field class="request__field field"><span class="field__label">Номер телефона</span><span class="field__input-wrap"><input placeholder="Номер телефона" data-required class="field__input" name="phone" type="text" data-tel-mask value="" /></span></label>
+						<label data-field class="request__field field"><span class="field__label">Введите Ваш Email</span><span class="field__input-wrap"><input placeholder="Введите Ваш email" data-required class="field__input" name="email" data-mail-mask="" value="" /></span></label>
+
+						<label data-field class="request__checkbox checkbox"><input data-required class="checkbox__check" name="agreement" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">
+								Нажимая "Отправить", вы даете согласие на обработку
+								<a href="#">персональных данных</a></span></label>
+						<button class="request__btn btn">Отправить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<button class="modal__close-btn ic-btn">
+			<svg>
+				<use href="#cross-svg"></use>
+			</svg>
+		</button>
+	</div>
+	<div class="form-message form-message_success">
+		<span class="form-message__icon"></span>
+		заявка принята. скоро с вами свяжется команда
+	</div>
+	<div class="form-message form-message_alert">
+		<span class="form-message__icon"></span>
+		ошибка
+	</div>
+	<div id="newsletter-modal" class="modal _has-bg">
+		<div style="max-width: 1160px" class="modal__container">
+			<div class="modal__content modal__content">
+				<form class="subscribe-form__inner" data-form-validate="">
+					<div>
+						<h2 class="subscribe-form__title">
+							Подпишитесь на новостную рассылку<br />
+							с инсайтами от масштабных предпринимателей
+						</h2>
+
+						<p class="subscribe-form__desc">Какие темы интересны?</p>
+						<div class="subscribe-form__list">
+							<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Окружение</span><!----></label>
+							<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Исследования</span><!----></label>
+							<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Рост прибыли</span><!----></label>
+							<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Внедрение инноваций</span><!----></label>
+							<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Масштабирование</span><!----></label>
+							<label class="subscribe-form__checkbox checkbox"><input class="checkbox__check" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">Инсайты предпринимателей</span><!----></label>
+						</div>
+					</div>
+					<div class="subscribe-form__block">
+						<p class="form-message form-message_message">
+							<span class="form-message__icon"></span>
+							Пожалуйста, проверьте правильность написания почты
+						</p>
+						<label data-field="" class="request__field field"><span class="field__label">E-mail</span><span class="field__input-wrap"><input placeholder="Введите ваш email" class="field__input" type="text" data-mail-mask="" data-required="" value="" inputmode="text" /></span></label><button type="submit" class="subscribe-form__btn btn">
+							Подписаться</button><span class="subscribe-form__agreement">Нажимая на кнопку, вы даете согласие на обработку
+							<a href="#">персональных данных</a></span>
+					</div>
+				</form>
+			</div>
+			<button class="modal__close-btn ic-btn">
+				<svg>
+					<use href="#cross-svg"></use>
+				</svg>
+			</button>
+		</div>
+	</div>
+	<div id="inviting-modal" class="modal inviting-modal _has-bg" data-step="01">
+		<div class="modal__container">
+			<div class="modal__content inviting-modal__container inviting-modal__container_reg">
+				<div class="inviting-modal__upper">
+					<div class="inviting-modal__head">
+						<span class="inviting-modal__subtitle">Получи приглашение в кулуары «Атлантов» </span>
+						<button type="button" class="inviting-modal__close-btn modal__close-btn ic-btn">
+							<svg>
+								<use href="#cross-svg"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="inviting-modal__body">
+						<div class="inviting-modal__content">
+							<div class="inviting-modal__info">
+								<span class="inviting-modal__info-txt">25 февраля 14:00-23:00</span>
+								<span class="inviting-modal__info-txt"> Москва, ЦМТ</span>
+							</div>
+							<span class="inviting-modal__title">ВРЕМЯ  АТЛАНТОВ</span>
+							<p class="inviting-modal__text">
+								Со специальным гостем
+								<span class="inviting-modal__txt-highlight">Виктором Кузнецовым</span>, основателем Всеинструменты.ру
+							</p>
+						</div>
+						<div class="inviting-modal__image-wrap">
+							<img src="img/content/2522.webp" alt="" class="inviting-modal__image" />
+						</div>
+						<button type="button" class="inviting-modal__reg-btn btn btn_lemon">
+							зарегистрироваться
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="modal__content inviting-modal__container inviting-modal__container_main">
+				<div class="inviting-modal__upper">
+					<div class="inviting-modal__head">
+						<span class="inviting-modal__subtitle">Получи приглашение в кулуары «Атлантов» </span>
+						<button type="button" class="inviting-modal__close-btn modal__close-btn ic-btn">
+							<svg>
+								<use href="#cross-svg"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="inviting-modal__body">
+						<div class="inviting-modal__content">
+							<div class="inviting-modal__info">
+								<span class="inviting-modal__info-txt">25 февраля 14:00-23:00</span>
+								<span class="inviting-modal__info-txt"> Москва, ЦМТ</span>
+							</div>
+							<span class="inviting-modal__title">ВРЕМЯ  АТЛАНТОВ</span>
+							<p class="inviting-modal__text">
+								Со специальным гостем
+								<span class="inviting-modal__txt-highlight">Виктором Кузнецовым</span>, основателем Всеинструменты.ру
+							</p>
+						</div>
+						<div class="inviting-modal__image-wrap">
+							<img src="img/content/2522.webp" alt="" class="inviting-modal__image" />
+						</div>
+					</div>
+				</div>
+				<div class="inviting-modal__lower">
+					<div class="inviting-modal__row">
+						<span class="inviting-modal__heading">Чтобы подать заявку на мероприятие, ответьте на несколько
+							вопросов:</span>
+						<div class="inviting-modal__fraction">
+							<span class="inviting-modal__fraction-current"></span>
+							<span class="inviting-modal__fraction-total"></span>
+						</div>
+					</div>
+					<form action="#" class="inviting-modal__form">
+						<div class="inviting-modal__form-body">
+							<div class="inviting-modal__group _is-active">
+								<span class="inviting-modal__group-heading">Какой у вас статус?</span>
+								<div class="inviting-modal__options">
+									<label class="inviting-modal__option chat-option">
+										<input type="radio" name="company-status-opt" class="chat-option__input" />
+										<span class="chat-option__txt">СОБСТВЕННИК КОМПАНИИ</span>
+									</label>
+									<label class="inviting-modal__option chat-option">
+										<input type="radio" name="company-status-opt" class="chat-option__input" />
+										<span class="chat-option__txt">ТОП-МЕНЕДЖЕР</span>
+									</label>
+								</div>
+							</div>
+							<div class="inviting-modal__group">
+								<span class="inviting-modal__group-heading">Какой оборот у вашей компании?</span>
+								<div class="inviting-modal__options">
+									<label class="inviting-modal__option chat-option">
+										<input type="radio" name="chat-annual-turnover-opt" class="chat-option__input" />
+										<span class="chat-option__txt">от 60 млн.р до 200 млн.р</span>
+									</label>
+									<label class="inviting-modal__option chat-option">
+										<input type="radio" name="chat-annual-turnover-opt" class="chat-option__input" />
+										<span class="chat-option__txt">от 200 млн.р до 800 млн.р</span>
+									</label>
+									<label class="inviting-modal__option chat-option">
+										<input type="radio" name="chat-annual-turnover-opt" class="chat-option__input" />
+										<span class="chat-option__txt">от 800 млн.р до 2 млрд.р</span>
+									</label>
+									<label class="inviting-modal__option chat-option">
+										<input type="radio" name="chat-annual-turnover-opt" class="chat-option__input" />
+										<span class="chat-option__txt">от 2 млрд.р до 5 млрд.р</span>
+									</label>
+									<label class="inviting-modal__option chat-option">
+										<input type="radio" name="chat-annual-turnover-opt" class="chat-option__input" />
+										<span class="chat-option__txt">более 5 млрд.р</span>
+									</label>
+								</div>
+							</div>
+							<div class="inviting-modal__group">
+								<span class="inviting-modal__group-heading">Заполните форму:</span>
+								<div class="inviting-modal__fields">
+									<input autocomplete="off" data-name-mask type="text" name="form[]" placeholder="Ваше имя" class="inviting-modal__input" />
+									<input autocomplete="off" data-tel-mask type="text" name="form[]" placeholder="Ваш телефон" class="inviting-modal__input" />
+									<input autocomplete="off" data-mail-mask type="text" name="form[]" placeholder="Ваш e-mail" class="inviting-modal__input" />
+								</div>
+							</div>
+						</div>
+						<div class="inviting-modal__btns">
+							<button type="button" class="inviting-modal__btn inviting-modal__btn_prev link link_lemon">
+								Назад
+							</button>
+							<button type="button" class="inviting-modal__btn inviting-modal__btn_next link link_lemon">
+								ДАЛЕЕ
+							</button>
+							<button type="submit" class="inviting-modal__btn inviting-modal__btn_submit link link_lemon">
+								ОСТАВИТЬ ЗАЯВКУ
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="request-sent-modal" class="modal request-sent-modal _has-bg">
+		<div class="request-sent-modal__container modal__container">
+			<div class="request-sent-modal__content modal__content">
+				<span class="request-sent-modal__heading">Ваша заявка принята!</span>
+				<p class="request-sent-modal__text">
+					Скоро свяжется команда для верификации на мероприятие
+				</p>
 				<button class="modal__close-btn ic-btn">
 					<svg>
 						<use href="#cross-svg"></use>
@@ -762,8 +1159,43 @@
 			</div>
 		</div>
 	</div>
+	<div id="guide-modal" class="modal guide-modal _has-bg">
+		<div class="modal__container">
+			<div class="modal__content modal__content">
+				<div class="guide-modal__left">
+					<a href="/" class="guide-modal__logo"><img src="img/logo-2.webp" alt="" /></a>
+					<span data-da=".guide-modal__right,768,first" class="guide-modal__heading">Получи гайд от бизнес-клуба «Атланты»</span>
+					<span class="guide-modal__txt">Как управлять большими дистанционными командами</span>
+					<div data-da=".guide-modal__form,768,last" class="guide-modal__image">
+						<img src="img/content/guide.webp" alt="" />
+					</div>
+				</div>
+				<div class="guide-modal__right">
+					<span class="guide-modal__subtitle">ЗАПОЛНИТЕ ФОРМУ</span>
+					<form action="#" data-validate class="guide-modal__form">
+						<label data-field class="guide-modal__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input placeholder="Ваше имя" data-required data-name-mask class="field__input" name="name" type="text" value="" /></span></label>
 
+						<label data-field class="guide-modal__field field"><span class="field__label">Номер телефона</span><span class="field__input-wrap"><input placeholder="Номер телефона" data-required class="field__input" name="phone" type="text" data-tel-mask value="" /></span></label>
+						<label data-field class="guide-modal__field field"><span class="field__label">Введите Ваш Email</span><span class="field__input-wrap"><input placeholder="Введите Ваш email" data-required class="field__input" name="email" data-mail-mask="" value="" /></span></label>
+
+						<label data-field class="guide-modal__checkbox checkbox"><input data-required class="checkbox__check" name="agreement" type="checkbox" /><span class="checkbox__input"></span><span class="checkbox__label">
+								Нажимая "Отправить", вы даете согласие на обработку
+								<a href="#">персональных данных</a></span></label>
+						<button type="submit" class="guide-modal__btn btn">
+							получить гайд
+						</button>
+					</form>
+				</div>
+			</div>
+			<button class="modal__close-btn ic-btn">
+				<svg>
+					<use href="#cross-svg"></use>
+				</svg>
+			</button>
+		</div>
+	</div>
 	<script src="js/app.js"></script>
+
 	<svg display="none">
 		<symbol id="tg-circ-svg" viewBox="0 0 52 52">
 			<circle fill="none" cx="26" cy="26" r="25" stroke="#FF0" stroke-width="2" />

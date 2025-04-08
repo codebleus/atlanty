@@ -227,6 +227,37 @@ body::after {
 }
 
 .guide-modal {
+  &:not(.silicone &) {
+    .request__checkbox {
+      margin-bottom: 2rem;
+    }
+    .request__btn {
+      @media (max-width: 48em) {
+        order: 1;
+      }
+    }
+    .guide-modal {
+      @media (max-width: 48em) {
+        &__right {
+          padding: 5rem 2rem;
+        }
+        &__heading {
+          margin-bottom: 4rem;
+
+          font-size: 2.8rem;
+        }
+        &__field {
+          &:not(:last-child) {
+            margin-bottom: 2rem;
+          }
+        }
+        &__image {
+          width: 16.7rem;
+        }
+      }
+    }
+  }
+
   &.modal._has-bg .modal__content {
     padding: 0;
   }
