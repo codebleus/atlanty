@@ -5,6 +5,10 @@
   .swiper-slide {
     height: auto;
 
+    article {
+      height: 100%;
+    }
+
     &:not(._pages-loaded &) {
       width: 100%;
 

@@ -37,7 +37,7 @@
   font: var(--font-heading-h5);
   height: 100%;
   justify-content: end;
-  min-height: 282px;
+  min-height: 360px;
   overflow: hidden;
   position: relative;
   text-decoration: none;
@@ -64,9 +64,11 @@
     min-height: 59rem;
   }
   &:hover {
-    .banner-media-lead__more {
-      opacity: 1;
-      visibility: visible;
+    .card-media-grid__title-content {
+      color: var(--bg-brown);
+    }
+    .banner-media-lead__image {
+      transform: scale(1.05);
     }
   }
 
@@ -103,6 +105,7 @@
     top: 0;
     width: 100%;
     text-align: center;
+    overflow: hidden;
   }
 
   // .banner-media-lead__image
@@ -110,6 +113,7 @@
   &__image {
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease-in-out;
   }
 
   // .banner-media-lead__name
@@ -159,7 +163,7 @@
   // .banner-media-lead__tags
 
   &__tags {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     gap: 1.6rem;
     list-style: none;
@@ -189,15 +193,30 @@
     height: calc(100% + 0.1rem);
     left: 0;
     letter-spacing: 0.098em;
-    opacity: 0;
     padding: 1.3rem 3.4rem;
     position: absolute;
     text-decoration: none;
     text-transform: uppercase;
     top: -0.1rem;
-    transition: all 0.3s ease-out;
-    visibility: hidden;
     width: 100%;
+
+    @media (max-width: 48em) {
+      padding: 1.3rem 2rem;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        span {
+          flex: 0 0 auto;
+        }
+      }
+    }
+
+    span {
+      flex: 1 1 auto;
+
+      transition: flex 0.5s ease-in-out;
+    }
 
     &::after {
       content: '';
@@ -206,6 +225,11 @@
       width: 3.6rem;
 
       background: url(@img/icons/more.svg) center / contain no-repeat;
+
+      @media (max-width: 48em) {
+        height: 3rem;
+        width: 3rem;
+      }
     }
   }
 }
