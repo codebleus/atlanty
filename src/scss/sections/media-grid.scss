@@ -95,9 +95,6 @@
       .card-media-grid__title-content {
         color: var(--bg-brown);
       }
-      &::after {
-        filter: grayscale(0);
-      }
     }
   }
 
@@ -116,8 +113,6 @@
 
     opacity: 0.1;
     filter: grayscale(1);
-
-    transition: filter 0.5s ease-in-out;
 
     @media (max-width: 48em) {
       left: -5.1rem;
