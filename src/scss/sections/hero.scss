@@ -106,6 +106,12 @@
 
     &.container {
       padding-top: var(--hero-carousel-padding-top);
+      @media (min-width: 1600px) {
+        &.container {
+          padding-left: 3rem;
+          padding-right: 3rem;
+        }
+      }
     }
   }
 

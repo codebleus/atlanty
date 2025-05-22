@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/all';
 import { openModal } from './modals';
 import { initTabsSlider } from './tabs-slider';
 import { initReadMore } from './read-more';
+import { removeClasses } from './utils';
 
 if (document.querySelector('.guests'))
   document.querySelector('.guests').style.opacity = 0;
@@ -301,6 +302,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   document.addEventListener('click', function (e) {
+    if (
+      (e.target.closest('.nav-header__item_has-sublist._is-active button') ||
+        !e.target.closest('.nav-header__item_has-sublist button')) &&
+      !e.target.closest('.nav-header__list')
+    ) {
+      removeClasses(
+        gsap.utils.toArray('.nav-header__item_has-sublist'),
+        '_is-active'
+      );
+    } else if (e.target.closest('.nav-header__item_has-sublist button')) {
+      removeClasses(
+        gsap.utils.toArray('.nav-header__item_has-sublist'),
+        '_is-active'
+      );
+      e.target.closest('.nav-header__item').classList.add('_is-active');
+    }
     if (e.target.closest('.search-cases-hero__deny')) {
       e.target.closest('.cases-hero').classList.remove('_show-search');
     }

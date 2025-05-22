@@ -10,13 +10,8 @@ html {
   font-family: var(--font-family-main);
   font-style: normal;
   font-weight: normal;
-  // font-size: 10px;
   font-size: 62.5%;
   -webkit-animation: bugfix infinite 1s;
-
-  @media (max-width: 74.999em) {
-    // font-size: 62.5%;
-  }
 
   &.silicone {
     font-size: 9px;
@@ -25,7 +20,6 @@ html {
     }
 
     @media (max-width: 1200px) {
-      // font-size: 0.5208335vw;
       font-size: 0.8vw;
     }
 
