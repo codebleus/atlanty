@@ -383,6 +383,35 @@
     padding: 4.3rem 0 3.9rem;
   }
 
+  &__list {
+    display: flex;
+    column-gap: 8rem;
+
+    @media (max-width: 767px) {
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      row-gap: 4rem;
+    }
+
+    .middle-footer__list-subtitle {
+      color: var(--primary-brown);
+      @media (any-hover: hover) {
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__list-item,
+  &__sublist {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+
+
+
   // .middle-footer__container
 
   &__container {
@@ -390,7 +419,7 @@
       @media (min-width: 48em) {
         display: grid;
         gap: 3.2rem;
-        grid-template-columns: 1fr 40rem;
+        grid-template-columns: auto auto 40rem;
       }
       @media (min-width: 64em) and (max-width: 75em) {
         padding: 0 10rem;
@@ -398,11 +427,11 @@
       }
       @media (min-width: 75em) {
         gap: 3.2rem;
-        grid-template-columns: 1fr 34.2rem;
+        grid-template-columns: auto auto 34.2rem;
         padding-right: 0;
       }
       @media (min-width: 96em) {
-        grid-template-columns: 1fr 39.2rem;
+        grid-template-columns: auto auto 39.2rem;
         padding-left: 11rem;
       }
     }
@@ -411,15 +440,14 @@
   // .middle-footer__menu
 
   &__menu {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-content: start;
     @media (max-width: 47.999em) {
       margin-bottom: 4rem;
     }
     @media (min-width: 48em) {
-      display: grid;
       gap: 1.408rem 3.6rem;
-      grid-template-columns: 1fr 1fr;
       max-width: 33.6rem;
     }
     @media (min-width: 96em) {
@@ -431,7 +459,7 @@
   &__nav-link {
     @media (any-hover: hover) {
       &:hover {
-        color: var(--primary-brown);
+        opacity: 0.6;
       }
     }
   }
@@ -450,6 +478,7 @@
     font: var(--font-text-xs);
     text-decoration: none;
     text-transform: uppercase;
+    transition: opacity 0.3s ease-in-out;
 
     @media (min-width: 48em) {
       margin-bottom: 0;
@@ -473,6 +502,7 @@
     font: var(--font-text-xs);
     text-underline-offset: 0.3em;
     text-decoration: none;
+    transition: opacity 0.3s ease-in-out;
     @media (min-width: 75em) {
       margin-bottom: 1.392rem;
     }
