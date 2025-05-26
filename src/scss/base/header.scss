@@ -428,6 +428,31 @@
     }
   }
 }
+html:not(.silicone) .header._dark._header-scroll {
+  .header__container .nav-header__txt,
+  .header__container .header__tel-txt,
+  .header__container .ic-btn {
+    color: #ede7e2;
+
+    svg {
+      color: #ede7e2;
+    }
+  }
+  .header__container .nav-header__list .nav-header__txt {
+    color: var(--bg-super-black);
+  }
+  .nav-header__txt::before {
+    content: url('data:image/svg+xml,<svg viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_413_9)"><path d="M6.22183 13.2218L6.10197 0.898029M12.4437 7L0.119854 6.88015" stroke="white" stroke-width="0.5"/></g><defs><clipPath id="clip0_413_9"><rect width="8.79899" height="8.79899" fill="white" transform="translate(0 7) rotate(-45)"/></clipPath></defs></svg>');
+  }
+  .header__logo {
+    &:not(._dark-mode) {
+      display: inline-block;
+    }
+    &._dark-mode {
+      display: none;
+    }
+  }
+}
 html:not(.silicone) {
   .header {
     position: fixed;
@@ -455,15 +480,21 @@ html:not(.silicone) {
           color: var(--bg-super-black);
         }
       }
-      .header__link_marked,
-      .header__tel-txt {
+      .nav-header__txt::before {
+        content: url('data:image/svg+xml,<svg viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_413_9)"><path d="M6.22183 13.2218L6.10197 0.898029M12.4437 7L0.119854 6.88015" stroke="%23151515" stroke-width="0.5"/></g><defs><clipPath id="clip0_413_9"><rect width="8.79899" height="8.79899" fill="white" transform="translate(0 7) rotate(-45)"/></clipPath></defs></svg>');
+      }
+      .header__container .nav-header__txt,
+      .header__container .header__tel-txt {
         color: var(--bg-super-black);
       }
       .header {
-        &__nav {
+        .header__container .header__nav {
           color: var(--primary-brown);
         }
         &__logo {
+          &:not(._dark-mode) {
+            display: none;
+          }
           svg path {
             fill: var(--logo-mobile-color);
           }
@@ -1095,7 +1126,13 @@ html:not(.silicone)._show-menu .menu-header,
     }
   }
 }
-
+.header {
+  &:not(._dark) {
+    .header__logo._dark-mode {
+      display: none;
+    }
+  }
+}
 .menu-header {
   background-color: var(--bg-super-black);
   height: 100vh;
