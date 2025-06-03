@@ -369,7 +369,8 @@ window.addEventListener('load', function () {
     document.querySelector('.guests').style.opacity = 1;
   if (
     document.querySelectorAll('.guests__tab').length &&
-    document.querySelectorAll('.guests__tab').length === 1
+    document.querySelectorAll('.guests__tab').length === 1 &&
+    !document.querySelector('.slide-guests__btn')
   ) {
     document.querySelector('.guests').classList.add('_shrink');
 
