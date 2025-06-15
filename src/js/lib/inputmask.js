@@ -14,7 +14,7 @@ const initInputmask = () => {
   const telInputCollection = document.querySelectorAll('[data-tel-mask]');
   const mailInputCollection = document.querySelectorAll('[data-mail-mask]');
   const nameInputCollection = document.querySelectorAll('[data-name-mask]');
-
+  console.log(telInputCollection)
   if (telInputCollection.length) {
     telInputCollection.forEach(input => {
       Inputmask({
@@ -83,4 +83,4 @@ const initInputmask = () => {
     }).mask(document.querySelector('[data-input="company-name"]'));
   }
 };
-initInputmask();
+window.addEventListener('load', initInputmask)
