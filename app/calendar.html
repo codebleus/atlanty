@@ -94,9 +94,9 @@
 		</header>
 
 		<main class="main">
-			<div class="container">
-				<div class="calendar-hero__crumbs">
-					<ol class="calendar-hero__bread-items bread-items">
+			<section class="events-hero">
+				<div class="events-hero__container container">
+					<ol class="events-hero__bread-items bread-items">
 						<li class="bread-items__item">
 							<a href="#" class="bread-items__inner">Главная</a>
 						</li>
@@ -104,54 +104,152 @@
 							<span class="bread-items__inner">Мероприятия</span>
 						</li>
 					</ol>
-				</div>
-			</div>
-			<div class="calendar-hero container">
-				<div class="calendar-hero__carousel">
-					<div class="calendar-hero__swiper swiper">
-						<div class="calendar-hero__swiper-wrapper swiper-wrapper">
-							<div class="calendar-hero__slide slide-calendar-hero swiper-slide">
-								<div class="slide-calendar-hero__content">
-									<div class="slide-calendar-hero__image-wrap">
-										<img src="img/content/image_2677_6ZKBJ8a.webp" class="slide-calendar-hero__image _desktop-only" alt="" />
-										<img src="img/content/2024-12-11_010457.webp" class="slide-calendar-hero__image _mobile-only" alt="" />
-									</div>
-									<div class="slide-calendar-hero__info">
-										<div class="slide-calendar-hero__date">
-											<span>24</span><span>декабря</span>
-										</div>
-										<div class="slide-calendar-hero__location location-slide-calendar-hero">
-											<div class="location-slide-calendar-hero__icon">
-												<svg>
-													<use href="#pin-svg"></use>
-												</svg>
-											</div>
-											<span class="location-slide-calendar-hero__label">Москва, Дом Атлантов + ZOOM</span>
-										</div>
-										<h3 class="slide-calendar-hero__title">
-											"МАРКЕТИНГОВАЯ СТРАТЕГИЯ: ЖИТЬ ИЗ БУДУЩЕГО В ПРОШЛОЕ. КАК И ДЛЯ ЧЕГО?"
-										</h3>
-										<a href="#" class="slide-calendar-hero__btn btn">подробнее</a>
-									</div>
-									<!---->
-								</div>
-							</div>
-							<!----><!----><!---->
-						</div>
-						<!---->
+					<h1 class="events-hero__heading">Бизнес-мероприятия в Москве</h1>
+					<div class="events-hero__text-wrap">
+						<p class="events-hero__text">
+							Бизнес-встречи и конференции для предпринимателей в 2025 году
+						</p>
 					</div>
-					<!-- <div class="calendar-hero__navigation">
-    <button
-      class="calendar-hero__swiper-btn calendar-hero__swiper-btn_prev"></button>
-    <div
-      class="calendar-hero__pagination pagination">
-    </div>
-    <button
-      class="calendar-hero__swiper-btn calendar-hero__swiper-btn_next"></button>
-  </div> -->
+					<button data-anchor="events" type="button" class="events-hero__btn btn btn_brown">
+						Смотреть календарь мероприятий
+					</button>
+				</div>
+			</section>
+			<section class="values">
+				<div class="values__container container">
+					<div class="values__inner">
+						<h2 class="values__heading">
+							Бизнес-клуб «Атланты» — закрытое сообщество для предпринимателей и
+							топ-менеджеров в Москве, Санкт-Петербурге и Дубае.
+						</h2>
+						<ul class="values__list">
+							<li class="values__item item-values">
+								<h3 class="item-values__heading">120+ Мероприятий в месяц</h3>
+								<div class="item-values__text-wrap">
+									<p class="item-values__text">
+										Насыщенная программа деловых событий: мастер-классы,
+										стратегические сессии, встречи с экспертами и закрытые клубные
+										форматы. Каждый участник может подобрать события под свои цели.
+									</p>
+								</div>
+							</li>
+							<li class="values__item item-values">
+								<h3 class="item-values__heading">1500+ владельцев бизнеса</h3>
+								<div class="item-values__text-wrap">
+									<p class="item-values__text">
+										Бизнес-клуб «Атланты» - это сообщество единомышленников с
+										амбициями, опытом и реальными кейсами.
+									</p>
+								</div>
+							</li>
+							<li class="values__item item-values">
+								<h3 class="item-values__heading">26 различных отраслей</h3>
+								<div class="item-values__text-wrap">
+									<p class="item-values__text">
+										От ИТ и логистики до медицины и fashion — участники клуба
+										представляют разнообразные направления бизнеса, что усиливает
+										эффект обмена опытом и масштабирует нетворкинг.
+									</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<div class="calendar-hero calendar-hero_events">
+				<div class="calendar-hero__container container">
+					<div class="slide-calendar-hero__date">
+						<span>27</span><span>июня</span>
+					</div>
+					<div class="slide-calendar-hero__location location-slide-calendar-hero">
+						<div class="location-slide-calendar-hero__icon">
+							<svg>
+								<use href="#pin-svg"></use>
+							</svg>
+						</div>
+						<span class="location-slide-calendar-hero__label">санкт-петербург</span>
+					</div>
+					<h3 class="slide-calendar-hero__title">
+						АТЛАНТЫ КЭМП: СЧАСТЬЕ В ПРОСТОМ
+					</h3>
+					<a href="#" class="slide-calendar-hero__btn btn">подробнее</a>
+				</div>
+				<div class="calendar-hero__bg">
+					<img src="img/content/14.webp" alt="" class="calendar-hero__bg-image" />
 				</div>
 			</div>
-			<div class="events section">
+			<section class="events-info">
+				<div class="events-info__container container">
+					<h2 class="events-info__heading">
+						Посещать наши бизнес-мероприятия в Москве могут не только резиденты: мы
+						регулярно проводим различные
+						<span class="events-info__heading-highlight">бизнес-конференции</span>,
+						<span class="events-info__heading-highlight">встречи</span> и другие
+						<span class="events-info__heading-highlight">флагманские события</span>.
+					</h2>
+					<div class="events-info__group">
+						<p class="events-info__text">
+							Мы проводим мастер-классы, мастермайнды, встречи по темам:
+						</p>
+						<ul class="events-info__list">
+							<li class="events-info__item item-events-info">
+								<span class="item-events-info__txt">Развитие сотрудников</span>
+							</li>
+							<li class="events-info__item item-events-info">
+								<span class="item-events-info__txt">Инвестиции</span>
+							</li>
+							<li class="events-info__item item-events-info">
+								<span class="item-events-info__txt">Продвижение</span>
+							</li>
+							<li class="events-info__item item-events-info">
+								<span class="item-events-info__txt">Управление компанией</span>
+							</li>
+							<li class="events-info__item item-events-info">
+								<span class="item-events-info__txt">Новый продукт</span>
+							</li>
+							<li class="events-info__item item-events-info">
+								<span class="item-events-info__txt">и многое другое</span>
+							</li>
+						</ul>
+					</div>
+					<div class="events-info__slider swiper">
+						<ul class="events-info__wrapper swiper-wrapper">
+							<li class="events-info__slide slide-events-info swiper-slide">
+								<div class="slide-events-info__image-wrap">
+									<img src="img/content/15.webp" alt="" class="slide-events-info__image" />
+								</div>
+							</li>
+							<li class="events-info__slide slide-events-info swiper-slide">
+								<div class="slide-events-info__image-wrap">
+									<img src="img/content/16.webp" alt="" class="slide-events-info__image" />
+								</div>
+							</li>
+							<li class="events-info__slide slide-events-info swiper-slide">
+								<div class="slide-events-info__image-wrap">
+									<img src="img/content/15.webp" alt="" class="slide-events-info__image" />
+								</div>
+							</li>
+							<li class="events-info__slide slide-events-info swiper-slide">
+								<div class="slide-events-info__image-wrap">
+									<img src="img/content/16.webp" alt="" class="slide-events-info__image" />
+								</div>
+							</li>
+							<li class="events-info__slide slide-events-info swiper-slide">
+								<div class="slide-events-info__image-wrap">
+									<img src="img/content/15.webp" alt="" class="slide-events-info__image" />
+								</div>
+							</li>
+							<li class="events-info__slide slide-events-info swiper-slide">
+								<div class="slide-events-info__image-wrap">
+									<img src="img/content/16.webp" alt="" class="slide-events-info__image" />
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<div id="events" class="events section">
 				<div class="events__container container">
 					<h2 class="events__title">Ближайшие события</h2>
 					<div class="events__filters-wrap">

@@ -1,0 +1,162 @@
+.values {
+  // .values__container
+
+  &__container {
+    &.container {
+      padding-top: 18rem;
+      padding-bottom: 18rem;
+
+      @media (min-width: 1700px) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      @media (max-width: 48em) {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 12.5rem;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      right: -5rem;
+
+      width: 2rem;
+      height: 100%;
+
+      background-color: var(--bg-beige);
+    }
+    @media (max-width: 48em) {
+      row-gap: 7.1rem;
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  // .values__heading
+
+  &__heading {
+    max-width: 105.1rem;
+
+    font-family: 'Circe Contrast';
+    font-size: 4rem;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #262626;
+
+    @media (max-width: 48em) {
+      max-width: none;
+
+      font-size: 2.7rem;
+    }
+  }
+
+  // .values__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    column-gap: 9rem;
+    row-gap: 5rem;
+
+    @media (max-width: 48em) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  // .values__item
+
+  &__item {
+  }
+}
+
+.item-values {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.4rem;
+
+  @media (max-width: 48em) {
+    row-gap: 2.1rem;
+  }
+
+  @media (min-width: 47.01em) {
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      right: -4.5rem;
+
+      width: 1px;
+      height: 100%;
+
+      background-color: var(--bg-brown);
+
+      opacity: 0.45;
+    }
+  }
+
+  // .item-values__heading
+
+  &__heading {
+    margin-bottom: auto;
+
+    display: block;
+    flex: 0 1 auto;
+    min-height: 7rem;
+    border-bottom: 1.5px solid var(--bg-brown);
+
+    font-family: 'FuturaBookC';
+    font-size: 2.4rem;
+    line-height: 113%;
+    text-transform: uppercase;
+    color: #262626;
+
+    @media (max-width: 48em) {
+      padding-bottom: 1.1rem;
+
+      min-height: auto;
+
+      font-size: 1.7rem;
+    }
+  }
+
+  // .item-values__text-wrap
+
+  &__text-wrap {
+    margin-bottom: auto;
+
+    flex: 1 1 auto;
+  }
+
+  // .item-values__text
+
+  &__text {
+    max-width: 47.1rem;
+
+    font-size: 2rem;
+    line-height: 119%;
+    color: #262626;
+
+    @media (max-width: 48em) {
+      max-width: none;
+
+      font-size: 1.6rem;
+    }
+  }
+}

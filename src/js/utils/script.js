@@ -1,9 +1,21 @@
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
 import { openModal } from './modals';
 import { initTabsSlider } from './tabs-slider';
 import { initReadMore } from './read-more';
 import { removeClasses } from './utils';
+
+gsap.registerPlugin(ScrollToPlugin);
+
+if (document.querySelector('[data-anchor]')) {
+  for (let i = 0; i < document.querySelectorAll('[data-anchor]').length; i++) {
+    const element = document.querySelectorAll('[data-anchor]')[i];
+
+    element.addEventListener('click', function () {
+      gsap.to(window, { duration: 2, scrollTo: `#${element.dataset.anchor}` });
+    });
+  }
+}
 
 if (document.querySelector('.guests'))
   document.querySelector('.guests').style.opacity = 0;
@@ -173,7 +185,11 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  if (document.querySelector('.project, .calendar-hero, .common-page')) {
+  if (
+    document.querySelector(
+      '.project, .calendar-hero, .common-page, .events-hero'
+    )
+  ) {
     document.querySelector('.header').classList.add('_dark');
 
     if (document.querySelector('.header [style="color: #ffff00;"]')) {

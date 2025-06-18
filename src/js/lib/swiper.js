@@ -238,6 +238,26 @@ window.addEventListener('load', function () {
       freeMode: true,
     });
   }
+  if (document.querySelector('.events-info__slider')) {
+    new Swiper('.events-info__slider', {
+      modules: [Autoplay],
+      speed: 6000,
+      spaceBetween: 13,
+      loop: true,
+      slidesPerView: 'auto',
+      allowTouchMove: false,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      autoplay: {
+        delay: 0,
+      },
+      breakpoints: {
+        768: {
+          spaceBetween: 25,
+        },
+      },
+    });
+  }
   if (document.querySelector('.products__slider')) {
     new Swiper('.products__slider', {
       modules: [Autoplay],

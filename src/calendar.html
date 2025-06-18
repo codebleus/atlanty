@@ -5,7 +5,36 @@
     <div class="wrapper">
       @@include('html/_header.htm',{})
       <main class="main">
-        @@include('html/calendar-hero.htm',{}) @@include('html/events.htm',{})
+        @@include('html/events-hero.htm',{}) @@include('html/values.htm',{})
+        <div class="calendar-hero calendar-hero_events">
+          <div class="calendar-hero__container container">
+            <div class="slide-calendar-hero__date">
+              <span>27</span><span>июня</span>
+            </div>
+            <div
+              class="slide-calendar-hero__location location-slide-calendar-hero">
+              <div class="location-slide-calendar-hero__icon">
+                <svg>
+                  <use href="#pin-svg"></use>
+                </svg>
+              </div>
+              <span class="location-slide-calendar-hero__label"
+                >санкт-петербург</span
+              >
+            </div>
+            <h3 class="slide-calendar-hero__title">
+              АТЛАНТЫ КЭМП: СЧАСТЬЕ В ПРОСТОМ
+            </h3>
+            <a href="#" class="slide-calendar-hero__btn btn">подробнее</a>
+          </div>
+          <div class="calendar-hero__bg">
+            <img
+              src="@img/content/14.webp"
+              alt=""
+              class="calendar-hero__bg-image" />
+          </div>
+        </div>
+        @@include('html/events-info.htm',{}) @@include('html/events.htm',{})
         <div class="events events_past section">
           <div class="events__container container">
             <h2 class="events__title">Прошедшие события</h2>
