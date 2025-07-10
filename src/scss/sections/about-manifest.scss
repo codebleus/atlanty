@@ -1,0 +1,122 @@
+.about-manifest {
+  position: relative;
+
+  overflow: hidden;
+
+  color: var(--bg-white);
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: url(@img/content/ilgmyzin-xyWs4zOs-WE-unsplash.webp) center /
+      cover no-repeat;
+  }
+
+  // .about-manifest__container
+
+  &__container {
+    &.container {
+      position: relative;
+      z-index: 2;
+
+      padding: 0;
+      padding-top: 13.9rem;
+      padding-bottom: 10.2rem;
+
+      display: grid;
+      grid-template-columns: 1fr 63.4rem;
+      column-gap: 3rem;
+      max-width: 123.2rem;
+    }
+  }
+
+  // .about-manifest__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/3;
+  }
+
+  // .about-manifest__heading
+
+  &__heading {
+    margin-bottom: 2rem;
+
+    color: var(--primary-lemon);
+  }
+
+  // .about-manifest__subtitle
+
+  &__subtitle {
+    margin-bottom: 5.2rem;
+
+    max-width: 56rem;
+  }
+
+  // .about-manifest__quote
+
+  &__quote {
+    margin-bottom: 6.1rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 3.4rem;
+    max-width: 51.2rem;
+
+    &.txt {
+      font-weight: 390;
+    }
+
+    &::before {
+      content: url('data:image/svg+xml,<svg viewBox="0 0 53 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M47.5968 13.0852C46.5442 15.7377 43.2139 18.2122 39.3572 18.2122C34.449 18.2122 29.8916 14.4999 29.8916 9.372C29.8906 4.42104 33.5728 0 39.8835 0C47.4214 0 52.1542 6.71956 52.1542 16.2676C52.1542 26.8773 45.3172 38.3709 33.2219 43.3218L32.1693 41.2003C40.5843 37.1331 48.473 28.292 48.473 18.0362C48.473 15.7377 48.1222 14.323 47.5968 13.0852ZM17.7053 13.0852C16.6527 15.7377 13.3233 18.2122 9.46664 18.2122C4.55741 18.2122 0 14.5009 0 9.37296C0 4.42104 3.68121 0 9.99198 0C17.5308 0 22.2627 6.71956 22.2627 16.2676C22.2627 26.8773 15.4256 38.3709 3.33034 43.3218L2.27871 41.2003C10.6937 37.1331 18.5815 28.292 18.5815 18.0362C18.5815 15.7377 18.2306 14.323 17.7053 13.0852Z" fill="%23FFFF00"/></svg>');
+
+      width: 5.2rem;
+      height: 4.3rem;
+    }
+  }
+
+  // .about-manifest__lower-content
+
+  &__lower-content {
+    position: relative;
+    z-index: 2;
+
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.3rem;
+    max-width: 23.5rem;
+  }
+
+  // .about-manifest__txt
+
+  &__txt {
+    &.txt {
+      font-weight: 390;
+    }
+  }
+
+  // .about-manifest__image-wrap
+
+  &__image-wrap {
+    position: absolute;
+    bottom: -4.1rem;
+    left: -2.2rem;
+
+    width: 65rem;
+  }
+
+  // .about-manifest__image
+
+  &__image {
+  }
+}

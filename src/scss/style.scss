@@ -9,6 +9,8 @@
   --font-heading-h7: 500 var(--font-size-13) / 1.2 var(--font-family-main);
 
   --bg-super-black: #151515;
+  --primary-black: #000000;
+  --primary-brown: #c58b73;
   --bg-black: #262626;
   --primary-lemon: #ff0;
   --primary-brown: #ad8366;
@@ -20,6 +22,7 @@
   --primary-bg-color: #ede7e2;
   --bg-white: #fff;
   --bg-green: #3c4b45;
+  --primary-gray: #505050;
 
   --font-heading-h7: 500 var(--font-size-13) / 1.2 var(--font-family-main);
   --font-heading-h1-large: 400 var(--font-size-116) / 100%
@@ -574,6 +577,7 @@
 
 // --------------------------------------------------------------------------
 
+@import 'common/layout';
 @import 'common/button';
 @import 'common/typo';
 @import 'common/filters';
@@ -611,3 +615,18 @@
 @import 'sections/events-hero';
 @import 'sections/values';
 @import 'sections/events-info';
+
+@import 'sections/about-hero';
+@import 'sections/about-numbers';
+@import 'sections/about-manifest';
+@import 'sections/about-infographics';
+@import 'sections/about-values';
+@import 'sections/about-culture';
+@import 'sections/about-residents';
+@import 'sections/about-speakers';
+@import 'sections/about-events';
+@import 'sections/about-reviews';
+@import 'sections/about-community';
+@import 'sections/about-principles';
+@import 'sections/guest-access';
+@import 'sections/guest-access-request';

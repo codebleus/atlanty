@@ -1,0 +1,83 @@
+.about-principles {
+  background-color: #253846;
+
+  color: var(--bg-white);
+
+  // .about-principles__container
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6.4rem;
+
+    &.container {
+      padding: 0;
+      padding-top: 8rem;
+      padding-bottom: 12.2rem;
+
+      max-width: 111.1rem;
+    }
+  }
+
+  // .about-principles__heading
+
+  &__heading {
+  }
+
+  // .about-principles__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5.6rem;
+  }
+
+  // .about-principles__item
+
+  &__item {
+  }
+}
+
+.item-about-principles {
+  padding-left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #ffffff;
+
+  // .item-about-principles__heading
+
+  &__heading {
+    margin-bottom: 1.2rem;
+
+    max-width: 31.3rem;
+
+    color: var(--primary-lemon);
+
+    &.txt {
+      font-weight: 400;
+    }
+  }
+
+  // .item-about-principles__txt
+
+  &__txt {
+    margin-bottom: auto;
+
+    max-width: 26.4rem;
+
+    &.txt {
+      font-weight: 400;
+    }
+  }
+
+  // .item-about-principles__number
+
+  &__number {
+    margin-top: 3rem;
+
+    &.txt {
+      font-weight: 400;
+    }
+  }
+}

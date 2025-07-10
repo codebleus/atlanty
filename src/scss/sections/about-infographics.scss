@@ -1,0 +1,68 @@
+.about-infographics {
+  background-color: var(--bg-super-black);
+
+  // .about-infographics__container
+
+  &__container {
+    &.container {
+      padding: 0;
+      padding-top: 8rem;
+      padding-bottom: 12rem;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 5.1rem;
+      max-width: 114.8rem;
+    }
+  }
+
+  // .about-infographics__heading
+
+  &__heading {
+    max-width: 76.2rem;
+
+    color: var(--bg-white);
+  }
+
+  // .about-infographics__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: 31.7rem 1fr;
+    column-gap: 13.6rem;
+  }
+
+  // .about-infographics__item
+
+  &__item {
+  }
+}
+
+.item-about-infographics {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.2rem;
+
+  &__image-wrap {
+    width: 100%;
+  }
+
+  &__image {
+    max-height: 31.6rem;
+    object-position: left;
+  }
+
+  // .item-about-infographics__subtitle
+
+  &__subtitle {
+    padding-bottom: 0.2rem;
+
+    border-bottom: 1px solid var(--primary-gray);
+
+    color: var(--primary-brown);
+
+    &.txt {
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.about-values {
+  // .about-values__container
+
+  &__container {
+    &.container {
+      padding: 0;
+      padding-top: 8rem;
+      padding-bottom: 12rem;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 5.8rem;
+      max-width: 117.3rem;
+    }
+  }
+
+  // .about-values__heading
+
+  &__heading {
+  }
+
+  // .about-values__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10.5rem;
+  }
+
+  // .about-values__item
+
+  &__item {
+  }
+}
+
+.item-about-values {
+  display: grid;
+  grid-template-columns: 1fr 51.3rem;
+  column-gap: 8.4rem;
+
+  // .item-about-values__quote
+
+  &__quote {
+    display: flex;
+    column-gap: 3.3rem;
+    max-width: 55.2rem;
+
+    &::before {
+      content: url('data:image/svg+xml,<svg viewBox="0 0 53 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M47.5968 13.0852C46.5442 15.7377 43.2139 18.2122 39.3572 18.2122C34.449 18.2122 29.8916 14.4999 29.8916 9.372C29.8906 4.42104 33.5728 0 39.8835 0C47.4214 0 52.1542 6.71956 52.1542 16.2676C52.1542 26.8773 45.3172 38.3709 33.2219 43.3218L32.1693 41.2003C40.5843 37.1331 48.473 28.292 48.473 18.0362C48.473 15.7377 48.1222 14.323 47.5968 13.0852ZM17.7053 13.0852C16.6527 15.7377 13.3233 18.2122 9.46664 18.2122C4.55741 18.2122 0 14.5009 0 9.37296C0 4.42104 3.68121 0 9.99198 0C17.5308 0 22.2627 6.71956 22.2627 16.2676C22.2627 26.8773 15.4256 38.3709 3.33034 43.3218L2.27871 41.2003C10.6937 37.1331 18.5815 28.292 18.5815 18.0362C18.5815 15.7377 18.2306 14.323 17.7053 13.0852Z" fill="%23C58B73"/></svg>');
+
+      flex: 0 0 5.5rem;
+      width: 5.5rem;
+      height: 4.4rem;
+    }
+  }
+
+  // .item-about-values__highlight
+
+  &__highlight {
+    color: #c58b73;
+  }
+
+  // .item-about-values__content
+
+  &__content {
+  }
+}
+
+.content-item-about-values {
+  padding-left: 2.1rem;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  border-left: 1px solid #c58b73;
+
+  // .content-item-about-values__txt
+
+  &__txt {
+  }
+
+  // .content-item-about-values__group
+
+  &__group {
+    display: flex;
+    column-gap: 1.5rem;
+    align-items: center;
+  }
+
+  // .content-item-about-values__image-wrap
+
+  &__image-wrap {
+    flex: 0 0 5.6rem;
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 50%;
+
+    overflow: hidden;
+  }
+
+  // .content-item-about-values__image
+
+  &__image {
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  // .content-item-about-values__group-content
+
+  &__group-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .content-item-about-values__heading
+
+  &__heading {
+    font-weight: 500;
+  }
+
+  &__group-txt {
+    color: #6a6a6a;
+  }
+}

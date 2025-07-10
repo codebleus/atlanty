@@ -1,0 +1,55 @@
+.about-numbers {
+  &.container {
+    padding: 0;
+    padding-top: 8rem;
+    padding-bottom: 11rem;
+
+    display: grid;
+    grid-template-columns: 1fr 70.5rem;
+    column-gap: 2.8rem;
+    align-content: start;
+    max-width: 116.5rem;
+  }
+
+  // .about-numbers__heading
+
+  &__heading {
+  }
+
+  // .about-numbers__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 5.3rem;
+    row-gap: 3rem;
+  }
+
+  // .about-numbers__item
+
+  &__item {
+  }
+}
+
+.item-about-numbers {
+  padding-left: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  min-height: 11rem;
+  border-left: 1px solid var(--primary-black);
+
+  // .item-about-numbers__heading
+
+  &__heading {
+    margin-top: auto;
+
+    color: var(--primary-brown);
+  }
+
+  // .item-about-numbers__txt
+
+  &__txt {
+  }
+}

@@ -1,0 +1,160 @@
+.about-speakers {
+  background-color: #253846;
+
+  // .about-speakers__container
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5.9rem;
+
+    &.container {
+      padding: 0;
+      padding-top: 9rem;
+      padding-bottom: 12rem;
+
+      max-width: 108.2rem;
+    }
+  }
+
+  // .about-speakers__heading
+
+  &__heading {
+    text-align: center;
+    color: var(--bg-white);
+  }
+
+  // .about-speakers__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 11.8rem;
+    row-gap: 8.1rem;
+  }
+
+  // .about-speakers__item
+
+  &__item {
+  }
+
+  // .about-speakers__note
+
+  &__note {
+  }
+}
+
+.item-about-speakers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  // .item-about-speakers__image-wrap
+
+  &__image-wrap {
+    margin-bottom: 4rem;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background-color: #d5a286;
+  }
+
+  // .item-about-speakers__image
+
+  &__image {
+    width: 28.2rem;
+    height: 28.2rem;
+
+    object-fit: cover;
+  }
+
+  // .item-about-speakers__heading
+
+  &__heading {
+    margin-bottom: 1rem;
+
+    max-width: 26rem;
+    min-height: 6.4rem;
+
+    color: var(--bg-white);
+
+    &.txt {
+      font-weight: 400;
+    }
+  }
+
+  // .item-about-speakers__txt
+
+  &__txt {
+    padding-top: 1rem;
+
+    border-top: 2px solid #c58b73;
+
+    color: var(--bg-white);
+  }
+}
+
+.note-item-about-speakers {
+  // .note-item-about-speakers__inner
+
+  &__inner {
+    padding: 2.6rem 3.8rem;
+
+    display: flex;
+    flex-direction: column;
+    width: 36rem;
+
+    background-color: var(--bg-beige);
+  }
+
+  // .note-item-about-speakers__icon
+
+  &__icon {
+    margin-bottom: 1.9rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 8.3rem;
+    height: 8.3rem;
+
+    background-color: #c58b73;
+
+    svg {
+      width: 5.6rem;
+      height: 5.6rem;
+    }
+  }
+
+  // .note-item-about-speakers__heading
+
+  &__heading {
+    margin-bottom: 1.3rem;
+  }
+
+  // .note-item-about-speakers__highlight
+
+  &__highlight {
+    color: #d5a286;
+  }
+
+  // .note-item-about-speakers__txt
+
+  &__txt {
+    margin-bottom: auto;
+
+    max-width: 27.6rem;
+  }
+
+  // .note-item-about-speakers__btn
+
+  &__btn {
+    margin-top: 3rem;
+
+    font-size: 1.4rem;
+  }
+}

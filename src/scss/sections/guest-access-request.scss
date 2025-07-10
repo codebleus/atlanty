@@ -1,0 +1,87 @@
+.guest-access-request {
+  background-color: #161616;
+
+  .request__form {
+    column-gap: 2rem;
+    row-gap: 3.2rem;
+  }
+
+  .field__label,
+  .select__label {
+    margin-bottom: 1.2rem;
+  }
+
+  .field,
+  .select {
+    --primary-lemon: #c58b73;
+  }
+
+  .field__input,
+  .select__btn {
+    padding-bottom: 0.9rem;
+    padding-top: 0;
+
+    height: auto;
+
+    font-size: 1.6rem;
+  }
+
+  .select__btn::after {
+    background: url(@img/icons/Vector12-w.svg) center / contain no-repeat;
+  }
+
+  .request__btn {
+    width: 100%;
+    height: 5.2rem;
+
+    font-size: 1.4rem;
+  }
+
+  .checkbox__label {
+    font-size: 1.3rem;
+    line-height: 120%;
+  }
+
+  // .guest-access-request__container
+
+  &__container {
+    display: grid;
+    grid-template-columns: 47.9rem 1fr;
+    column-gap: 7.1rem;
+
+    &.container {
+      padding: 0;
+      padding-top: 10.5rem;
+      padding-bottom: 8rem;
+
+      max-width: 116rem;
+    }
+  }
+
+  // .guest-access-request__text
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+
+    color: var(--bg-white);
+  }
+
+  // .guest-access-request__heading
+
+  &__heading {
+  }
+
+  // .guest-access-request__highlight
+
+  &__highlight {
+    color: #c58b73;
+  }
+
+  // .guest-access-request__txt
+
+  &__txt {
+    max-width: 43.3rem;
+  }
+}

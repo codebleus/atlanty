@@ -1,9 +1,9 @@
 .footer {
-  background-color: var(--bg-black);
+  background-color: #161616;
 
   @media (min-width: 48.01em) {
     position: relative;
-    z-index: 50;
+    z-index: 48;
   }
 
   // .footer__top
@@ -290,7 +290,7 @@
     position: relative;
 
     align-items: center;
-    background-color: #ffffff29;
+    background-color: #161616;
     border: none;
     color: #fff;
     cursor: pointer;
@@ -306,7 +306,7 @@
     transition: background 0.4s ease;
 
     &:hover {
-      background: #fff6;
+      background: #202020;
     }
 
     &:first-child {
@@ -324,7 +324,7 @@
     }
 
     @media (min-width: 75em) {
-      background-color: var(--bg-black);
+      background-color: #161616;
       height: 50%;
       line-height: 1;
       padding-bottom: 2.9rem;
@@ -409,8 +409,6 @@
     flex-direction: column;
     row-gap: 1.5rem;
   }
-
-
 
   // .middle-footer__container
 
@@ -523,19 +521,19 @@
   //   transition: fill 0.3s ease;
   // }
 
-  background-color: #262626;
+  background-color: #161616;
   path {
     fill: white;
   }
   .svg-l {
-    fill: #262626;
+    fill: #161616;
   }
 
   @media (any-hover: hover) {
     &:hover {
       background-color: #fff;
       path {
-        fill: #262626;
+        fill: #161616;
       }
       .svg-l {
         fill: #fff;

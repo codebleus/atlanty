@@ -1,0 +1,165 @@
+.about-events {
+  display: flex;
+  flex-direction: column;
+
+  // .about-events__main
+
+  &__main {
+    position: relative;
+
+    .container {
+      position: relative;
+      z-index: 2;
+
+      padding: 0;
+      padding-top: 17.4rem;
+      padding-bottom: 4rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 12.5rem;
+    }
+  }
+
+  // .about-events__container
+
+  &__container {
+    &.container {
+      max-width: 112rem;
+    }
+  }
+
+  // .about-events__heading
+
+  &__heading {
+    max-width: 71rem;
+
+    text-align: center;
+    color: var(--bg-white);
+
+    &.txt {
+      font-weight: 400;
+    }
+  }
+
+  // .about-events__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 11.3rem;
+  }
+
+  // .about-events__item
+
+  &__item {
+    color: var(--bg-white);
+  }
+
+  // .about-events__image-wrap
+
+  &__image-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.8) 72.47%
+      );
+    }
+  }
+
+  // .about-events__image
+
+  &__image {
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  // .about-events__lower
+
+  &__lower {
+    background-color: #202020;
+
+    .container {
+      padding: 0;
+      padding-top: 3.4rem;
+      padding-bottom: 3.4rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 3rem;
+    }
+  }
+
+  // .about-events__lower-txt
+
+  &__lower-txt {
+    max-width: 55.3rem;
+
+    color: var(--bg-white);
+
+    &.txt {
+      font-weight: 400;
+    }
+  }
+
+  // .about-events__btn
+
+  &__btn {
+    min-width: 34rem;
+
+    font-size: 1.4rem;
+  }
+}
+
+.item-about-events {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.3rem;
+
+  // .item-about-events__txt
+
+  &__txt {
+    margin-top: auto;
+
+    &.txt {
+      font-weight: 400;
+    }
+  }
+
+  // .item-about-events__lower
+
+  &__lower {
+    padding-top: 1rem;
+
+    border-top: 1px solid #c58b73;
+  }
+
+  // .item-about-events__number
+
+  &__number {
+    color: #c58b73;
+    font-family: 'Circe Contrast';
+
+    &.txt {
+      font-weight: 400;
+    }
+  }
+}

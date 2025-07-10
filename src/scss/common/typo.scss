@@ -20,3 +20,51 @@
   -webkit-line-clamp: var(--line-clamp, 5);
   -webkit-box-orient: vertical;
 }
+
+.h {
+  font-family: 'Circe Contrast';
+  font-weight: 400;
+  line-height: 110%;
+  text-transform: uppercase;
+
+  &_xl {
+    font-size: 7.5rem;
+  }
+  &_x {
+    font-size: 5rem;
+  }
+  &_m {
+    font-size: 3.2rem;
+  }
+}
+
+.txt {
+  font-size: 1.8rem;
+  line-height: 140%;
+
+  &_l {
+    font-size: 3.2rem;
+    font-weight: 500;
+    line-height: 100%;
+  }
+
+  &_xs {
+    line-height: 120%;
+    font-size: 1.2rem;
+  }
+
+  &_s {
+    font-weight: 450;
+    font-size: 1.6rem;
+  }
+
+  &_m {
+    font-size: 2.2rem;
+    line-height: 120%;
+    font-weight: 410;
+  }
+
+  &_uc {
+    text-transform: uppercase;
+  }
+}
