@@ -176,9 +176,9 @@ window.addEventListener('load', function () {
           type: 'bullets',
           clickable: true,
         },
-        autoplay: {
-          disableOnInteraction: false,
-        },
+        // autoplay: {
+        //   disableOnInteraction: false,
+        // },
         on: {
           afterInit: swiper => {
             const activeIdx = swiper.realIndex;
