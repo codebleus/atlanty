@@ -308,7 +308,9 @@
     &:hover {
       background: #202020;
     }
-
+    @media (max-width: 75em) {
+      background-color: #202020;
+    }
     &:first-child {
       &::after {
         @media (min-width: 75em) {

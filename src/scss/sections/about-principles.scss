@@ -15,7 +15,18 @@
       padding-top: 8rem;
       padding-bottom: 12.2rem;
 
-      max-width: 111.1rem;
+      max-width: 116.1rem;
+
+      @media (max-width: 49em) {
+        padding-top: 6rem;
+        padding-bottom: 8rem;
+
+        row-gap: 4rem;
+      }
+      @media (max-width: 1199px) {
+        padding-left: 1.4rem;
+        padding-right: 1.4rem;
+      }
     }
   }
 
@@ -29,7 +40,13 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5.6rem;
+    gap: 3.9rem;
+
+    @media (max-width: 49em) {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
   }
 
   // .about-principles__item
@@ -44,6 +61,10 @@
   display: flex;
   flex-direction: column;
   border-left: 1px solid #ffffff;
+
+  @media (max-width: 49em) {
+    padding-left: 1rem;
+  }
 
   // .item-about-principles__heading
 
@@ -66,6 +87,10 @@
 
     max-width: 26.4rem;
 
+    @media (max-width: 49em) {
+      min-height: 5.9rem;
+    }
+
     &.txt {
       font-weight: 400;
     }
@@ -78,6 +103,9 @@
 
     &.txt {
       font-weight: 400;
+      @media (max-width: 49em) {
+        font-size: 1.6rem;
+      }
     }
   }
 }

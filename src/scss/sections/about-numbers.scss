@@ -9,6 +9,20 @@
     column-gap: 2.8rem;
     align-content: start;
     max-width: 116.5rem;
+
+    @media (max-width: 49em) {
+      padding-top: 6rem;
+      padding-bottom: 8.2rem;
+    }
+    @media (max-width: 1011px) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 4rem;
+    }
+    @media (max-width: 1199px) {
+      padding-left: 1.4rem;
+      padding-right: 1.4rem;
+    }
   }
 
   // .about-numbers__heading
@@ -23,6 +37,12 @@
     grid-template-columns: repeat(3, auto);
     column-gap: 5.3rem;
     row-gap: 3rem;
+
+    @media (max-width: 49em) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.6rem;
+    }
   }
 
   // .about-numbers__item
@@ -40,12 +60,29 @@
   min-height: 11rem;
   border-left: 1px solid var(--primary-black);
 
+  @media (max-width: 49em) {
+    padding-left: 0;
+    padding-bottom: 1rem;
+    row-gap: 0.6rem;
+    min-height: auto;
+    border-left: none;
+    border-bottom: 1px solid #787878;
+  }
+
   // .item-about-numbers__heading
 
   &__heading {
     margin-top: auto;
 
     color: var(--primary-brown);
+
+    @media (max-width: 49em) {
+      margin-top: 0;
+      &.h {
+        font-size: 4rem;
+        line-height: 110%;
+      }
+    }
   }
 
   // .item-about-numbers__txt

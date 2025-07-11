@@ -7,28 +7,36 @@
 
   &__marquee {
     --pos-x: 4rem;
+    position: absolute;
+    z-index: 2;
+    top: 3rem;
 
-    display: none;
-
-    animation: _marquee_1iq5q_1 20s linear infinite;
+    @media (max-width: 75em) {
+      animation: _marquee_1iq5q_2 20s linear infinite;
+    }
 
     @media (min-width: 75em) {
       display: block;
       bottom: 0;
-      position: absolute;
-      z-index: 2;
-      text-orientation: mixed;
       top: 0;
-      writing-mode: vertical-rl;
-    }
 
-    &:first-child {
-      left: var(--pos-x);
-      scale: -1;
+      text-orientation: mixed;
+
+      writing-mode: vertical-rl;
+      animation: _marquee_1iq5q_1 20s linear infinite;
+
+      &:first-child {
+        left: var(--pos-x);
+        scale: -1;
+      }
     }
 
     &:nth-last-child(2) {
       right: var(--pos-x);
+
+      @media (max-width: 75em) {
+        display: none;
+      }
     }
   }
 
@@ -37,6 +45,10 @@
   &__marquee-wrapper {
     display: flex;
     column-gap: 5.5rem;
+
+    @media (max-width: 49em) {
+      column-gap: 3.6rem;
+    }
   }
 
   // .guest-access__marquee-item
@@ -48,8 +60,8 @@
     text-transform: uppercase;
     color: #9f6f5d;
 
-    &.swiper-slide {
-      width: 24.5rem;
+    @media (max-width: 49em) {
+      font-size: 1.3rem;
     }
   }
 
@@ -68,6 +80,15 @@
 
     text-align: center;
     color: var(--bg-white);
+
+    @media (max-width: 49em) {
+      padding-top: 12.3rem;
+      padding-bottom: 31.5rem;
+    }
+    @media (max-width: 1199px) {
+      padding-left: 1.4rem;
+      padding-right: 1.4rem;
+    }
   }
 
   // .guest-access__subtitle
@@ -90,6 +111,18 @@
       width: 2.6rem;
       height: 2.6rem;
     }
+
+    @media (max-width: 49em) {
+      font-size: 1.2rem;
+      column-gap: 0.9rem;
+      margin-bottom: 0.4rem;
+
+      &::before {
+        flex: 0 0 1.4rem;
+        width: 1.4rem;
+        height: 2rem;
+      }
+    }
   }
 
   // .guest-access__heading
@@ -98,6 +131,12 @@
     margin-bottom: 1rem;
 
     max-width: 63.1rem;
+
+    @media (max-width: 49em) {
+      font-size: 2.7rem;
+      line-height: 125%;
+      margin-bottom: 0.8rem;
+    }
   }
 
   // .guest-access__label
@@ -119,6 +158,12 @@
     color: #161616;
 
     background-color: var(--primary-lemon);
+
+    @media (max-width: 49em) {
+      font-size: 1.4rem;
+      padding: 0 0.3rem;
+      height: 2.2rem;
+    }
   }
 
   // .guest-access__txt
@@ -128,6 +173,11 @@
 
     font-size: 2rem;
     line-height: 135%;
+
+    @media (max-width: 49em) {
+      font-size: 1.4rem;
+      max-width: 28.2rem;
+    }
   }
 
   // .guest-access__image-wrap

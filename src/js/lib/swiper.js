@@ -154,6 +154,55 @@ window.addEventListener('load', function () {
       };
     });
   }
+  if (document.querySelector('.about-reviews__swiper')) {
+    const el = document.querySelector('.about-reviews__fraction');
+    const cur = el.querySelector('.fraction__current');
+    const total = el.querySelector('.fraction__total');
+
+    mm.add('(max-width: 768px)', () => {
+      let swiper = new Swiper('.about-reviews__swiper', {
+        modules: [Navigation, Pagination, Autoplay],
+        speed: 1000,
+        spaceBetween: 20,
+        loop: true,
+        autoHeight: true,
+        navigation: {
+          prevEl: '.about-reviews .controls__btn_prev',
+          nextEl: '.about-reviews .controls__btn_next',
+        },
+        pagination: {
+          el: '.about-reviews__controls .controls__pagination',
+          type: 'bullets',
+          clickable: true,
+        },
+        // autoplay: {
+        //   disableOnInteraction: false,
+        // },
+        on: {
+          afterInit: swiper => {
+            const activeIdx = swiper.realIndex;
+            const length = swiper.slides.length;
+
+            initFraction(cur, activeIdx, total, length);
+          },
+          activeIndexChange: swiper => {
+            const activeIdx = swiper.realIndex;
+            const length = swiper.slides.length;
+
+            initFraction(cur, activeIdx, total, length);
+          },
+        },
+      });
+
+      return () => {
+        try {
+          swiper.destroy();
+        } catch (error) {
+          console.warn(error);
+        }
+      };
+    });
+  }
   if (document.querySelector('.testimonials__slider')) {
     const el = document.querySelector(
       '.testimonials .slider-controls__fraction'

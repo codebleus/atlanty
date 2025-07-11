@@ -631,6 +631,11 @@ html:not(.silicone) {
 
       transition: border-bottom 0.3s ease;
 
+      @media (max-width: 1390px) and (min-width: 1119.02px) {
+        padding: 0 2rem;
+        column-gap: 8rem;
+      }
+
       @media (min-width: 1600px) {
         &.container {
           padding: 0;

@@ -4,11 +4,23 @@
   .request__form {
     column-gap: 2rem;
     row-gap: 3.2rem;
+    @media (max-width: 49em) {
+      padding: 0;
+      row-gap: 1.2rem;
+    }
   }
 
   .field__label,
   .select__label {
     margin-bottom: 1.2rem;
+
+    font-size: 1.6rem;
+
+    @media (max-width: 49em) {
+      margin-bottom: 1rem;
+
+      font-size: 1.4rem;
+    }
   }
 
   .field,
@@ -16,18 +28,34 @@
     --primary-lemon: #c58b73;
   }
 
+  .request__checkbox {
+    @media (min-width: 49.01em) {
+      padding-top: 1rem;
+    }
+  }
+
   .field__input,
   .select__btn {
-    padding-bottom: 0.9rem;
+    padding-bottom: 0.5rem;
     padding-top: 0;
 
     height: auto;
 
     font-size: 1.6rem;
+
+    @media (max-width: 49em) {
+      padding-bottom: 0.7rem;
+      font-size: 1.4rem;
+    }
   }
 
   .select__btn::after {
     background: url(@img/icons/Vector12-w.svg) center / contain no-repeat;
+    @media (max-width: 49em) {
+      height: 1rem;
+      width: 1rem;
+      transform: translateY(-0.5rem);
+    }
   }
 
   .request__btn {
@@ -37,9 +65,22 @@
     font-size: 1.4rem;
   }
 
+  .checkbox {
+    @media (max-width: 49em) {
+      order: 1;
+
+      &__input {
+        transform: scale(0.8);
+      }
+    }
+  }
+
   .checkbox__label {
     font-size: 1.3rem;
     line-height: 120%;
+    @media (max-width: 49em) {
+      font-size: 1rem;
+    }
   }
 
   // .guest-access-request__container
@@ -55,6 +96,19 @@
       padding-bottom: 8rem;
 
       max-width: 116rem;
+      @media (max-width: 966px) and (min-width: 49.01em) {
+        grid-template-columns: 38.9rem 1fr;
+      }
+      @media (max-width: 49em) {
+        padding-top: 8rem;
+
+        display: flex;
+        flex-direction: column;
+      }
+      @media (max-width: 1199px) {
+        padding-left: 1.4rem;
+        padding-right: 1.4rem;
+      }
     }
   }
 
@@ -71,6 +125,15 @@
   // .guest-access-request__heading
 
   &__heading {
+    &.h {
+      letter-spacing: 0.1rem;
+
+      @media (max-width: 49em) {
+        margin-bottom: 9rem;
+        line-height: 122%;
+        letter-spacing: 0.18rem;
+      }
+    }
   }
 
   // .guest-access-request__highlight
@@ -83,5 +146,8 @@
 
   &__txt {
     max-width: 43.3rem;
+    @media (max-width: 49em) {
+      display: none;
+    }
   }
 }
