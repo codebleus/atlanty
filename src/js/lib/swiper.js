@@ -160,9 +160,10 @@ window.addEventListener('load', function () {
     const total = el.querySelector('.fraction__total');
 
     mm.add('(max-width: 768px)', () => {
+      console.log('log');
       let swiper = new Swiper('.about-reviews__swiper', {
         modules: [Navigation, Pagination, Autoplay],
-        speed: 1000,
+        speed: 800,
         spaceBetween: 20,
         loop: true,
         autoHeight: true,
@@ -175,9 +176,9 @@ window.addEventListener('load', function () {
           type: 'bullets',
           clickable: true,
         },
-        // autoplay: {
-        //   disableOnInteraction: false,
-        // },
+        autoplay: {
+          disableOnInteraction: false,
+        },
         on: {
           afterInit: swiper => {
             const activeIdx = swiper.realIndex;
