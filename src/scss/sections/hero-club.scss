@@ -73,6 +73,10 @@
     align-items: center;
     column-gap: 0.8rem;
 
+    &:first-child {
+      margin-top: auto;
+    }
+
     @media (max-width: 48em) {
       margin-bottom: 10.6rem;
     }
