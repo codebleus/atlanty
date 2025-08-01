@@ -1,7 +1,6 @@
-import Inputmask from 'inputmask';
-import { addError, removeError } from '../utils/forms';
+import { addError } from '../utils/forms';
 
-// --------------------------------------------------------------------------
+const loadInputmask = () => import('inputmask');
 
 const handleOnIncomplete = input => {
   input.value = '';
@@ -10,42 +9,48 @@ const handleOnIncomplete = input => {
   }
 };
 
-const initInputmask = () => {
+const initInputmask = async () => {
   const telInputCollection = document.querySelectorAll('[data-tel-mask]');
   const mailInputCollection = document.querySelectorAll('[data-mail-mask]');
   const nameInputCollection = document.querySelectorAll('[data-name-mask]');
-  console.log(telInputCollection)
+  const companyNameInput = document.querySelector('[data-input="company-name"]');
+
+  if (
+    !telInputCollection.length &&
+    !mailInputCollection.length &&
+    !nameInputCollection.length &&
+    !companyNameInput
+  ) {
+    return;
+  }
+
+  const { default: Inputmask } = await loadInputmask();
+
   if (telInputCollection.length) {
     telInputCollection.forEach(input => {
       Inputmask({
         mask: '+7 (999) 999-99-99',
         showMaskOnHover: false,
         jitMasking: true,
-        onincomplete: function () {
-          handleOnIncomplete(input);
-        },
-        oncomplete: function () {
-          // handleOnComplete(input);
-        },
+        onincomplete: () => handleOnIncomplete(input),
       }).mask(input);
     });
   }
+
   if (mailInputCollection.length) {
     mailInputCollection.forEach(input => {
       Inputmask({
-        // mask: '*{3,20}@*{3,20}.*{2,7}',
         showMaskOnHover: false,
         jitMasking: true,
         clearMaskOnLostFocus: true,
         clearIncomplete: true,
         alias: 'email',
-        onincomplete: function () {
-          // handleOnIncomplete(input);
+        onincomplete: () => {
           if (input.closest('.field')) {
             input.closest('.field').classList.add('_incomplete');
           }
         },
-        oncomplete: function () {
+        oncomplete: () => {
           if (input.closest('.field')) {
             input.closest('.field').classList.remove('_incomplete');
           }
@@ -53,34 +58,25 @@ const initInputmask = () => {
       }).mask(input);
     });
   }
+
   if (nameInputCollection.length) {
     nameInputCollection.forEach(input => {
       Inputmask({
         showMaskOnHover: false,
         jitMasking: true,
         regex: '^[а-яА-Яa-zA-Z]*[ ][а-яА-Яa-zA-Z]*$',
-        onincomplete: function () {
-          // handleOnIncomplete(input);
-        },
-        oncomplete: function () {
-          // handleOnComplete(input);
-        },
       }).mask(input);
     });
   }
-  if (document.querySelector('[data-input="company-name"]')) {
+
+  if (companyNameInput) {
     Inputmask({
       showMaskOnHover: false,
       jitMasking: true,
       regex:
         '^[а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*$',
-      onincomplete: function () {
-        // handleOnIncomplete(input);
-      },
-      oncomplete: function () {
-        // handleOnComplete(input);
-      },
-    }).mask(document.querySelector('[data-input="company-name"]'));
+    }).mask(companyNameInput);
   }
 };
-window.addEventListener('load', initInputmask)
+
+window.addEventListener('load', initInputmask);

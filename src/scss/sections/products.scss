@@ -1,6 +1,42 @@
 .products {
   background: var(--bg-brown);
 
+  // .products__marquee
+
+  &__marquee {
+    &.swiper {
+      padding-bottom: 2rem;
+
+      max-width: 3840px;
+
+      @media (min-width: 96em) {
+        padding-bottom: 8rem;
+      }
+
+      @media (min-width: 75em) {
+        padding-bottom: 10rem;
+      }
+    }
+  }
+
+  // .products__marquee-wrapper
+
+  &__marquee-wrapper {
+  }
+
+  // .products__marquee-item
+
+  &__marquee-item {
+    &.swiper-slide {
+      width: 27.5rem;
+      height: 18.3rem;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
   .swiper-slide {
     width: 27.5rem;
     // height: 18rem;

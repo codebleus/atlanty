@@ -1,31 +1,43 @@
 import Swiper from 'swiper';
 import 'swiper/css';
-import {
-  Navigation,
-  Pagination,
-  EffectFade,
-  Autoplay,
-  Controller,
-} from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { remToPx } from '../utils/utils';
-import gsap from 'gsap';
 
-const mm = gsap.matchMedia();
+const mm = {
+  add: (query, callback) => {
+    const mql = window.matchMedia(query);
+    const handler = e => {
+      if (e.matches) callback();
+    };
+    if (mql.matches) callback();
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
+  },
+};
 
 const initFraction = (cur, activeIdx, total, length) => {
-  cur.innerHTML = `
-            ${activeIdx < 10 ? '0' + (activeIdx + 1) : activeIdx}
-          `;
-
-  total.innerHTML = `
-            ${length < 10 ? '0' + length : length}
-          `;
+  cur.innerHTML = `${activeIdx < 9 ? '0' + (activeIdx + 1) : activeIdx + 1}`;
+  total.innerHTML = `${length < 10 ? '0' + length : length}`;
 };
 
 window.addEventListener('load', function () {
+  if (document.querySelector('.products__marquee')) {
+    new Swiper('.products__marquee', {
+      modules: [Autoplay],
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      spaceBetween: remToPx(2),
+      slidesPerView: 'auto',
+      loop: true,
+      speed: 4000,
+    });
+  }
+
   if (document.querySelector('.gallery__slider_main')) {
     mm.add('(min-width: 768px)', () => {
-      let swiper = new Swiper('.gallery__slider_main', {
+      const swiper = new Swiper('.gallery__slider_main', {
         modules: [Navigation, Pagination],
         speed: 500,
         spaceBetween: 4.2,
@@ -48,17 +60,10 @@ window.addEventListener('load', function () {
           },
         },
       });
-
-      return () => {
-        try {
-          swiper.destroy();
-        } catch (error) {
-          console.warn(error);
-        }
-      };
     });
+
     mm.add('(max-width: 768px)', () => {
-      let swiper = new Swiper('.gallery__slider_main', {
+      const swiper = new Swiper('.gallery__slider_main', {
         modules: [Autoplay],
         speed: 7500,
         spaceBetween: 7,
@@ -69,6 +74,7 @@ window.addEventListener('load', function () {
           delay: 0,
         },
       });
+
       new Swiper('.gallery__slider_marquee', {
         modules: [Autoplay],
         speed: 7500,
@@ -81,16 +87,9 @@ window.addEventListener('load', function () {
           reverseDirection: true,
         },
       });
-
-      return () => {
-        try {
-          swiper.destroy();
-        } catch (error) {
-          console.warn(error);
-        }
-      };
     });
   }
+
   if (document.querySelector('.guests__mob-slider')) {
     const el = document.querySelector('.guests .slider-controls__fraction');
     const cur = el.querySelector('.fraction__current');
@@ -112,23 +111,18 @@ window.addEventListener('load', function () {
       },
       on: {
         afterInit: swiper => {
-          const activeIdx = swiper.realIndex;
-          const length = swiper.slides.length;
-
-          initFraction(cur, activeIdx, total, length);
+          initFraction(cur, swiper.realIndex, total, swiper.slides.length);
         },
         activeIndexChange: swiper => {
-          const activeIdx = swiper.realIndex;
-          const length = swiper.slides.length;
-
-          initFraction(cur, activeIdx, total, length);
+          initFraction(cur, swiper.realIndex, total, swiper.slides.length);
         },
       },
     });
   }
+
   if (document.querySelector('.schedule__slider')) {
     mm.add('(max-width: 768px)', () => {
-      let swiper = new Swiper('.schedule__slider', {
+      new Swiper('.schedule__slider', {
         modules: [Navigation, Pagination],
         speed: 500,
         spaceBetween: 20,
@@ -144,24 +138,16 @@ window.addEventListener('load', function () {
           clickable: true,
         },
       });
-
-      return () => {
-        try {
-          swiper.destroy();
-        } catch (error) {
-          console.warn(error);
-        }
-      };
     });
   }
+
   if (document.querySelector('.about-reviews__swiper')) {
     const el = document.querySelector('.about-reviews__fraction');
     const cur = el.querySelector('.fraction__current');
     const total = el.querySelector('.fraction__total');
 
     mm.add('(max-width: 768px)', () => {
-      console.log('log');
-      let swiper = new Swiper('.about-reviews__swiper', {
+      new Swiper('.about-reviews__swiper', {
         modules: [Navigation, Pagination, Autoplay],
         speed: 800,
         spaceBetween: 20,
@@ -176,34 +162,18 @@ window.addEventListener('load', function () {
           type: 'bullets',
           clickable: true,
         },
-        // autoplay: {
-        //   disableOnInteraction: false,
-        // },
         on: {
           afterInit: swiper => {
-            const activeIdx = swiper.realIndex;
-            const length = swiper.slides.length;
-
-            initFraction(cur, activeIdx, total, length);
+            initFraction(cur, swiper.realIndex, total, swiper.slides.length);
           },
           activeIndexChange: swiper => {
-            const activeIdx = swiper.realIndex;
-            const length = swiper.slides.length;
-
-            initFraction(cur, activeIdx, total, length);
+            initFraction(cur, swiper.realIndex, total, swiper.slides.length);
           },
         },
       });
-
-      return () => {
-        try {
-          swiper.destroy();
-        } catch (error) {
-          console.warn(error);
-        }
-      };
     });
   }
+
   if (document.querySelector('.testimonials__slider')) {
     const el = document.querySelector(
       '.testimonials .slider-controls__fraction'
@@ -233,34 +203,17 @@ window.addEventListener('load', function () {
           slidesPerView: 3,
         },
       },
-      afterInit: swiper => {
-        const activeIdx = swiper.realIndex;
-        const length = swiper.slides.length;
-
-        initFraction(cur, activeIdx, total, length);
-      },
-      activeIndexChange: swiper => {
-        const activeIdx = swiper.realIndex;
-        const length = swiper.slides.length;
-
-        initFraction(cur, activeIdx, total, length);
-      },
       on: {
         afterInit: swiper => {
-          const activeIdx = swiper.realIndex;
-          const length = swiper.slides.length;
-
-          initFraction(cur, activeIdx, total, length);
+          initFraction(cur, swiper.realIndex, total, swiper.slides.length);
         },
         activeIndexChange: swiper => {
-          const activeIdx = swiper.realIndex;
-          const length = swiper.slides.length;
-
-          initFraction(cur, activeIdx, total, length);
+          initFraction(cur, swiper.realIndex, total, swiper.slides.length);
         },
       },
     });
   }
+
   if (document.querySelector('.infographics__swiper')) {
     new Swiper('.infographics__swiper', {
       modules: [Navigation, Pagination],
@@ -278,6 +231,7 @@ window.addEventListener('load', function () {
       },
     });
   }
+
   if (document.querySelector('.cases-hero__swiper')) {
     new Swiper('.cases-hero__swiper', {
       modules: [],
@@ -288,6 +242,7 @@ window.addEventListener('load', function () {
       freeMode: true,
     });
   }
+
   if (document.querySelector('.events-info__slider')) {
     new Swiper('.events-info__slider', {
       modules: [Autoplay],
@@ -308,6 +263,7 @@ window.addEventListener('load', function () {
       },
     });
   }
+
   if (document.querySelector('.products__slider')) {
     new Swiper('.products__slider', {
       modules: [Autoplay],
@@ -321,6 +277,7 @@ window.addEventListener('load', function () {
       },
     });
   }
+
   if (
     document.querySelector('.products__carousel-slider') &&
     window.innerWidth <= 1024
@@ -347,6 +304,7 @@ window.addEventListener('load', function () {
       },
     });
   }
+
   if (document.querySelector('.mobapp .swiper') && window.innerWidth <= 1200) {
     new Swiper('.mobapp .swiper', {
       modules: [Pagination],
@@ -360,6 +318,7 @@ window.addEventListener('load', function () {
       },
     });
   }
+
   if (document.querySelectorAll('.carousel .swiper').length) {
     document.querySelectorAll('.carousel .swiper').forEach(section => {
       new Swiper(section, {
@@ -369,11 +328,11 @@ window.addEventListener('load', function () {
         spaceBetween: 36,
         loop: true,
         navigation: {
-          prevEl: section.querySelector(' .controls__btn_prev'),
-          nextEl: section.querySelector(' .controls__btn_next'),
+          prevEl: section.querySelector('.controls__btn_prev'),
+          nextEl: section.querySelector('.controls__btn_next'),
         },
         pagination: {
-          el: section.querySelector(' .controls__pagination'),
+          el: section.querySelector('.controls__pagination'),
           type: 'bullets',
           clickable: true,
           dynamicBullets: true,
@@ -392,24 +351,20 @@ window.addEventListener('load', function () {
         on: {
           beforeInit: swiper => {
             const slides = swiper.el.querySelectorAll('.swiper-slide');
-
-            if (slides.length) {
-              slides.forEach(slide => {
-                if (slide.classList.contains('card-cases-grid_large')) {
-                  slide.remove();
-                }
-              });
-            }
+            slides.forEach(slide => {
+              if (slide.classList.contains('card-cases-grid_large')) {
+                slide.remove();
+              }
+            });
           },
         },
       });
     });
   }
-  if (document.querySelector('.residents__swiper')) {
-    // let swiper;
 
+  if (document.querySelector('.residents__swiper')) {
     mm.add('(max-width: 1278px)', () => {
-      let swiper = new Swiper('.residents__swiper', {
+      new Swiper('.residents__swiper', {
         modules: [Navigation, Pagination],
         speed: 300,
         hashNavigation: {
@@ -434,17 +389,10 @@ window.addEventListener('load', function () {
           },
         },
       });
-
-      return () => {
-        try {
-          swiper.destroy();
-        } catch (error) {
-          console.warn(error);
-        }
-      };
     });
   }
 });
+
 window.addEventListener('resize', function () {
   if (
     document.querySelector('.products__carousel-slider') &&
@@ -472,6 +420,7 @@ window.addEventListener('resize', function () {
       },
     });
   }
+
   if (document.querySelector('.mobapp .swiper') && window.innerWidth <= 1200) {
     new Swiper('.mobapp .swiper', {
       modules: [Pagination],

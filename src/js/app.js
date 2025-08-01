@@ -1,7 +1,6 @@
 import '../scss/style.scss';
 
 import './lib/dd';
-import './lib/video';
 import './lib/swiper';
 import './lib/inputmask';
 import './lib/simplebar';

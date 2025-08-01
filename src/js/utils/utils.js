@@ -14,6 +14,56 @@ export function remToPx(remValue) {
   return Math.round(pxValue) + 'px';
 }
 
+export const scrollToElement = (target, duration = 2000) => {
+  const start = window.pageYOffset;
+  const end = target.getBoundingClientRect().top + start;
+  const distance = end - start;
+  const startTime = performance.now();
+
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+
+  function animateScroll(currentTime) {
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const easedProgress = easeInOutQuad(progress);
+
+    window.scrollTo(0, start + distance * easedProgress);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animateScroll);
+    }
+  }
+
+  requestAnimationFrame(animateScroll);
+};
+
+export const matchMediaHandler = (query, onMatch) => {
+  const mql = window.matchMedia(query);
+  let cleanupFn;
+
+  const handleChange = e => {
+    if (e.matches) {
+      cleanupFn = onMatch();
+    } else if (cleanupFn) {
+      cleanupFn();
+      cleanupFn = null;
+    }
+  };
+
+  mql.addEventListener('change', handleChange);
+
+  if (mql.matches) {
+    cleanupFn = onMatch();
+  }
+
+  return () => {
+    if (cleanupFn) cleanupFn();
+    mql.removeEventListener('change', handleChange);
+  };
+};
+
 // smooth slide
 export const _slideUp = (target, duration = 500, showmore = 0) => {
   if (!target.classList.contains('_slide')) {
