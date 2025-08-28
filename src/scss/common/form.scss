@@ -55,6 +55,7 @@
     width: var(--checkmark-size);
     opacity: 0.0001;
     position: absolute;
+    z-index: 2;
     &[type='checkbox'] {
       opacity: 0;
       top: 0;
