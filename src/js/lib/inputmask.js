@@ -13,7 +13,9 @@ const initInputmask = async () => {
   const telInputCollection = document.querySelectorAll('[data-tel-mask]');
   const mailInputCollection = document.querySelectorAll('[data-mail-mask]');
   const nameInputCollection = document.querySelectorAll('[data-name-mask]');
-  const companyNameInput = document.querySelector('[data-input="company-name"]');
+  const companyNameInput = document.querySelector(
+    '[data-input="company-name"]'
+  );
 
   if (
     !telInputCollection.length &&
@@ -31,7 +33,9 @@ const initInputmask = async () => {
       Inputmask({
         mask: '+7 (999) 999-99-99',
         showMaskOnHover: false,
-        jitMasking: true,
+        showMaskOnFocus: true,
+        jitMasking: false,
+        placeholder: '_',
         onincomplete: () => handleOnIncomplete(input),
       }).mask(input);
     });
