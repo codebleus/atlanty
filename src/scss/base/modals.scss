@@ -434,20 +434,10 @@ body::after {
   &__form {
     display: flex;
     flex-direction: column;
-  }
+    row-gap: 2.3rem;
 
-  // .guide-modal__field
-
-  &__field {
-    margin-bottom: 4rem;
-
-    @media (min-width: 48.01em) {
-      &:not(:last-child) {
-        margin-bottom: 2.5rem;
-      }
-      &:last-child {
-        margin-bottom: 2.3rem;
-      }
+    @media (max-width: 48em) {
+      row-gap: 4rem;
     }
   }
 
