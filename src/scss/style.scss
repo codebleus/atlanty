@@ -177,6 +177,15 @@
   }
 }
 
+.guide-modal__right {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.guide-modal__right::-webkit-scrollbar {
+  display: none;
+}
+
 .modal-show,
 ._show-menu {
   overflow: hidden;
