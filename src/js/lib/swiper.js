@@ -34,6 +34,24 @@ window.addEventListener('load', function () {
       speed: 4000,
     });
   }
+  if (document.querySelector('.common-page__carousel')) {
+    new Swiper('.common-page__carousel', {
+      modules: [Autoplay],
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      allowTouchMove: false,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      spaceBetween: remToPx(2),
+      slidesPerView: 'auto',
+      loop: true,
+      speed: 4000,
+      watchSlidesProgress: true,
+      watchSlidesVisibility: true,
+    });
+  }
 
   if (document.querySelector('.gallery__slider_main')) {
     mm.add('(min-width: 768px)', () => {

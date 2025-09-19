@@ -7,6 +7,18 @@
     padding-top: 20.4rem;
   }
 
+  &_blank ol,
+  &_blank ol li {
+    list-style: decimal;
+  }
+
+  &__label {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
   // .common-page__wrapper
 
   &__wrapper {
@@ -62,6 +74,7 @@
   // .common-page__wysiwyg
 
   &__wysiwyg {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
 
@@ -121,5 +134,48 @@
     p:not(:last-child) {
       margin-bottom: 2rem;
     }
+  }
+
+  &__carousel-wrap {
+    position: relative;
+    height: 50rem;
+    margin-top: 5rem;
+  }
+}
+.carousel-common-page {
+  &.swiper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100%;
+    overflow: visible;
+  }
+  &__wrapper.swiper-wrapper,
+  &__slide.swiper-slide {
+    list-style: none;
+    &::before {
+      opacity: 0;
+    }
+  }
+  &__wrapper.swiper-wrapper {
+    padding: 0;
+    // column-gap: 2.5rem;
+  }
+  &__slide.swiper-slide {
+    // flex-shrink: 0;
+    flex: 0 0 auto;
+    width: 24rem;
+    // transition: opacity 0.3s ease-out;
+    // &:not(.swiper-slide-visible) {
+    //   opacity: 0;
+    // }
+  }
+  &__image-wrap {
+    height: 100%;
+  }
+  &__image {
+    height: 100%;
+    object-fit: cover;
   }
 }
