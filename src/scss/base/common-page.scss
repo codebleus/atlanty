@@ -19,6 +19,12 @@
     font-weight: 500;
   }
 
+  &__btn.btn[data-modal] {
+    background-color: var(--bg-brown);
+    color: var(--bg-white);
+    font-size: 1.4rem;
+  }
+
   // .common-page__wrapper
 
   &__wrapper {

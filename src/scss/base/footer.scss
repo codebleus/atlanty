@@ -86,7 +86,7 @@
       @media (min-width: 100.001em) {
         border-right: 0.1rem solid hsla(0, 0%, 100%, 0.3);
       }
-      @media (min-width: 75em) {
+      @media (min-width: 75.01em) {
         --inner-pd-y: 3.2rem;
         display: grid;
         grid-template-columns: 1fr 34.2rem;
@@ -96,6 +96,29 @@
         padding-right: 0;
         padding-top: var(--inner-pd-y);
       }
+      @media (max-width: 75em) {
+        align-items: end;
+      }
+    }
+  }
+
+  &__content-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    @media (max-width: 64em) {
+      row-gap: 0.5rem;
+    }
+  }
+
+  &__caption {
+    color: white;
+    opacity: 0.6;
+    line-height: 122%;
+    font-size: 1.3rem;
+    max-width: 64rem;
+    @media (max-width: 48em) {
+      margin-bottom: 3rem;
     }
   }
 
