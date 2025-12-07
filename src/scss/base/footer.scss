@@ -112,13 +112,20 @@
   }
 
   &__caption {
+    padding-left: 18.3rem;
     color: white;
     opacity: 0.6;
     line-height: 122%;
     font-size: 1.3rem;
-    max-width: 64rem;
+    max-width: 84rem;
     @media (max-width: 48em) {
       margin-bottom: 3rem;
+    }
+    @media (max-width: 1535px) {
+      padding-left: 17.3rem;
+    }
+    @media (max-width: 1350px) {
+      padding-left: 0;
     }
   }
 

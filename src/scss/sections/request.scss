@@ -88,6 +88,7 @@
   &__form {
     position: relative;
     display: grid;
+    grid-auto-flow: dense;
     gap: 3.2rem;
 
     @media (max-width: 47.999em) {
@@ -121,11 +122,13 @@
   // .request__checkbox
 
   &__checkbox {
+    order: 1;
   }
 
   // .request__btn
 
   &__btn {
+    order: 1;
     text-align: center;
     @media (min-width: 64em) {
       justify-self: end;
@@ -195,7 +198,7 @@
 
     &::after {
       border-radius: 50%;
-      content: '';
+      content: "";
       height: var(--icon-err-size);
       position: absolute;
       right: 0;
@@ -311,7 +314,7 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       background-color: var(--bg-white);
       transition: transform var(--transition-duration);
@@ -414,7 +417,7 @@
       margin-bottom: 1em;
     }
 
-    &[aria-selected='true'] {
+    &[aria-selected="true"] {
       text-decoration-color: transparent;
       color: var(--primary-brown);
     }
