@@ -2,8 +2,8 @@
 
 // colors
 :root {
-  --font-family-main: 'Futura', sans-serif;
-  --font-family-second: 'Circe Contrast', serif;
+  --font-family-main: "Futura", sans-serif;
+  --font-family-second: "Circe Contrast", serif;
   --font-size-13: 1.3rem;
   --font-size-116: 11.6rem;
   --font-heading-h7: 500 var(--font-size-13) / 1.2 var(--font-family-main);
@@ -99,21 +99,21 @@
 // ---------------------------------- fonts ---------------------------------
 
 // local fonts
-@import 'base/fonts';
+@import "base/fonts";
 
 // ------------------------------- base styles ------------------------------
 
 // base scss file
-@import 'base/set';
+@import "base/set";
 
-@import 'base/header';
-@import 'base/footer';
-@import 'base/modals';
-@import 'base/cookie';
-@import 'base/cta';
-@import 'base/common-page';
-@import 'base/error-page';
-@import 'base/chat';
+@import "base/header";
+@import "base/footer";
+@import "base/modals";
+@import "base/cookie";
+@import "base/cta";
+@import "base/common-page";
+@import "base/error-page";
+@import "base/chat";
 
 //  {
 //   body {
@@ -143,8 +143,8 @@
   }
 }
 
-[for='trial-form-block-trial-name'],
-[for='trial-form-block-trial-phone'] {
+[for="trial-form-block-trial-name"],
+[for="trial-form-block-trial-phone"] {
   @media (max-width: 64em) {
     order: -1;
   }
@@ -365,7 +365,7 @@
 
 .simplebar-content:before,
 .simplebar-content:after {
-  content: ' ';
+  content: " ";
   display: table;
 }
 
@@ -457,7 +457,7 @@
 
 .simplebar-scrollbar:before {
   position: absolute;
-  content: '';
+  content: "";
   background: black;
   border-radius: 7px;
   left: 2px;
@@ -500,7 +500,7 @@
 }
 
 /* Rtl support */
-[data-simplebar-direction='rtl'] .simplebar-track.simplebar-vertical {
+[data-simplebar-direction="rtl"] .simplebar-track.simplebar-vertical {
   right: auto;
   left: 0;
 }
@@ -536,56 +536,57 @@
 
 // --------------------------------------------------------------------------
 
-@import 'common/layout';
-@import 'common/button';
-@import 'common/typo';
-@import 'common/filters';
-@import 'common/controls';
-@import 'common/form';
-@import 'common/reg-banner';
+@import "common/layout";
+@import "common/button";
+@import "common/typo";
+@import "common/filters";
+@import "common/controls";
+@import "common/form";
+@import "common/reg-banner";
 
 // sections
-@import 'sections/hero';
-@import 'sections/rezidents';
-@import 'sections/infographics';
-@import 'sections/request';
-@import 'sections/cases';
-@import 'sections/project';
-@import 'sections/calendar';
-@import 'sections/events';
-@import 'sections/residents';
-@import 'sections/events-description';
-@import 'sections/form-exclusive';
-@import 'sections/media-lead';
-@import 'sections/media-grid';
-@import 'sections/subscribe-form';
-@import 'sections/signature';
-@import 'sections/bg-image';
-@import 'sections/carousel';
-@import 'sections/products';
-@import 'sections/mobapp';
-@import 'sections/tg';
-@import 'sections/hero-club';
-@import 'sections/guests';
-@import 'sections/time';
-@import 'sections/schedule';
-@import 'sections/gallery';
-@import 'sections/testimonials';
-@import 'sections/events-hero';
-@import 'sections/values';
-@import 'sections/events-info';
+@import "sections/hero";
+@import "sections/rezidents";
+@import "sections/infographics";
+@import "sections/request";
+@import "sections/cases";
+@import "sections/project";
+@import "sections/calendar";
+@import "sections/events";
+@import "sections/residents";
+@import "sections/events-description";
+@import "sections/form-exclusive";
+@import "sections/media-lead";
+@import "sections/media-grid";
+@import "sections/subscribe-form";
+@import "sections/signature";
+@import "sections/bg-image";
+@import "sections/carousel";
+@import "sections/products";
+@import "sections/mobapp";
+@import "sections/tg";
+@import "sections/hero-club";
+@import "sections/guests";
+@import "sections/time";
+@import "sections/schedule";
+@import "sections/gallery";
+@import "sections/testimonials";
+@import "sections/events-hero";
+@import "sections/values";
+@import "sections/events-info";
 
-@import 'sections/about-hero';
-@import 'sections/about-numbers';
-@import 'sections/about-manifest';
-@import 'sections/about-infographics';
-@import 'sections/about-values';
-@import 'sections/about-culture';
-@import 'sections/about-residents';
-@import 'sections/about-speakers';
-@import 'sections/about-events';
-@import 'sections/about-reviews';
-@import 'sections/about-community';
-@import 'sections/about-principles';
-@import 'sections/guest-access';
-@import 'sections/guest-access-request';
+@import "sections/about-hero";
+@import "sections/about-numbers";
+@import "sections/about-manifest";
+@import "sections/about-infographics";
+@import "sections/about-values";
+@import "sections/about-culture";
+@import "sections/about-residents";
+@import "sections/about-speakers";
+@import "sections/about-events";
+@import "sections/about-reviews";
+@import "sections/about-community";
+@import "sections/about-principles";
+@import "sections/guest-access";
+@import "sections/guest-access-request";
+@import "sections/countdown-banner";

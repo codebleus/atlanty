@@ -1,0 +1,66 @@
+<section class="countdown-banner">
+  <div class="countdown-banner__container container">
+    <h2 class="countdown-banner__heading h1">
+      <span>Новогодняя цена</span> <br />
+      в бизнес-клубе «Атланты»!
+    </h2>
+    <p class="countdown-banner__subtitle">До конца акции:</p>
+    <div class="countdown__inner">
+      <div class="countdown__item countdown__item--days">
+        <div class="countdown__value" id="countdown-days">00</div>
+        <div class="countdown__label">ДНЕЙ</div>
+      </div>
+      <div class="countdown__item countdown__item--hours">
+        <div class="countdown__value" id="countdown-hours">00</div>
+        <div class="countdown__label">ЧАС</div>
+      </div>
+      <div class="countdown__item countdown__item--minutes">
+        <div class="countdown__value" id="countdown-minutes">00</div>
+        <div class="countdown__label">МИНУТЫ</div>
+      </div>
+      <div class="countdown__item countdown__item--seconds">
+        <div class="countdown__value" id="countdown-seconds">00</div>
+        <div class="countdown__label">СЕКУНД</div>
+      </div>
+    </div>
+    <div class="countdown-banner__lower">
+      <a href="#" class="countdown-banner__btn btn">подробнее</a>
+    </div>
+  </div>
+  <div class="countdown-banner__bg-wrap">
+    <img src="https://atlanty.ru/upload/iblock/fc6/fmcclyulnk0esbs3idv31fj02y59c86f.webp"
+      alt=""
+      class="countdown-banner__bg"
+    />
+  </div>
+</section>
+<script>
+  const countdownEndDate = new Date("2025-12-31T23:59:59").getTime();
+  const countdownDays = document.getElementById("countdown-days");
+  const countdownHours = document.getElementById("countdown-hours");
+  const countdownMinutes = document.getElementById("countdown-minutes");
+  const countdownSeconds = document.getElementById("countdown-seconds");
+
+  function countdownPad(n) {
+    return n.toString().padStart(2, "0");
+  }
+
+  function countdownUpdate() {
+    const now = new Date().getTime();
+    let diff = countdownEndDate - now;
+    if (diff < 0) diff = 0;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    countdownDays.textContent = countdownPad(days);
+    countdownHours.textContent = countdownPad(hours);
+    countdownMinutes.textContent = countdownPad(minutes);
+    countdownSeconds.textContent = countdownPad(seconds);
+  }
+
+  countdownUpdate();
+  setInterval(countdownUpdate, 1000);
+</script>
