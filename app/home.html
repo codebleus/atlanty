@@ -111,69 +111,38 @@
 					</video>
 				</div>
 			</section>
-			<section class="countdown-banner">
-				<div class="countdown-banner__container container">
-					<h2 class="countdown-banner__heading h1">
-						<span>Новогодняя цена</span> <br />
-						в бизнес-клубе «Атланты»!
-					</h2>
-					<p class="countdown-banner__subtitle">До конца акции:</p>
-					<div class="countdown__inner">
-						<div class="countdown__item countdown__item--days">
-							<div class="countdown__value" id="countdown-days">00</div>
-							<div class="countdown__label">ДНЕЙ</div>
-						</div>
-						<div class="countdown__item countdown__item--hours">
-							<div class="countdown__value" id="countdown-hours">00</div>
-							<div class="countdown__label">ЧАС</div>
-						</div>
-						<div class="countdown__item countdown__item--minutes">
-							<div class="countdown__value" id="countdown-minutes">00</div>
-							<div class="countdown__label">МИНУТЫ</div>
-						</div>
-						<div class="countdown__item countdown__item--seconds">
-							<div class="countdown__value" id="countdown-seconds">00</div>
-							<div class="countdown__label">СЕКУНД</div>
-						</div>
+			<section class="dating">
+				<div class="dating__container container">
+					<div class="dating__image-wrap">
+						<svg viewBox="0 0 570 448">
+							<defs>
+								<mask id="m">
+									<rect y="51" width="181.784" height="396.432" fill="white" />
+									<rect x="193.783" width="181.784" height="396.432" fill="white" />
+									<rect x="387.566" y="51" width="181.784" height="396.432" fill="white" />
+								</mask>
+							</defs>
+
+							<image href="img/content/dating.webp" mask="url(#m)" width="569" height="447" preserveAspectRatio="xMidYMid slice" />
+						</svg>
 					</div>
-					<div class="countdown-banner__lower">
-						<a href="#" class="countdown-banner__btn btn">подробнее</a>
+					<h2 class="dating__heading">бизнес-дейтинг</h2>
+					<div class="dating__content">
+						<h3 class="dating__subtitle">Новые партнёрства за один вечер</h3>
+						<p class="dating__txt _desktop-only">
+							На бесплатном оффлайн-ивенте узнаем, как найти надёжных бизнес-партнёров
+							даже среди конкурентов, и проведём бизнес-дейтинг — формат быстрых
+							знакомств. Наша встреча — среда равных, где сложные вопросы решаются
+							быстрее.
+						</p>
+						<p class="dating__txt _mobile-only">
+							На бесплатном оффлайн-ивенте узнаем, как найти надёжных бизнес-партнёров
+							даже среди конкурентов.
+						</p>
+						<button class="dating__btn btn" type="button">прийти в гости</button>
 					</div>
-				</div>
-				<div class="countdown-banner__bg-wrap">
-					<img src="https://atlanty.ru/upload/iblock/fc6/fmcclyulnk0esbs3idv31fj02y59c86f.webp" alt="" class="countdown-banner__bg" />
 				</div>
 			</section>
-			<script>
-				const countdownEndDate = new Date("2025-12-31T23:59:59").getTime();
-				const countdownDays = document.getElementById("countdown-days");
-				const countdownHours = document.getElementById("countdown-hours");
-				const countdownMinutes = document.getElementById("countdown-minutes");
-				const countdownSeconds = document.getElementById("countdown-seconds");
-
-				function countdownPad(n) {
-					return n.toString().padStart(2, "0");
-				}
-
-				function countdownUpdate() {
-					const now = new Date().getTime();
-					let diff = countdownEndDate - now;
-					if (diff < 0) diff = 0;
-
-					const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-					const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-					const minutes = Math.floor((diff / (1000 * 60)) % 60);
-					const seconds = Math.floor((diff / 1000) % 60);
-
-					countdownDays.textContent = countdownPad(days);
-					countdownHours.textContent = countdownPad(hours);
-					countdownMinutes.textContent = countdownPad(minutes);
-					countdownSeconds.textContent = countdownPad(seconds);
-				}
-
-				countdownUpdate();
-				setInterval(countdownUpdate, 1000);
-			</script>
 
 			<section class="signature">
 				<div class="signature__container">

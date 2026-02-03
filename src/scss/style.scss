@@ -186,6 +186,52 @@
   display: none;
 }
 
+.project__block {
+  table {
+    overflow-x: scroll;
+    width: 100%;
+    display: block;
+    border: none;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    * {
+      border: none;
+    }
+    td {
+      padding: 1rem;
+      p {
+        font-size: 16px;
+      }
+    }
+    > * {
+      min-width: -webkit-fill-available;
+      width: fit-content;
+      display: inline-table;
+    }
+
+    tbody {
+      position: relative;
+      tr {
+        &:nth-child(odd) {
+          background-color: #e5ddd9;
+        }
+      }
+      td {
+        min-width: 185px;
+
+        @media (max-width: 48em) {
+          min-width: 160px;
+        }
+      }
+    }
+  }
+}
+
 .modal-show,
 ._show-menu {
   overflow: hidden;
@@ -590,3 +636,5 @@
 @import "sections/guest-access";
 @import "sections/guest-access-request";
 @import "sections/countdown-banner";
+
+@import "sections/dating";
