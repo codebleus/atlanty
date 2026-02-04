@@ -37,11 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const translateY = progress * 80;
 
-        if (window.innerWidth > 768) {
-          imageWrap.style.transform = `translateY(${translateY}px)`;
-        } else {
-          imageWrap.style.transform = `translateY(0px)`;
-        }
+        imageWrap.style.transform = `translateY(${translateY}px)`;
       }
     });
   }
