@@ -23,9 +23,9 @@ if (document.querySelector(".guests")) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (document.querySelector(".dating .dating__image-wrap")) {
+  if (document.querySelector(".dating .dating__image-wrap image")) {
     const datingSection = document.querySelector(".dating");
-    const imageWrap = document.querySelector(".dating__image-wrap");
+    const imageWrap = document.querySelector(".dating__image-wrap image");
 
     window.addEventListener("scroll", () => {
       const rect = datingSection.getBoundingClientRect();
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const progress =
           (windowHeight - rect.top) / (windowHeight + rect.height);
 
-        const translateY = progress * 70;
+        const translateY = progress * 80;
 
         if (window.innerWidth > 768) {
           imageWrap.style.transform = `translateY(${translateY}px)`;
