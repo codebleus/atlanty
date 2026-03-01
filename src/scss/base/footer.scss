@@ -602,6 +602,11 @@
   .select_dark .select__btn::after {
     background-color: transparent;
   }
+  .checkbox__label {
+    @media (max-width: 48em) {
+      margin-top: 0;
+    }
+  }
   .select {
     &__btn {
       --pd-y: 0.9rem;

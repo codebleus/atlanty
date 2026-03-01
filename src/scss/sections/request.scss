@@ -434,9 +434,34 @@
       margin-bottom: 1em;
     }
 
+    &:last-child {
+      margin-bottom: -10px;
+    }
+
     &[aria-selected="true"] {
       text-decoration-color: transparent;
       color: var(--primary-brown);
+    }
+  }
+}
+
+.silicone {
+  @media (max-width: 48em) {
+    .form-message {
+      font-size: 2.8rem;
+      gap: 1.8rem;
+      padding: 2rem;
+      &__icon {
+        height: 3rem;
+        width: 3rem;
+        transform: translateY(0.3rem);
+        &::after {
+          content: "";
+          width: 2.5rem;
+          height: 2.5rem;
+          background: url(../img/icons/error.svg) center / 2.5rem no-repeat;
+        }
+      }
     }
   }
 }

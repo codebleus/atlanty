@@ -1,20 +1,20 @@
-import { addError } from '../utils/forms';
+import { addError } from "../utils/forms";
 
-const loadInputmask = () => import('inputmask');
+const loadInputmask = () => import("inputmask");
 
 const handleOnIncomplete = input => {
-  input.value = '';
-  if (input.closest('.field')) {
-    addError(input.closest('.field'), input.closest('form'));
+  input.value = "";
+  if (input.closest(".field")) {
+    addError(input.closest(".field"), input.closest("form"));
   }
 };
 
 const initInputmask = async () => {
-  const telInputCollection = document.querySelectorAll('[data-tel-mask]');
-  const mailInputCollection = document.querySelectorAll('[data-mail-mask]');
-  const nameInputCollection = document.querySelectorAll('[data-name-mask]');
+  const telInputCollection = document.querySelectorAll("[data-tel-mask]");
+  const mailInputCollection = document.querySelectorAll("[data-mail-mask]");
+  const nameInputCollection = document.querySelectorAll("[data-name-mask]");
   const companyNameInput = document.querySelector(
-    '[data-input="company-name"]'
+    '[data-input="company-name"]',
   );
 
   if (
@@ -31,12 +31,11 @@ const initInputmask = async () => {
   if (telInputCollection.length) {
     telInputCollection.forEach(input => {
       Inputmask({
-        mask: '+7 (999) 999-99-99',
+        mask: "+7 (999) 999-99-99",
+        clearIncomplete: false,
+        clearMaskOnLostFocus: true,
         showMaskOnHover: false,
-        showMaskOnFocus: true,
-        jitMasking: false,
-        placeholder: '_',
-        onincomplete: () => handleOnIncomplete(input),
+        placeholder: "_",
       }).mask(input);
     });
   }
@@ -48,15 +47,15 @@ const initInputmask = async () => {
         jitMasking: true,
         clearMaskOnLostFocus: true,
         clearIncomplete: true,
-        alias: 'email',
+        alias: "email",
         onincomplete: () => {
-          if (input.closest('.field')) {
-            input.closest('.field').classList.add('_incomplete');
+          if (input.closest(".field")) {
+            input.closest(".field").classList.add("_incomplete");
           }
         },
         oncomplete: () => {
-          if (input.closest('.field')) {
-            input.closest('.field').classList.remove('_incomplete');
+          if (input.closest(".field")) {
+            input.closest(".field").classList.remove("_incomplete");
           }
         },
       }).mask(input);
@@ -68,7 +67,7 @@ const initInputmask = async () => {
       Inputmask({
         showMaskOnHover: false,
         jitMasking: true,
-        regex: '^[а-яА-Яa-zA-Z]*[ ][а-яА-Яa-zA-Z]*$',
+        regex: "^[а-яА-Яa-zA-Z]*[ ][а-яА-Яa-zA-Z]*$",
       }).mask(input);
     });
   }
@@ -78,9 +77,9 @@ const initInputmask = async () => {
       showMaskOnHover: false,
       jitMasking: true,
       regex:
-        '^[а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*$',
+        "^[а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*[ ][а-яА-Яa-zA-Z0-9]*$",
     }).mask(companyNameInput);
   }
 };
 
-window.addEventListener('load', initInputmask);
+window.addEventListener("load", initInputmask);

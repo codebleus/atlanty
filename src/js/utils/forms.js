@@ -164,32 +164,66 @@ const shouldValidateSelectOnLiveInteraction = select => {
   return isSelectValid(select);
 };
 
-const storeTelValue = input => {
-  if (!isTel(input)) return;
-  input.dataset.preservedTelValue = input.value || "";
-};
+const isMobileViewport = () => window.matchMedia("(max-width: 767px)").matches;
 
-const restoreTelValueIfCleared = input => {
-  if (!isTel(input)) return;
+const getFirstProblemControl = form => {
+  const controls = getRequiredControls(form);
 
-  const currentValue = input.value || "";
-  const preservedValue = input.dataset.preservedTelValue || "";
-  const preservedDigits = preservedValue.replace(/\D/g, "");
-
-  if (currentValue.length) return;
-  if (!preservedValue.length) return;
-  if (!preservedDigits.length) return;
-  if (preservedDigits.length >= 11) return;
-
-  input.value = preservedValue;
-
-  if (input.inputmask) {
-    if (typeof input.inputmask.setValue === "function") {
-      input.inputmask.setValue(preservedValue);
-    } else if (typeof input.inputmask._valueSet === "function") {
-      input.inputmask._valueSet(preservedValue);
+  for (const control of controls) {
+    const field = getField(control);
+    if (field?.classList.contains("_has-error")) {
+      return control;
     }
   }
+
+  const checkbox = getConsentCheckbox(form);
+  if (checkbox) {
+    const field = getField(checkbox);
+    if (field?.classList.contains("_has-error")) {
+      return checkbox;
+    }
+  }
+
+  return null;
+};
+
+const focusProblemControl = control => {
+  if (!control) return;
+
+  if (isCustomSelect(control)) {
+    const btn = getSelectBtn(control);
+    if (btn && typeof btn.focus === "function") {
+      btn.focus({ preventScroll: true });
+    }
+    return;
+  }
+
+  if (typeof control.focus === "function") {
+    control.focus({ preventScroll: true });
+  }
+};
+
+const scrollToProblemControl = form => {
+  if (!form || !isMobileViewport()) return;
+
+  const control = getFirstProblemControl(form);
+  if (!control) return;
+
+  const field = getField(control);
+  const target = field || control;
+  if (!target) return;
+
+  const rect = target.getBoundingClientRect();
+  const top = window.pageYOffset + rect.top - 96;
+
+  window.scrollTo({
+    top: Math.max(top, 0),
+    behavior: "smooth",
+  });
+
+  setTimeout(() => {
+    focusProblemControl(control);
+  }, 350);
 };
 
 const validateControl = (control, accent = false) => {
@@ -399,17 +433,9 @@ const initFieldBehavior = field => {
   const input = field.querySelector("input, textarea, select");
   if (!input) return;
 
-  if (isTel(input)) {
-    storeTelValue(input);
-  }
-
   input.addEventListener("input", () => {
     if (input.dataset.mask === "text") {
       input.value = input.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]+/g, "");
-    }
-
-    if (isTel(input)) {
-      storeTelValue(input);
     }
 
     if (!isCheckbox(input)) {
@@ -431,18 +457,7 @@ const initFieldBehavior = field => {
 
   input.addEventListener("change", () => {
     const form = field.closest("form");
-
-    if (isTel(input)) {
-      storeTelValue(input);
-      setTimeout(() => {
-        restoreTelValueIfCleared(input);
-        validateControl(input);
-        updateSubmitState(form);
-        refreshFormMessage(form);
-      }, 0);
-    } else {
-      validateControl(input);
-    }
+    validateControl(input);
 
     if (form) {
       updateSubmitState(form);
@@ -452,18 +467,7 @@ const initFieldBehavior = field => {
 
   input.addEventListener("focusout", () => {
     const form = field.closest("form");
-
-    if (isTel(input)) {
-      storeTelValue(input);
-      setTimeout(() => {
-        restoreTelValueIfCleared(input);
-        validateControl(input);
-        updateSubmitState(form);
-        refreshFormMessage(form);
-      }, 0);
-    } else {
-      validateControl(input);
-    }
+    validateControl(input);
 
     if (
       !field.classList.contains("_has-error") &&
@@ -611,15 +615,6 @@ document.addEventListener(
     const form = btn.closest(FORM_SELECTOR);
     if (!form) return;
 
-    form.querySelectorAll("input[data-tel-mask]").forEach(input => {
-      storeTelValue(input);
-      setTimeout(() => {
-        restoreTelValueIfCleared(input);
-        validateControl(input);
-        refreshFormMessage(form);
-      }, 0);
-    });
-
     form.dataset.submitAttempted = "true";
 
     const consent = getConsentCheckbox(form);
@@ -628,6 +623,7 @@ document.addEventListener(
       validateForm(form, true);
       updateSubmitState(form);
       refreshFormMessage(form);
+      scrollToProblemControl(form);
       e.preventDefault();
       e.stopPropagation();
       e.stopImmediatePropagation();
@@ -639,6 +635,7 @@ document.addEventListener(
     if (!isValid) {
       updateSubmitState(form);
       refreshFormMessage(form);
+      scrollToProblemControl(form);
       e.preventDefault();
       e.stopPropagation();
       e.stopImmediatePropagation();
@@ -684,15 +681,6 @@ document.addEventListener(
     const btn = getSubmitBtn(form);
     if (!btn) return;
 
-    form.querySelectorAll("input[data-tel-mask]").forEach(input => {
-      storeTelValue(input);
-      setTimeout(() => {
-        restoreTelValueIfCleared(input);
-        validateControl(input);
-        refreshFormMessage(form);
-      }, 0);
-    });
-
     form.dataset.submitAttempted = "true";
 
     e.preventDefault();
@@ -701,6 +689,7 @@ document.addEventListener(
       validateForm(form, true);
       updateSubmitState(form);
       refreshFormMessage(form);
+      scrollToProblemControl(form);
       return false;
     }
 
