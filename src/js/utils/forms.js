@@ -1,160 +1,601 @@
-import { closeModal } from './modals';
+const FIELD_SELECTOR = "[data-field]";
+const FORM_SELECTOR = "form[data-form-validate]";
+const REQUIRED_SELECTOR = "[data-required]";
+
+const EMAIL_RE = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@([a-z0-9-]+\.)+[a-z]{2,24}$/i;
+
+const FORM_MESSAGES = {
+  REQUIRED: "Пожалуйста, заполните обязательные поля",
+  EMAIL: "Введите корректный email",
+  CONSENT: "Согласитесь с условиями",
+};
+
+let activeAjaxForm = null;
+
+const accentError = field => {
+  if (!field) return;
+  field.classList.remove("_error-shake");
+  void field.offsetWidth;
+  field.classList.add("_error-shake");
+  setTimeout(() => {
+    field.classList.remove("_error-shake");
+  }, 400);
+};
 
 export const addError = (field, form) => {
-  field.classList.remove('_is-filled');
-  field.classList.add('_has-error');
-  form.classList.add('_has-error');
+  if (!field) return;
+  field.classList.remove("_is-filled");
+  field.classList.add("_has-error");
+  if (form) form.classList.add("_has-error");
 };
 
 export const removeError = (field, form) => {
-  if (field.classList.contains('_has-error')) {
-    field.classList.remove('_has-error');
-    form.classList.remove('_has-error');
+  if (!field) return;
+  field.classList.remove("_has-error");
+  field.classList.remove("_error-shake");
+
+  if (form && !form.querySelector("._has-error")) {
+    form.classList.remove("_has-error");
   }
 };
 
-if (document.querySelectorAll('[data-field]').length) {
-  document.querySelectorAll('[data-field]').forEach(field => {
-    const input = field.querySelector('input');
+const wrapFormMessageContent = root => {
+  const messages =
+    root.matches?.(".form-message") ?
+      [root]
+    : Array.from(root.querySelectorAll?.(".form-message") || []);
 
-    input.addEventListener('input', function () {
-      if (input.dataset.mask === 'text') {
-        input.value = input.value.replace(/[^a-zA-Zа-яА-я]+/g, '');
+  messages.forEach(message => {
+    let outer =
+      message.parentElement?.classList.contains("form-message__outer") ?
+        message.parentElement
+      : null;
+
+    if (!outer) {
+      outer = document.createElement("div");
+      outer.className = "form-message__outer";
+      message.parentNode?.insertBefore(outer, message);
+      outer.appendChild(message);
+    }
+
+    let shell =
+      outer.parentElement?.classList.contains("form-message-shell") ?
+        outer.parentElement
+      : null;
+
+    if (!shell) {
+      shell = document.createElement("div");
+      shell.className = "form-message-shell";
+      outer.parentNode?.insertBefore(shell, outer);
+      shell.appendChild(outer);
+    }
+  });
+};
+
+const getForm = element => element.closest("form");
+
+const getField = element =>
+  element.closest(FIELD_SELECTOR) ||
+  element.closest("label") ||
+  element.closest(".select") ||
+  element.parentElement;
+
+const getInputValue = input => (input.value || "").trim();
+
+const getSelectBtn = select => select.querySelector(".select__btn");
+
+const isCheckbox = input => input.type === "checkbox";
+const isEmail = input => input.hasAttribute("data-mail-mask");
+const isTel = input => input.hasAttribute("data-tel-mask");
+const isCustomSelect = element => element.classList?.contains("select");
+
+const getRequiredControls = form =>
+  [
+    ...Array.from(form.querySelectorAll(REQUIRED_SELECTOR)),
+    ...Array.from(form.querySelectorAll(".select")),
+  ].filter((control, index, arr) => arr.indexOf(control) === index);
+
+const getConsentCheckbox = form => form.querySelector('input[type="checkbox"]');
+
+const getSubmitBtn = form =>
+  form.querySelector(
+    'button[type="submit"], input[type="submit"], button:not([type]), [data-form-btn]',
+  );
+
+const isBlockedBtn = btn =>
+  !btn ||
+  btn.disabled ||
+  btn.classList.contains("_disabled") ||
+  btn.classList.contains("_is-loading") ||
+  btn.getAttribute("aria-disabled") === "true";
+
+const disableBtn = btn => {
+  if (!btn) return;
+  btn.disabled = true;
+  btn.classList.add("_disabled");
+  btn.setAttribute("aria-disabled", "true");
+};
+
+const enableBtn = btn => {
+  if (!btn) return;
+  btn.disabled = false;
+  btn.classList.remove("_disabled");
+  btn.setAttribute("aria-disabled", "false");
+};
+
+const isTelComplete = input => {
+  if (input.inputmask && typeof input.inputmask.isComplete === "function") {
+    return input.inputmask.isComplete();
+  }
+
+  const digits = (input.value || "").replace(/\D/g, "");
+  return digits.length === 11;
+};
+
+const isSelectValid = select => {
+  const selectedOption = select.querySelector(
+    '[role="option"][aria-selected="true"]',
+  );
+  return !!selectedOption;
+};
+
+const isControlEmpty = control => {
+  if (isCustomSelect(control)) return !isSelectValid(control);
+  if (isCheckbox(control)) return !control.checked;
+  return !getInputValue(control).length;
+};
+
+const validateControl = (control, accent = false) => {
+  const form = getForm(control);
+  const field = getField(control);
+
+  if (!field) return true;
+
+  let valid = true;
+
+  if (isCustomSelect(control)) {
+    valid = isSelectValid(control);
+  } else if (isCheckbox(control)) {
+    valid = !!control.checked;
+  } else {
+    const value = getInputValue(control);
+    valid = value.length > 0;
+
+    if (valid && isEmail(control)) valid = EMAIL_RE.test(value);
+    if (valid && isTel(control)) valid = isTelComplete(control);
+  }
+
+  if (!valid) {
+    const alreadyErrored = field.classList.contains("_has-error");
+    addError(field, form);
+
+    if (accent && alreadyErrored) {
+      accentError(field);
+    }
+  } else {
+    removeError(field, form);
+
+    if (isCustomSelect(control)) {
+      field.classList.add("_is-filled");
+    } else if (!isCheckbox(control) && getInputValue(control).length) {
+      field.classList.add("_is-filled");
+    }
+  }
+
+  return valid;
+};
+
+const validateForm = (form, accent = false) => {
+  const controls = getRequiredControls(form);
+  let ok = true;
+
+  controls.forEach(control => {
+    const valid = validateControl(control, accent);
+    if (!valid) ok = false;
+  });
+
+  return ok;
+};
+
+const updateSubmitState = form => {
+  const btn = getSubmitBtn(form);
+  const consent = getConsentCheckbox(form);
+
+  if (!btn || btn.classList.contains("_is-loading")) return;
+
+  if (!consent || !consent.checked) {
+    disableBtn(btn);
+  } else {
+    enableBtn(btn);
+  }
+};
+
+const setSubmitLoading = (form, loading) => {
+  const btn = getSubmitBtn(form);
+  if (!btn) return;
+
+  if (!btn.dataset.defaultText) {
+    btn.dataset.defaultText = btn.innerHTML;
+  }
+
+  if (loading) {
+    disableBtn(btn);
+    btn.classList.add("_is-loading");
+    btn.innerHTML =
+      'Отправляем<span class="btn-dots"><span>.</span><span>.</span><span>.</span></span>';
+  } else {
+    btn.classList.remove("_is-loading");
+    btn.innerHTML = btn.dataset.defaultText;
+    updateSubmitState(form);
+  }
+};
+
+const clearFormMessage = form => {
+  const message = form.querySelector(".form-message_message");
+  if (!message) return;
+
+  wrapFormMessageContent(form);
+
+  let icon = message.querySelector(":scope > .form-message__icon");
+
+  if (!icon) {
+    icon = document.createElement("span");
+    icon.className = "form-message__icon";
+  }
+
+  message.innerHTML = "";
+  message.appendChild(icon);
+};
+
+const setFormMessage = (form, type) => {
+  const message = form.querySelector(".form-message_message");
+  if (!message) return;
+
+  wrapFormMessageContent(form);
+
+  let icon = message.querySelector(":scope > .form-message__icon");
+
+  if (!icon) {
+    icon = document.createElement("span");
+    icon.className = "form-message__icon";
+  }
+
+  const text = FORM_MESSAGES[type];
+  if (!text) return;
+
+  message.innerHTML = "";
+  message.appendChild(icon);
+  message.insertAdjacentHTML("beforeend", text);
+};
+
+const getErroredRequiredControlType = form => {
+  const controls = getRequiredControls(form);
+
+  for (const control of controls) {
+    const field = getField(control);
+    if (!field || !field.classList.contains("_has-error")) continue;
+
+    if (isCheckbox(control)) continue;
+
+    if (!isCustomSelect(control) && isEmail(control)) {
+      const value = getInputValue(control);
+      if (value.length && !EMAIL_RE.test(value)) {
+        return "EMAIL";
       }
-      removeError(field, field.closest('form'));
+    }
+
+    return "REQUIRED";
+  }
+
+  return null;
+};
+
+const hasConsentErrorOnly = form => {
+  const checkbox = getConsentCheckbox(form);
+  if (!checkbox) return false;
+
+  const checkboxField = getField(checkbox);
+  if (!checkboxField || !checkboxField.classList.contains("_has-error")) {
+    return false;
+  }
+
+  const controls = getRequiredControls(form);
+
+  for (const control of controls) {
+    if (control === checkbox) continue;
+
+    const field = getField(control);
+    if (field?.classList.contains("_has-error")) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+const getFormMessageType = form => {
+  const mainErrorType = getErroredRequiredControlType(form);
+
+  if (mainErrorType) {
+    return mainErrorType;
+  }
+
+  if (hasConsentErrorOnly(form)) {
+    return "CONSENT";
+  }
+
+  const checkbox = getConsentCheckbox(form);
+  if (checkbox) {
+    const checkboxField = getField(checkbox);
+    if (checkboxField?.classList.contains("_has-error")) {
+      return "CONSENT";
+    }
+  }
+
+  return null;
+};
+
+const refreshFormMessage = form => {
+  if (!form) return;
+
+  const type = getFormMessageType(form);
+
+  if (!type) {
+    clearFormMessage(form);
+    return;
+  }
+
+  setFormMessage(form, type);
+};
+
+const initFieldBehavior = field => {
+  const input = field.querySelector("input, textarea, select");
+  if (!input) return;
+
+  input.addEventListener("input", () => {
+    if (input.dataset.mask === "text") {
+      input.value = input.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]+/g, "");
+    }
+
+    if (!isCheckbox(input)) {
+      removeError(field, field.closest("form"));
+    }
+
+    if (!isCheckbox(input) && getInputValue(input).length) {
+      field.classList.add("_is-filled");
+    } else if (!isCheckbox(input)) {
+      field.classList.remove("_is-filled");
+    }
+
+    const form = field.closest("form");
+    if (form) {
+      updateSubmitState(form);
+      refreshFormMessage(form);
+    }
+  });
+
+  input.addEventListener("change", () => {
+    const form = field.closest("form");
+    validateControl(input);
+
+    if (form) {
+      updateSubmitState(form);
+      refreshFormMessage(form);
+    }
+  });
+
+  input.addEventListener("focusout", () => {
+    const form = field.closest("form");
+    validateControl(input);
+
+    if (
+      !field.classList.contains("_has-error") &&
+      !isCheckbox(input) &&
+      getInputValue(input).length
+    ) {
+      field.classList.add("_is-filled");
+    }
+
+    if (form) {
+      updateSubmitState(form);
+      refreshFormMessage(form);
+    }
+  });
+};
+
+const initSelectBehavior = form => {
+  form.querySelectorAll(".select").forEach(select => {
+    const btn = getSelectBtn(select);
+    if (!btn) return;
+
+    const sync = () => {
+      validateControl(select);
+      updateSubmitState(form);
+      refreshFormMessage(form);
+    };
+
+    btn.addEventListener("click", () => {
+      setTimeout(sync, 0);
     });
 
-    input.addEventListener('focusin', function () {
-      field.classList.remove('_is-filled');
-    });
-    input.addEventListener('focusout', function () {
-      if (
-        !field.classList.contains('_has-error') &&
-        input.value &&
-        input.value.length
-      ) {
-        field.classList.add('_is-filled');
-      }
+    btn.addEventListener("blur", sync);
+
+    const dropdown = select.querySelector('[role="listbox"]');
+    if (dropdown) {
+      dropdown.addEventListener("click", () => {
+        setTimeout(sync, 0);
+      });
+    }
+
+    const observer = new MutationObserver(sync);
+
+    observer.observe(select, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["aria-selected", "data-headlessui-state"],
+      childList: true,
     });
   });
-}
+};
 
-if (document.querySelectorAll('[data-form-validate]').length) {
-  document.querySelectorAll('[data-form-validate]').forEach(form => {
-    form.addEventListener(
-      'submit',
-      function (e) {
-        e.preventDefault();
+const patchBxAjax = () => {
+  if (
+    !window.BX ||
+    !BX.ajax ||
+    typeof BX.ajax.runComponentAction !== "function" ||
+    BX.ajax.runComponentAction.__formValidationPatched
+  ) {
+    return;
+  }
 
-        const inputs = form.querySelectorAll('[data-required]');
-        const modal = document.querySelector('.modal_show.modal');
-        const successAlert = document.querySelector('.form-message_success');
-        const alert = document.querySelector('.form-message_alert');
+  const original = BX.ajax.runComponentAction.bind(BX.ajax);
 
-        if (inputs.length) {
-          inputs.forEach(input => {
-            const field = input.closest('[data-field]');
-            if (input.value && input.value.length) {
-              const domen =
-                input.value.split('@')[1] &&
-                input.value.split('@')[1].split('.')[1];
+  BX.ajax.runComponentAction = function (...args) {
+    const currentForm = activeAjaxForm;
+    const result = original(...args);
 
-              if (field) {
-                if (input.type === 'checkbox') {
-                  if (!input.checked)
-                    !input.checked && addError(field, field.closest('form'));
-                } else if (!input.value.length) {
-                  addError(field, field.closest('form'));
-                }
-
-                if (input.hasAttribute('data-mail-mask')) {
-                  if (
-                    (domen !== 'com' && domen !== 'ru') ||
-                    field.classList.contains('_incomplete')
-                  ) {
-                    addError(field, field.closest('form'));
-
-                    if (
-                      alert &&
-                      !document.querySelector(
-                        '.form-message_success._form-sent'
-                      )
-                    ) {
-                      alert.classList.add('_show-alert');
-                      setTimeout(() => {
-                        alert.classList.remove('_show-alert');
-                      }, 5000);
-                    }
-                  } else {
-                    removeError(field, field.closest('form'));
-                    field.classList.add('_is-filled');
-                  }
-                }
-
-                if (input.hasAttribute('data-name-mask')) {
-                  console.log(/^\b\w+\b \b\w+\b$/.test(input.value));
-                }
-              }
-            } else {
-              field && addError(field, field.closest('form'));
-            }
-          });
-        }
-
-        if (
-          form.querySelector('._has-error') ||
-          inputs.length !== form.querySelectorAll('._is-filled').length
-        ) {
-          const message = form.querySelector('.form-message_message');
-          const placeholder =
-            form.querySelector('.field._has-error input') &&
-            form.querySelector('.field._has-error input').placeholder;
-
-          if (message) {
-            const htm = '<span class="form-message__icon"></span>';
-            const setText = txt => {
-              message.innerHTML = `
-               ${htm}
-               ${txt}
-              `;
-            };
-
-            if (placeholder) {
-              if (placeholder.includes('Ваше имя')) {
-                setText(
-                  'Пожалуйста, проверьте правильность написания вашего имени. Оно может содержать только буквы и пробелы.'
-                );
-              } else if (placeholder.includes('телефон')) {
-                setText(
-                  'Пожалуйста, проверьте правильность заполнения телефона, он должен соответствовать образцу +7 (999) 999 — 99 — 99'
-                );
-              } else if (placeholder.includes('email')) {
-                setText('Пожалуйста, проверьте правильность написания почты');
-              }
-            } else {
-              if (form.querySelector('.checkbox._has-error input')) {
-                setText(
-                  'Пожалуйста, дайте согласие на обработку персональных данных'
-                );
-              }
-            }
+    if (result && typeof result.then === "function") {
+      return result
+        .then(res => {
+          if (currentForm) {
+            setSubmitLoading(currentForm, false);
+            activeAjaxForm = null;
           }
-
-          return false;
-        } else {
-          modal && closeModal(modal);
-          if (
-            successAlert &&
-            !document.querySelector('.form-message_alert._show-alert')
-          ) {
-            successAlert.classList.add('_form-sent');
-            setTimeout(() => {
-              successAlert.classList.remove('_form-sent');
-            }, 5000);
+          return res;
+        })
+        .catch(err => {
+          if (currentForm) {
+            setSubmitLoading(currentForm, false);
+            activeAjaxForm = null;
           }
-        }
-      },
-      false
+          throw err;
+        });
+    }
+
+    if (currentForm) {
+      setSubmitLoading(currentForm, false);
+      activeAjaxForm = null;
+    }
+
+    return result;
+  };
+
+  BX.ajax.runComponentAction.__formValidationPatched = true;
+};
+
+wrapFormMessageContent(document);
+
+const formMessageObserver = new MutationObserver(mutations => {
+  mutations.forEach(mutation => {
+    mutation.addedNodes.forEach(node => {
+      if (!(node instanceof Element)) return;
+      wrapFormMessageContent(node);
+    });
+  });
+});
+
+formMessageObserver.observe(document.documentElement, {
+  childList: true,
+  subtree: true,
+});
+
+document.querySelectorAll(FIELD_SELECTOR).forEach(initFieldBehavior);
+
+document.querySelectorAll(FORM_SELECTOR).forEach(form => {
+  form.setAttribute("novalidate", "novalidate");
+  initSelectBehavior(form);
+  updateSubmitState(form);
+  refreshFormMessage(form);
+});
+
+patchBxAjax();
+
+document.addEventListener(
+  "click",
+  e => {
+    const btn = e.target.closest(
+      'button[type="submit"], input[type="submit"], button:not([type]), [data-form-btn]',
     );
-  });
-}
+    if (!btn) return;
+
+    const form = btn.closest(FORM_SELECTOR);
+    if (!form) return;
+
+    form.dataset.submitAttempted = "true";
+
+    const consent = getConsentCheckbox(form);
+
+    if (!consent || !consent.checked || isBlockedBtn(btn)) {
+      validateForm(form, true);
+      updateSubmitState(form);
+      refreshFormMessage(form);
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      return false;
+    }
+
+    const isValid = validateForm(form, true);
+
+    if (!isValid) {
+      updateSubmitState(form);
+      refreshFormMessage(form);
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      return false;
+    }
+
+    clearFormMessage(form);
+    activeAjaxForm = form;
+    setSubmitLoading(form, true);
+  },
+  true,
+);
+
+document.addEventListener(
+  "change",
+  e => {
+    const target = e.target;
+    if (!target.closest('[type="checkbox"]')) return;
+
+    const form = target.closest(FORM_SELECTOR);
+    if (!form) return;
+
+    validateControl(target);
+    updateSubmitState(form);
+    refreshFormMessage(form);
+  },
+  true,
+);
+
+document.addEventListener(
+  "keydown",
+  e => {
+    if (e.key !== "Enter" || e.shiftKey) return;
+
+    const target = e.target;
+    if (!target) return;
+    if (target.tagName === "TEXTAREA") return;
+
+    const form = target.closest(FORM_SELECTOR);
+    if (!form) return;
+
+    const btn = getSubmitBtn(form);
+    if (!btn) return;
+
+    form.dataset.submitAttempted = "true";
+
+    e.preventDefault();
+
+    if (isBlockedBtn(btn)) {
+      validateForm(form, true);
+      updateSubmitState(form);
+      refreshFormMessage(form);
+      return false;
+    }
+
+    btn.click();
+  },
+  true,
+);

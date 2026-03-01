@@ -348,7 +348,7 @@
         @media (min-width: 75em) {
           background-color: #ffffff4d;
           bottom: 0;
-          content: '';
+          content: "";
           height: 1px;
           left: 0;
           position: absolute;
@@ -599,6 +599,9 @@
 }
 
 .footer-club {
+  .select_dark .select__btn::after {
+    background-color: transparent;
+  }
   .select {
     &__btn {
       --pd-y: 0.9rem;
@@ -681,7 +684,7 @@
   // .footer-club__heading
 
   &__heading {
-    font-family: 'Circe Contrast';
+    font-family: "Circe Contrast";
     font-size: 5.6rem;
     line-height: 100%;
     text-transform: uppercase;

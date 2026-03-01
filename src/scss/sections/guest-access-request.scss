@@ -10,6 +10,14 @@
     }
   }
 
+  .select._is-filled .select__btn {
+    color: var(--bg-white);
+  }
+
+  .select__btn {
+    color: hsla(0, 0%, 100%, 0.4);
+  }
+
   .field__label,
   .select__label {
     margin-bottom: 1.2rem;

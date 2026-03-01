@@ -3,7 +3,7 @@
   visibility: visible;
 }
 body::after {
-  content: '';
+  content: "";
   position: fixed;
   z-index: 51;
   width: 100%;
@@ -13,7 +13,9 @@ body::after {
   backdrop-filter: blur(10px);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .modal.modal_show {
@@ -38,7 +40,9 @@ body::after {
   opacity: 0;
   visibility: hidden;
   background-color: var(--bg-beige);
-  transition: visibility 0.3s ease, opacity 0.3s ease;
+  transition:
+    visibility 0.3s ease,
+    opacity 0.3s ease;
 
   &__close-btn {
     position: fixed;
@@ -166,6 +170,14 @@ body::after {
     .select__btn,
     .checkbox__label {
       color: var(--bg-black);
+    }
+
+    .select._is-filled .select__btn {
+      color: rgba(38, 38, 38, 1);
+    }
+
+    .select__btn {
+      color: rgba(38, 38, 38, 0.4);
     }
 
     .field__input {
@@ -310,7 +322,7 @@ body::after {
     color: var(--bg-white);
 
     &::after {
-      content: '';
+      content: "";
 
       position: absolute;
       width: 222.8rem;
@@ -537,9 +549,13 @@ body::after {
       min-height: auto;
 
       @media (min-width: 48em) {
-        box-shadow: 4.6px 4.6px 2.7px #00000006, 9.3px 9.3px 6.1px #0000000a,
-          15px 15px 10.8px #0000000d, 22.7px 22.7px 17.3px #0000000f,
-          34.9px 34.9px 27.2px #0001, 56px 56px 44.8px #00000013,
+        box-shadow:
+          4.6px 4.6px 2.7px #00000006,
+          9.3px 9.3px 6.1px #0000000a,
+          15px 15px 10.8px #0000000d,
+          22.7px 22.7px 17.3px #0000000f,
+          34.9px 34.9px 27.2px #0001,
+          56px 56px 44.8px #00000013,
           100px 100px 90px #0000001a;
         // width: min(var(--max-width), 100%);
       }
@@ -762,7 +778,7 @@ body::after {
     // .request-sent-modal__heading
 
     &__heading {
-      font-family: 'Circe Contrast';
+      font-family: "Circe Contrast";
       font-size: 4.8rem;
       line-height: 100%;
       text-transform: uppercase;
@@ -831,7 +847,9 @@ body::after {
 
         transform: translateY(-50%);
 
-        transition: opacity 0.3s ease-in-out, visibility 0.3s ease;
+        transition:
+          opacity 0.3s ease-in-out,
+          visibility 0.3s ease;
 
         &.modal__content.inviting-modal__container {
           padding: 0;
@@ -871,7 +889,9 @@ body::after {
       @media (max-width: 48em) {
         margin: 0;
 
-        transition: opacity 0.3s ease-in-out, visibility 0.3s ease;
+        transition:
+          opacity 0.3s ease-in-out,
+          visibility 0.3s ease;
 
         &_main {
           opacity: 0;
@@ -931,7 +951,7 @@ body::after {
   // .inviting-modal__subtitle
 
   &__subtitle {
-    font-family: 'Circe Contrast';
+    font-family: "Circe Contrast";
     font-size: 2rem;
     line-height: 100%;
     text-transform: uppercase;
@@ -987,7 +1007,7 @@ body::after {
 
     &:not(:last-child) {
       &::after {
-        content: ' | ';
+        content: " | ";
 
         margin-right: 0.5rem;
       }
@@ -1001,7 +1021,7 @@ body::after {
 
     max-width: 59rem;
 
-    font-family: 'Circe Contrast';
+    font-family: "Circe Contrast";
     font-size: 7rem;
     line-height: 100%;
     text-transform: uppercase;
@@ -1135,7 +1155,7 @@ body::after {
     }
 
     &::after {
-      content: '/';
+      content: "/";
 
       font-size: 1.6rem;
       line-height: 130%;
@@ -1191,11 +1211,11 @@ body::after {
 
       transition: height 0.3s ease-in-out;
 
-      [data-step='02'] & {
+      [data-step="02"] & {
         height: 17.2rem;
       }
 
-      [data-step='03'] & {
+      [data-step="03"] & {
         height: 16rem;
       }
     }
@@ -1212,7 +1232,9 @@ body::after {
     flex-direction: column;
     row-gap: 1.6rem;
 
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out,
+    transition:
+      opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out,
       transform 0.3s ease-in-out;
 
     @media (max-width: 48em) {

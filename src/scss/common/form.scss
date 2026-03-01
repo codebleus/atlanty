@@ -32,7 +32,7 @@
 
     &::after {
       --size: 1.6rem;
-      content: '';
+      content: "";
       display: block;
       height: var(--size);
       transform: scale(0);
@@ -56,7 +56,7 @@
     opacity: 0.0001;
     position: absolute;
     z-index: 2;
-    &[type='checkbox'] {
+    &[type="checkbox"] {
       opacity: 0;
       top: 0;
       left: 0;
@@ -85,7 +85,7 @@
     color: var(--bg-white);
     flex: 0 1 calc(100% - var(--checkmark-size) - 1.2rem);
     font: var(--font-text-xs);
-    margin-top: 0.3rem;
+    margin-top: 0;
     a {
       position: relative;
       z-index: 3;
@@ -115,13 +115,13 @@ form._has-error {
     margin-top: 2.4rem;
   }
 }
-.form-message_message {
+.form-message-shell {
   &:not(._has-error &) {
-    display: none;
+    grid-template-rows: 0fr;
   }
 }
 @property --scaleX {
-  syntax: '<number>'; /* <- defined as type number for the transition to work */
+  syntax: "<number>"; /* <- defined as type number for the transition to work */
   initial-value: 0;
   inherits: false;
 }
@@ -168,7 +168,7 @@ form._has-error {
 .form-message_alert,
 .form-message_success {
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 1px;
@@ -250,7 +250,7 @@ form._has-error {
     }
 
     &::after {
-      content: '';
+      content: "";
       width: 1rem;
       height: 1rem;
       background: url(@img/icons/error.svg) center / 1rem no-repeat;
@@ -259,5 +259,91 @@ form._has-error {
 
   @media (min-width: 48em) {
     padding: 1.2rem;
+  }
+}
+.select._has-error .select__btn {
+  border-bottom: 1px solid rgb(252, 67, 67);
+}
+html:not(._pages-loaded) .form-message-shell {
+  display: none;
+}
+.form-message-shell {
+  display: grid;
+  grid-row: 1 / 2;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.3s ease-out;
+  @media (min-width: 48.01em) {
+    grid-column: 1 / 3;
+  }
+}
+
+.form-message__outer {
+  overflow: hidden;
+}
+
+._has-error._error-shake,
+._has-error._error-shake .field__input,
+._has-error._error-shake .select__btn,
+._has-error._error-shake .checkbox__input {
+  animation: errorShake 0.38s ease;
+}
+
+@keyframes errorShake {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  40% {
+    transform: translate3d(2px, 0, 0);
+  }
+  60% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  80% {
+    transform: translate3d(1px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+[data-form-validate] button._is-loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.btn-dots {
+  display: inline-flex;
+  margin-left: 4px;
+}
+
+.btn-dots span {
+  display: inline-block;
+  animation: btnDots 1.2s infinite;
+}
+
+.btn-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.btn-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes btnDots {
+  0%,
+  20% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
   }
 }

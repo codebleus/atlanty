@@ -65,7 +65,8 @@
     }
 
     &:disabled {
-      --bg: var(--system-gray-1);
+      opacity: 0.5;
+      pointer-events: none;
     }
 
     &:hover,
@@ -142,7 +143,7 @@
   transition: gap 0.4s ease;
 
   &::after {
-    content: '';
+    content: "";
 
     height: 2.4rem;
     width: 2.4rem;
@@ -188,7 +189,7 @@
   text-underline-offset: 0.3em;
 
   &::after {
-    content: '';
+    content: "";
     height: 2.4rem;
     transition: transform 0.4s ease;
     width: 2.4rem;

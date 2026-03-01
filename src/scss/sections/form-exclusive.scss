@@ -6,6 +6,18 @@
   margin: 0 auto;
   max-width: 82rem;
   padding: 2rem;
+
+  .select._is-filled .select__btn {
+    color: var(--bg-white);
+  }
+
+  .select__btn {
+    color: hsla(0, 0%, 100%, 0.4);
+    &::after {
+      filter: invert(1);
+    }
+  }
+
   @media (min-width: 64em) {
     display: grid;
     gap: var(--gap);
