@@ -885,7 +885,13 @@
 					</div>
 					<div class="guide-modal__right">
 						<span class="guide-modal__subtitle">ЗАПОЛНИТЕ ФОРМУ</span>
-						<form action="#" data-validate class="guide-modal__form">
+						<form action="#" data-form-validate class="guide-modal__form">
+							<p class="request__form-message form-message form-message_message">
+								<span class="form-message__icon"></span>
+								Пожалуйста, проверьте правильность заполнения телефона, он должен
+								соответствовать образцу +7 (999) 999 — 99 — 99
+							</p>
+
 							<label data-field class="guide-modal__field field"><span class="field__label">Ваше имя</span><span class="field__input-wrap"><input placeholder="Ваше имя" data-required data-name-mask class="field__input" name="name" type="text" value="" /></span></label>
 
 							<label data-field class="guide-modal__field field"><span class="field__label">Номер телефона</span><span class="field__input-wrap"><input placeholder="Номер телефона" data-required class="field__input" name="phone" type="text" data-tel-mask value="" /></span></label>

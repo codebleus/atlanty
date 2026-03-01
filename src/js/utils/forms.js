@@ -89,13 +89,29 @@ const isEmail = input => input.hasAttribute("data-mail-mask");
 const isTel = input => input.hasAttribute("data-tel-mask");
 const isCustomSelect = element => element.classList?.contains("select");
 
-const getRequiredControls = form =>
-  [
+const getFormCheckboxes = form =>
+  Array.from(form.querySelectorAll('input[type="checkbox"]'));
+
+const getRequiredControls = form => {
+  const controls = [
     ...Array.from(form.querySelectorAll(REQUIRED_SELECTOR)),
     ...Array.from(form.querySelectorAll(".select")),
   ].filter((control, index, arr) => arr.indexOf(control) === index);
 
-const getConsentCheckbox = form => form.querySelector('input[type="checkbox"]');
+  const checkboxes = getFormCheckboxes(form);
+
+  if (checkboxes.length !== 1) {
+    return controls.filter(control => !isCheckbox(control));
+  }
+
+  return controls;
+};
+
+const getConsentCheckbox = form => {
+  const checkboxes = getFormCheckboxes(form);
+  if (checkboxes.length !== 1) return null;
+  return checkboxes[0];
+};
 
 const getSubmitBtn = form =>
   form.querySelector(
@@ -139,10 +155,41 @@ const isSelectValid = select => {
   return !!selectedOption;
 };
 
-const isControlEmpty = control => {
-  if (isCustomSelect(control)) return !isSelectValid(control);
-  if (isCheckbox(control)) return !control.checked;
-  return !getInputValue(control).length;
+const shouldValidateSelectOnLiveInteraction = select => {
+  const form = getForm(select);
+  const field = getField(select);
+  if (!form || !field) return false;
+  if (form.dataset.submitAttempted === "true") return true;
+  if (field.classList.contains("_has-error")) return true;
+  return isSelectValid(select);
+};
+
+const storeTelValue = input => {
+  if (!isTel(input)) return;
+  input.dataset.preservedTelValue = input.value || "";
+};
+
+const restoreTelValueIfCleared = input => {
+  if (!isTel(input)) return;
+
+  const currentValue = input.value || "";
+  const preservedValue = input.dataset.preservedTelValue || "";
+  const preservedDigits = preservedValue.replace(/\D/g, "");
+
+  if (currentValue.length) return;
+  if (!preservedValue.length) return;
+  if (!preservedDigits.length) return;
+  if (preservedDigits.length >= 11) return;
+
+  input.value = preservedValue;
+
+  if (input.inputmask) {
+    if (typeof input.inputmask.setValue === "function") {
+      input.inputmask.setValue(preservedValue);
+    } else if (typeof input.inputmask._valueSet === "function") {
+      input.inputmask._valueSet(preservedValue);
+    }
+  }
 };
 
 const validateControl = (control, accent = false) => {
@@ -203,7 +250,7 @@ const updateSubmitState = form => {
 
   if (!btn || btn.classList.contains("_is-loading")) return;
 
-  if (!consent || !consent.checked) {
+  if (consent && !consent.checked) {
     disableBtn(btn);
   } else {
     enableBtn(btn);
@@ -352,9 +399,17 @@ const initFieldBehavior = field => {
   const input = field.querySelector("input, textarea, select");
   if (!input) return;
 
+  if (isTel(input)) {
+    storeTelValue(input);
+  }
+
   input.addEventListener("input", () => {
     if (input.dataset.mask === "text") {
       input.value = input.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]+/g, "");
+    }
+
+    if (isTel(input)) {
+      storeTelValue(input);
     }
 
     if (!isCheckbox(input)) {
@@ -376,7 +431,18 @@ const initFieldBehavior = field => {
 
   input.addEventListener("change", () => {
     const form = field.closest("form");
-    validateControl(input);
+
+    if (isTel(input)) {
+      storeTelValue(input);
+      setTimeout(() => {
+        restoreTelValueIfCleared(input);
+        validateControl(input);
+        updateSubmitState(form);
+        refreshFormMessage(form);
+      }, 0);
+    } else {
+      validateControl(input);
+    }
 
     if (form) {
       updateSubmitState(form);
@@ -386,7 +452,18 @@ const initFieldBehavior = field => {
 
   input.addEventListener("focusout", () => {
     const form = field.closest("form");
-    validateControl(input);
+
+    if (isTel(input)) {
+      storeTelValue(input);
+      setTimeout(() => {
+        restoreTelValueIfCleared(input);
+        validateControl(input);
+        updateSubmitState(form);
+        refreshFormMessage(form);
+      }, 0);
+    } else {
+      validateControl(input);
+    }
 
     if (
       !field.classList.contains("_has-error") &&
@@ -409,7 +486,16 @@ const initSelectBehavior = form => {
     if (!btn) return;
 
     const sync = () => {
-      validateControl(select);
+      if (shouldValidateSelectOnLiveInteraction(select)) {
+        validateControl(select);
+      } else {
+        const field = getField(select);
+        if (field && isSelectValid(select)) {
+          field.classList.add("_is-filled");
+          removeError(field, form);
+        }
+      }
+
       updateSubmitState(form);
       refreshFormMessage(form);
     };
@@ -418,7 +504,9 @@ const initSelectBehavior = form => {
       setTimeout(sync, 0);
     });
 
-    btn.addEventListener("blur", sync);
+    btn.addEventListener("blur", () => {
+      setTimeout(sync, 0);
+    });
 
     const dropdown = select.querySelector('[role="listbox"]');
     if (dropdown) {
@@ -427,7 +515,9 @@ const initSelectBehavior = form => {
       });
     }
 
-    const observer = new MutationObserver(sync);
+    const observer = new MutationObserver(() => {
+      setTimeout(sync, 0);
+    });
 
     observer.observe(select, {
       subtree: true,
@@ -521,11 +611,20 @@ document.addEventListener(
     const form = btn.closest(FORM_SELECTOR);
     if (!form) return;
 
+    form.querySelectorAll("input[data-tel-mask]").forEach(input => {
+      storeTelValue(input);
+      setTimeout(() => {
+        restoreTelValueIfCleared(input);
+        validateControl(input);
+        refreshFormMessage(form);
+      }, 0);
+    });
+
     form.dataset.submitAttempted = "true";
 
     const consent = getConsentCheckbox(form);
 
-    if (!consent || !consent.checked || isBlockedBtn(btn)) {
+    if ((consent && !consent.checked) || isBlockedBtn(btn)) {
       validateForm(form, true);
       updateSubmitState(form);
       refreshFormMessage(form);
@@ -561,6 +660,7 @@ document.addEventListener(
 
     const form = target.closest(FORM_SELECTOR);
     if (!form) return;
+    if (!getConsentCheckbox(form)) return;
 
     validateControl(target);
     updateSubmitState(form);
@@ -583,6 +683,15 @@ document.addEventListener(
 
     const btn = getSubmitBtn(form);
     if (!btn) return;
+
+    form.querySelectorAll("input[data-tel-mask]").forEach(input => {
+      storeTelValue(input);
+      setTimeout(() => {
+        restoreTelValueIfCleared(input);
+        validateControl(input);
+        refreshFormMessage(form);
+      }, 0);
+    });
 
     form.dataset.submitAttempted = "true";
 

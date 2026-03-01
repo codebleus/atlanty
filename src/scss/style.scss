@@ -226,6 +226,15 @@
   }
 }
 
+.button:disabled {
+  opacity: 0.5;
+}
+
+main {
+  position: relative;
+  z-index: 50;
+}
+
 ._show-menu {
   overflow: hidden;
 }

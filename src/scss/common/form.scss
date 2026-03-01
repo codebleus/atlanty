@@ -85,7 +85,7 @@
     color: var(--bg-white);
     flex: 0 1 calc(100% - var(--checkmark-size) - 1.2rem);
     font: var(--font-text-xs);
-    margin-top: 0;
+    margin-top: 3px;
     a {
       position: relative;
       z-index: 3;
@@ -116,6 +116,7 @@ form._has-error {
   }
 }
 .form-message-shell {
+  order: -1;
   &:not(._has-error &) {
     grid-template-rows: 0fr;
   }

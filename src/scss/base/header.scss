@@ -3,9 +3,11 @@
     padding-top: 1.6rem;
     position: fixed;
     top: 0;
-    transition: transform 0.3s ease 0.2s, background-color 0.3s;
+    transition:
+      transform 0.3s ease 0.2s,
+      background-color 0.3s;
     width: 100%;
-    z-index: 50;
+    z-index: 51;
 
     @media (max-width: 74.999em) {
       padding-top: 0;
@@ -457,9 +459,11 @@ html:not(.silicone) {
   .header {
     position: fixed;
     top: 0;
-    transition: transform 0.3s ease 0.2s, background-color 0.3s;
+    transition:
+      transform 0.3s ease 0.2s,
+      background-color 0.3s;
     width: 100%;
-    z-index: 50;
+    z-index: 51;
 
     &:not(.header-club) {
       @media (max-width: 74.999em) {
@@ -860,7 +864,9 @@ html:not(.silicone) {
             height: 1rem;
             opacity: 0.5;
             transform: translateY(-50%);
-            transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            transition:
+              transform 0.4s ease-in-out,
+              opacity 0.4s ease-in-out;
           }
         }
         &._is-active {
@@ -948,14 +954,17 @@ html:not(.silicone) {
       left: 0;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+      transition:
+        opacity 0.4s ease-in-out,
+        visibility 0.4s ease-in-out;
     }
     @media (max-width: 1199px) {
       display: grid;
       width: 100%;
       grid-template-rows: 0fr;
       border-top: 0.5px solid rgba(173, 131, 102, 0);
-      transition: border-top 0.3s ease-in-out,
+      transition:
+        border-top 0.3s ease-in-out,
         grid-template-rows 0.4s ease-in-out;
       .nav-header__txt::after {
         content: none;
@@ -1018,7 +1027,9 @@ html:not(.silicone)._show-menu .menu-header,
 
   width: 100%;
 
-  transition: transform 0.5s ease-in-out, padding 0.5s ease-in-out;
+  transition:
+    transform 0.5s ease-in-out,
+    padding 0.5s ease-in-out;
 
   .header__logo {
     @media (max-width: 48em) {
